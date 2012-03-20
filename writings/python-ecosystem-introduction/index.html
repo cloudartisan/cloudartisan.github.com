@@ -67,15 +67,15 @@
 
 <p>On Ubuntu/Debian and derivatives</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo apt-get install python2.7
-</code></pre></div>
+<pre><code>$ sudo apt-get install python2.7
+</code></pre>
 
 <p><em><code>sudo</code> is a program for Unix-like operating systems that allows users to run programs with the security privileges of another user (normally the superuser, or root). <a href="http://en.wikipedia.org/wiki/Sudo">You can learn more about sudo at Wikipedia</a>.</em></p>
 
 <p>On Fedora/Red Hat and similar systems</p>
 
-<div class="codehilite"><pre><code>sudo yum install python2.7
-</code></pre></div>
+<pre><code>sudo yum install python2.7
+</code></pre>
 
 <p><em>On RHEL you would likely need EPEL repositories enabled for install to work</em></p>
 
@@ -91,62 +91,62 @@
 
 <p>As with any programming environment, some functions and classes (<code>str</code>, <code>len</code>, <code>Exception</code>, etc.) in Python are available in the global scope(called <code>builtin</code> scope in Python) and others need to be imported by means of an <code>import</code> statement. For example:</p>
 
-<div class="codehilite"><pre><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<pre><code>&gt;&gt;&gt; import os
 
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">basename</span><span class="p">,</span> <span class="n">dirname</span>
-</code></pre></div>
+&gt;&gt;&gt; from os.path import basename, dirname
+</code></pre>
 
 <p>These packages must be somewhere in your filesystem so that they can be found by the <code>import</code> statement. How does Python know the location of these modules? These locations are set automatically when you install the Python virtual machine and are, almost always, dependent on the target platform.</p>
 
 <p>The package path is always available for your inspection in <code>sys.path</code>. Here is what it looks like on my laptop which runs <em>Ubuntu 11.10 Oneric Ocelot</em>.</p>
 
-<div class="codehilite"><pre><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
+<pre><code>&gt;&gt;&gt; import sys
 
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+&gt;&gt;&gt; print sys.path
 
-<span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+['',
 
- <span class="s">&#39;/usr/lib/python2.7&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7',
 
- <span class="s">&#39;/usr/lib/python2.7/plat-linux2&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/plat-linux2',
 
- <span class="s">&#39;/usr/lib/python2.7/lib-tk&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/lib-tk',
 
- <span class="s">&#39;/usr/lib/python2.7/lib-old&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/lib-old',
 
- <span class="s">&#39;/usr/lib/python2.7/lib-dynload&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/lib-dynload',
 
- <span class="s">&#39;/usr/local/lib/python2.7/dist-packages&#39;</span><span class="p">,</span>
+ '/usr/local/lib/python2.7/dist-packages',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/PIL&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/PIL',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/gst-0.10&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/gst-0.10',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/gtk-2.0&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
 
- <span class="s">&#39;/usr/lib/pymodules/python2.7&#39;</span><span class="p">,</span>
+ '/usr/lib/pymodules/python2.7',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/ubuntu-sso-client&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/ubuntuone-client&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/ubuntuone-client',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/ubuntuone-control-panel&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/ubuntuone-control-panel',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/ubuntuone-couch&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/ubuntuone-couch',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/ubuntuone-installer&#39;</span><span class="p">,</span>
+ '/usr/lib/python2.7/dist-packages/ubuntuone-installer',
 
- <span class="s">&#39;/usr/lib/python2.7/dist-packages/ubuntuone-storage-protocol&#39;</span><span class="p">]</span>
-</code></pre></div>
+ '/usr/lib/python2.7/dist-packages/ubuntuone-storage-protocol']
+</code></pre>
 
 <p>This will give you the list of directories where Python will search for a given package. It starts at the top and keeps going downwards until a name match is found. This means if two different directories contain two packages with the same name, the package search will always stop at the first absolute match encountered and will never go further down the list.</p>
 
 <p>As you might have guessed by now, this package search path can easily be hacked to ensure that Python picks your packages first. All you need to do is:</p>
 
-<div class="codehilite"><pre><code><span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;/path/to/my/packages&#39;</span><span class="p">)</span>
-</code></pre></div>
+<pre><code>&gt;&gt;&gt; sys.path.insert(0, '/path/to/my/packages')
+</code></pre>
 
 <p>While this approach comes in handy in many situations, you must always bear in mind that it is very easy to abuse it. <strong>Use it if you have to but don't abuse it</strong>.</p>
 
@@ -156,15 +156,15 @@
 
 <p><code>PYTHONPATH</code> is a environment variable that can be used to augment the default package search paths. Think of it as a <code>PATH</code> variable but specifically for Python. It is simply a list (not a Python list like <code>sys.path</code>) of directories containing the Python modules separated by <code>:</code>. It can be simply set as follows:</p>
 
-<div class="codehilite"><pre><code><span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/path/to/some/directory:/path/to/another/directory:/path/to/yet/another/directory
-</code></pre></div>
+<pre><code>export PYTHONPATH=/path/to/some/directory:/path/to/another/directory:/path/to/yet/another/directory
+</code></pre>
 
 <p>In some situations you will not want to overwrite the existing <code>PYTHONPATH</code>, but just append or prepend to it.</p>
 
-<div class="codehilite"><pre><code><span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:/path/to/some/directory    <span class="c"># Append</span>
+<pre><code>export PYTHONPATH=$PYTHONPATH:/path/to/some/directory    # Append
 
-<span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span>/path/to/some/directory:<span class="nv">$PYTHONPATH</span>    <span class="c"># Prepend</span>
-</code></pre></div>
+export PYTHONPATH=/path/to/some/directory:$PYTHONPATH    # Prepend
+</code></pre>
 
 <p>Generally, you will put this inside the shell startup files like <code>.bashrc</code>, <code>.zshrc</code>, etc.</p>
 
@@ -202,8 +202,8 @@
 
 <p>Installing packages using the distro package management system is simply issuing the command or using whatever GUI app you use to install other apps. E.g., to install <code>simplejson</code> (a JSON parsing utility) on an Ubuntu system, you would issue the following command:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo apt-get install python-simplejson
-</code></pre></div>
+<pre><code>$ sudo apt-get install python-simplejson
+</code></pre>
 
 <h3>Installing with pip</h3>
 
@@ -211,88 +211,88 @@
 
 <p><code>pip</code> is a tool for installing and managing Python packages, such as those found in the Python Package Index. <code>pip</code> is not installed with the Python virtual machine, therefore we need to install it first. On Linux, I generally install it as follows:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo apt-get install python-pip
-</code></pre></div>
+<pre><code>$ sudo apt-get install python-pip
+</code></pre>
 
 <p>Before installing any other package I always upgrade <code>pip</code> to the latest version available in PyPI as Ubuntu repositories are generally behind PyPI. I upgrade <code>pip</code> with pip itself.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install pip --upgrade
-</code></pre></div>
+<pre><code>$ sudo pip install pip --upgrade
+</code></pre>
 
 <p>Now, to install any python package, you would run the <code>pip install package-name</code> command. Therefore, to install <code>simplejson</code> you would run the following command:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install simplejson
-</code></pre></div>
+<pre><code>$ sudo pip install simplejson
+</code></pre>
 
 <p>Removing packages is just as easy.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip uninstall simplejson
-</code></pre></div>
+<pre><code>$ sudo pip uninstall simplejson
+</code></pre>
 
 <p>By default, <code>pip</code> will install the most recent stable version found on PyPI, but often you will face situations where you will want to install a specific version of a package, because your project depends on that specific version. To accomplish that you will use the <code>pip install</code> command as follows:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install <span class="nv">simplejson</span><span class="o">==</span>2.2.1
-</code></pre></div>
+<pre><code>$ sudo pip install simplejson==2.2.1
+</code></pre>
 
 <p>You will often want to upgrade, downgrade and/or reinstall packages. This can be done with the following commands.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install simplejson --upgrade         <span class="c"># Upgrade a package to the latest version from PyPI</span>
+<pre><code>$ sudo pip install simplejson --upgrade         # Upgrade a package to the latest version from PyPI
 
-<span class="nv">$ </span>sudo pip install <span class="nv">simplejson</span><span class="o">==</span>2.2.1 --upgrade  <span class="c"># Upgrade/downgrade a package to a given version</span>
-</code></pre></div>
+$ sudo pip install simplejson==2.2.1 --upgrade  # Upgrade/downgrade a package to a given version
+</code></pre>
 
 <p>Now, what if you want to install the development version of a package which is in a version control repository and not yet on PyPI? <code>pip</code> takes care of that as well, but before you can do this, you will need to install the version control systems itself. On Ubuntu, you would perform the installation as follows:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo apt-get install git-core mercurial subversion
-</code></pre></div>
+<pre><code>$ sudo apt-get install git-core mercurial subversion
+</code></pre>
 
 <p>Once you have the version control system installed, installing a package from a version control repository can be done as follows:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install git+http://hostname_or_ip/path/to/git-repo#egg<span class="o">=</span>packagename
+<pre><code>$ sudo pip install git+http://hostname_or_ip/path/to/git-repo#egg=packagename
 
-<span class="nv">$ </span>sudo pip install hg+http://hostname_or_ip/path/to/hg-repo#egg<span class="o">=</span>packagename
+$ sudo pip install hg+http://hostname_or_ip/path/to/hg-repo#egg=packagename
 
-<span class="nv">$ </span>sudo pip install svn+http://hostname_or_ip/path/to/svn-repo#egg<span class="o">=</span>packagename
-</code></pre></div>
+$ sudo pip install svn+http://hostname_or_ip/path/to/svn-repo#egg=packagename
+</code></pre>
 
 <p>You could install from a repository, equally easily. Note the triple slash in the filesystem path.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install git+file:///path/to/local/repository
-</code></pre></div>
+<pre><code>$ sudo pip install git+file:///path/to/local/repository
+</code></pre>
 
 <p>One thing should be noted that while installing via <code>git</code> protocol, you should use <code>git+git</code> prefix like so:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install git+git://hostname_or_ip/path/to/git-repo#egg<span class="o">=</span>packagename
-</code></pre></div>
+<pre><code>$ sudo pip install git+git://hostname_or_ip/path/to/git-repo#egg=packagename
+</code></pre>
 
 <p>Now, you might be wondering what going on with these <em>eggs</em>. Right now all you need to understand is that an egg is a zipped Python package containing package source and some metadata. <code>pip</code> builds the egg information before it installs the package. You can find the egg name by inspecting the <code>setup.py</code> file within the code repository (it will almost always be there). Find the <code>setup</code> section and look for the line that looks like <code>name="something"</code>. It will look somewhat similar to the following piece of code (taken from the <code>setup.py</code> file from simplejson).</p>
 
-<div class="codehilite"><pre><code><span class="n">setup</span><span class="p">(</span>
+<pre><code>setup(
 
-    <span class="n">name</span><span class="o">=</span><span class="s">&quot;simplejson&quot;</span><span class="p">,</span> <span class="c"># &lt;--- This is your egg name</span>
+    name="simplejson", # &lt;--- This is your egg name
 
-    <span class="n">version</span><span class="o">=</span><span class="n">VERSION</span><span class="p">,</span>
+    version=VERSION,
 
-    <span class="n">description</span><span class="o">=</span><span class="n">DESCRIPTION</span><span class="p">,</span>
+    description=DESCRIPTION,
 
-    <span class="n">long_description</span><span class="o">=</span><span class="n">LONG_DESCRIPTION</span><span class="p">,</span>
+    long_description=LONG_DESCRIPTION,
 
-    <span class="n">classifiers</span><span class="o">=</span><span class="n">CLASSIFIERS</span><span class="p">,</span>
+    classifiers=CLASSIFIERS,
 
-    <span class="n">author</span><span class="o">=</span><span class="s">&quot;Bob Ippolito&quot;</span><span class="p">,</span>
+    author="Bob Ippolito",
 
-    <span class="n">author_email</span><span class="o">=</span><span class="s">&quot;bob@redivi.com&quot;</span><span class="p">,</span>
+    author_email="bob@redivi.com",
 
-    <span class="n">url</span><span class="o">=</span><span class="s">&quot;http://github.com/simplejson/simplejson&quot;</span><span class="p">,</span>
+    url="http://github.com/simplejson/simplejson",
 
-    <span class="n">license</span><span class="o">=</span><span class="s">&quot;MIT License&quot;</span><span class="p">,</span>
+    license="MIT License",
 
-    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;simplejson&#39;</span><span class="p">,</span> <span class="s">&#39;simplejson.tests&#39;</span><span class="p">],</span>
+    packages=['simplejson', 'simplejson.tests'],
 
-    <span class="n">platforms</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;any&#39;</span><span class="p">],</span>
+    platforms=['any'],
 
-    <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-</code></pre></div>
+    **kw)
+</code></pre>
 
 <p>What if there is no <code>setup.py</code> file? How do you find the egg name? Well, you don't need to. Just copy the package source to your project directory and import and use it just like you would use your own code.</p>
 
@@ -300,19 +300,19 @@
 
 <p>All of the above examples will install the packages system-wide. If you use <code>--user</code> switch with <code>pip install</code>, the packages will be installed in your <code>~/.local</code> directory. For example, on my machine, it looks like this:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip install --user markdown2
+<pre><code>$ pip install --user markdown2
 
 Downloading/unpacking markdown2
 
-  Downloading markdown2-1.0.1.19.zip <span class="o">(</span>130Kb<span class="o">)</span>: 130Kb downloaded
+  Downloading markdown2-1.0.1.19.zip (130Kb): 130Kb downloaded
 
-  Running setup.py egg_info <span class="k">for </span>package markdown2
+  Running setup.py egg_info for package markdown2
 
 
 
 Installing collected packages: markdown2
 
-  Running setup.py install <span class="k">for </span>markdown2
+  Running setup.py install for markdown2
 
     warning: build_py: byte-compiling is disabled, skipping.
 
@@ -331,7 +331,7 @@ Installing collected packages: markdown2
 Successfully installed markdown2
 
 Cleaning up...
-</code></pre></div>
+</code></pre>
 
 <p><em>Note the filesystem location (<code>/home/mir/.local/bin/markdown2</code>) where the markdown2 package was installed.</em></p>
 
@@ -341,10 +341,10 @@ Cleaning up...
 
 <p>Installing a python package from source is just one command. Extract the package content into a directory and run the following commands:</p>
 
-<div class="codehilite"><pre><code><span class="nb">cd</span> /path/to/package/directory
+<pre><code>cd /path/to/package/directory
 
 python setup.py install
-</code></pre></div>
+</code></pre>
 
 <p>Although you can use this method of installation with no real difference at all, understand that <code>pip</code> is always the recommended way of installing the packages because <code>pip</code> gives you the ability to upgrade/downgrade the packages very easily without the extra work involved in manually downloading, extracting and installing. Installing from source should always be your last option, if all else fails (which it normally should not).</p>
 
@@ -358,25 +358,25 @@ python setup.py install
 
 <p>Compiler and related tools:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo apt-get install build-essential
-</code></pre></div>
+<pre><code>$ sudo apt-get install build-essential
+</code></pre>
 
 <p>Python development files (headers, etc.):</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo aptitude install python-dev-all
-</code></pre></div>
+<pre><code>$ sudo aptitude install python-dev-all
+</code></pre>
 
 <p>If your distribution does not have <code>python-dev-all</code>, look for packages with name similar to <code>python-dev</code>, <code>python2.X-dev</code>, etc. </p>
 
 <p>Assuming you are installing <code>psycopg2</code> (the PostgreSQL RDBMS adapter for Python), you will also need the development files for PostgreSQL.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo aptitude install  postgresql-server-dev-all
-</code></pre></div>
+<pre><code>$ sudo aptitude install  postgresql-server-dev-all
+</code></pre>
 
 <p>Once these dependencies are satisfied, you can now run <code>pip install</code>.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install psycopg2
-</code></pre></div>
+<pre><code>$ sudo pip install psycopg2
+</code></pre>
 
 <p>There is one thing that should be remembered: <strong><em>Not all such packages are compatible with the <code>pip</code> installation method</em></strong>. But if you feel confident about compiling the source and/or already have the necessary experience/understanding of how all this works on your target platform, then by all means go ahead and install however you want.</p>
 
@@ -396,142 +396,142 @@ python setup.py install
 
 <p>Use <code>pip</code> to install virtualenv as well.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install virtualenv
-</code></pre></div>
+<pre><code>$ sudo pip install virtualenv
+</code></pre>
 
 <p>Now once virtualenv is installed, run the following commands to create an isolated Python environment for your project.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>mkdir my_project_venv
+<pre><code>$ mkdir my_project_venv
 
-<span class="nv">$ </span>virtualenv --distribute my_project_venv
+$ virtualenv --distribute my_project_venv
 
-<span class="c"># The output will something like:</span>
+# The output will something like:
 
 New python executable in my_project_venv/bin/python
 
 Installing distribute.............................................done.
 
 Installing pip.....................done.
-</code></pre></div>
+</code></pre>
 
 <p>So what's happening here? You created a directory called <code>my_project_venv</code> to hold your new isolated Python environment. The <code>--distribute</code> tells virtualenv to use new/improved packaging system based on the <code>distribute</code> package instead of using the old system based on <code>setuptools</code>. All you need to understand right now is that the <code>--distribute</code> option will install <code>pip</code> automatically within the new virtual environment, so that you don't have to. As your knowledge/experience as a Python developer increase, you will start to better understand these nuts and bolts under the hood.</p>
 
 <p>Now inspect the contents of the <code>my_project_venv</code> directory, and you'll see a structure like this:</p>
 
-<div class="codehilite"><pre><code><span class="c"># Showing only files/directories relevant to the discussion at hand</span>
+<pre><code># Showing only files/directories relevant to the discussion at hand
 
 .
 
 |-- bin
 
-|   |-- activate  <span class="c"># &lt;-- Activates this virtualenv</span>
+|   |-- activate  # &lt;-- Activates this virtualenv
 
-|   |-- pip       <span class="c"># &lt;-- pip specific to this virtualenv</span>
+|   |-- pip       # &lt;-- pip specific to this virtualenv
 
-|   <span class="sb">`</span>-- python    <span class="c"># &lt;-- A copy of python interpreter</span>
+|   `-- python    # &lt;-- A copy of python interpreter
 
-<span class="sb">`</span>-- lib
+`-- lib
 
-    <span class="sb">`</span>-- python2.7 <span class="c"># &lt;-- This is where all new packages will go</span>
-</code></pre></div>
+    `-- python2.7 # &lt;-- This is where all new packages will go
+</code></pre>
 
 <p>Activate the virtualenv with the following command:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd </span>my_project_venv
+<pre><code>$ cd my_project_venv
 
-<span class="nv">$ </span><span class="nb">source </span>bin/activate
-</code></pre></div>
+$ source bin/activate
+</code></pre>
 
 <p>After <em>sourcing</em> the <code>activate</code> script, your prompt should look something like this:</p>
 
-<div class="codehilite"><pre><code><span class="o">(</span>my_project_venv<span class="o">)</span><span class="nv">$ </span><span class="c"># the virtualenv name prepended to the prompt</span>
-</code></pre></div>
+<pre><code>(my_project_venv)$ # the virtualenv name prepended to the prompt
+</code></pre>
 
 <p>Now deactivate the virtualenv with the following command:</p>
 
-<div class="codehilite"><pre><code><span class="o">(</span>my_project_venv<span class="o">)</span><span class="nv">$ </span>deactivate
-</code></pre></div>
+<pre><code>(my_project_venv)$ deactivate
+</code></pre>
 
 <p>Run the following commands to better understand the difference when you use system-wide installation (deactivate the virtualenv first if it's active).</p>
 
 <p>First, let's find out which python/pip executable will be used if I call <code>python</code> or <code>pip</code> from the terminal.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>which python
+<pre><code>$ which python
 
 /usr/bin/python
 
-<span class="nv">$ </span>which pip
+$ which pip
 
 /usr/local/bin/pip
-</code></pre></div>
+</code></pre>
 
 <p><em>Learn about the <code>which</code> command at <a href="http://en.wikipedia.org/wiki/Which_%28Unix%29">Wikipedia</a>.</em></p>
 
 <p>Now do it again, but activate the virtualenv first and note the differences in the output. On my machine it looks like this:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd </span>my_project_venv
+<pre><code>$ cd my_project_venv
 
-<span class="nv">$ </span><span class="nb">source </span>bin/activate
+$ source bin/activate
 
-<span class="o">(</span>my_project_venv<span class="o">)</span><span class="nv">$ </span>which python
+(my_project_venv)$ which python
 
 /home/mir/my_project_venv/bin/python
 
-<span class="o">(</span>my_project_venv<span class="o">)</span><span class="nv">$ </span>which pip
+(my_project_venv)$ which pip
 
 /home/mir/my_project_venv/bin/pip
-</code></pre></div>
+</code></pre>
 
 <p>What <code>virtualenv</code> did is make a copy of the Python executable, and create a few utility scripts and a place to install project-specific packages that you'll eventually install/upgrade/remove over the lifetime of the project. It also did some package search path/PYTHONPATH magic to ensure that 1) when you install packages, they are installed inside the currently active virtualenv and not the system-wide Python installation and 2) when imported from code, the packages in the currently active virtualenv will take precedence over the ones installed in system-wide Python installations.</p>
 
 <p>An important thing to note here is that by default, all the packages installed inside the system-wide Python are automatically available to the virtualenv. That means if you installed the <code>simplejson</code> package in your system-wide Python installation, it will automatically be available to all the virtualenvs. This behavior can be altered by adding a <code>--no-site-packages</code> switch at the time of creation of the virtualenv, like so:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>virtualenv my_project_venv --no-site-packages
-</code></pre></div>
+<pre><code>$ virtualenv my_project_venv --no-site-packages
+</code></pre>
 
 <h3>virtualenvwrapper</h3>
 
 <p><code>virtualenvwrapper</code> is a wrapper around <code>virtualenv</code> which provides some really nice utilities to create/activate/manage/destroy virtual environments, which otherwise will be a chore. To install <code>virtualenvwrapper</code>, run the following command:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo pip install virtualenvwrapper
-</code></pre></div>
+<pre><code>$ sudo pip install virtualenvwrapper
+</code></pre>
 
 <p>Once installed, you will need to configure it. Here is how I do it:</p>
 
-<div class="codehilite"><pre><code><span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>id -u<span class="sb">`</span> !<span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">]</span>; <span class="k">then</span>
+<pre><code>if [ `id -u` != '0' ]; then
 
-<span class="k">  </span><span class="nb">export </span><span class="nv">VIRTUALENV_USE_DISTRIBUTE</span><span class="o">=</span>1        <span class="c"># &lt;-- Always use pip/distribute</span>
+  export VIRTUALENV_USE_DISTRIBUTE=1        # &lt;-- Always use pip/distribute
 
-  <span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs       <span class="c"># &lt;-- Where all virtualenvs will be stored</span>
+  export WORKON_HOME=$HOME/.virtualenvs       # &lt;-- Where all virtualenvs will be stored
 
-  <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+  source /usr/local/bin/virtualenvwrapper.sh
 
-  <span class="nb">export </span><span class="nv">PIP_VIRTUALENV_BASE</span><span class="o">=</span><span class="nv">$WORKON_HOME</span>
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
-  <span class="nb">export </span><span class="nv">PIP_RESPECT_VIRTUALENV</span><span class="o">=</span><span class="nb">true</span>
+  export PIP_RESPECT_VIRTUALENV=true
 
-<span class="k">fi</span>
-</code></pre></div>
+fi
+</code></pre>
 
 <p>Setting <code>WORKON_HOME</code> and <code>source /usr/local/bin/virtualenvwrapper.sh</code> are the only required pieces of configuration, rest of the configurations are as per my personal preferences.</p>
 
 <p>Add the above configuration at the end of my <code>~/.bashrc</code> file and run following command once in your current opened shell windows:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">source</span> ~/.bashrc
-</code></pre></div>
+<pre><code>$ source ~/.bashrc
+</code></pre>
 
 <p>Same effect can be achieved by closing all open shell windows and tabs and when you open a shell window or a tab again, <code>~/.bashrc</code> will be executed, automatically setting the your <code>virtualenvwrapper</code> configuration properly.</p>
 
 <p>Now to create/activate/deactivate/delete a virtualenv, you will run following (self explanatory) commands.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>mkvirtualenv my_project_venv
+<pre><code>$ mkvirtualenv my_project_venv
 
-<span class="nv">$ </span>workon my_project_venv
+$ workon my_project_venv
 
-<span class="nv">$ </span>deactivate
+$ deactivate
 
-<span class="nv">$ </span>rmvirtualenv my_project_venv
-</code></pre></div>
+$ rmvirtualenv my_project_venv
+</code></pre>
 
 <p><em>Tab-based bash shell command completion also works with virtualenvwrapper.</em></p>
 
@@ -543,30 +543,30 @@ Installing pip.....................done.
 
 <p>You can use the <code>pip freeze</code> command to export the list of currently installed packages. For example, here is the list of Python packages that I use to build this blog:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip freeze -l 
+<pre><code>$ pip freeze -l 
 
-<span class="nv">Jinja2</span><span class="o">==</span>2.6
+Jinja2==2.6
 
-<span class="nv">PyYAML</span><span class="o">==</span>3.10
+PyYAML==3.10
 
-<span class="nv">Pygments</span><span class="o">==</span>1.4
+Pygments==1.4
 
-<span class="nv">distribute</span><span class="o">==</span>0.6.19
+distribute==0.6.19
 
-<span class="nv">markdown2</span><span class="o">==</span>1.0.1.19
-</code></pre></div>
+markdown2==1.0.1.19
+</code></pre>
 
 <p><em>Note the <code>-l</code> switch. It tells <code>pip</code> to export only the packages installed in the currently active virtual environment and exclude the globally installed packages from the list.</em></p>
 
 <p>You can save this exported list to a file and add it to your version control system.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip freeze -l  &gt; requirements.txt
-</code></pre></div>
+<pre><code>$ pip freeze -l  &gt; requirements.txt
+</code></pre>
 
 <p><code>pip</code> can also install packages from a file containing the output of the <code>pip freeze</code> command.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip install -r requirements.txt
-</code></pre></div>
+<pre><code>$ pip install -r requirements.txt
+</code></pre>
 
 <h2>Other important tools</h2>
 
@@ -586,13 +586,13 @@ Installing pip.....................done.
 
 <p>You can install it with <code>pip</code>:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip install pyflakes
-</code></pre></div>
+<pre><code>$ pip install pyflakes
+</code></pre>
 
 <p>Call it from the terminal with a Python source file as an argument, like so:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pyflakes filename.py
-</code></pre></div>
+<pre><code>$ pyflakes filename.py
+</code></pre>
 
 <p>Pyflakes can be integrated into your editor as well. Here is how it looks on my Vim. Note the <em>red squiggly lines</em>.</p>
 
@@ -608,27 +608,27 @@ Installing pip.....................done.
 
 <p>Install it with <code>pip</code>, like so:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip install requests
-</code></pre></div>
+<pre><code>$ pip install requests
+</code></pre>
 
 <p>Here's a simple example:</p>
 
-<div class="codehilite"><pre><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">requests</span>
+<pre><code>&gt;&gt;&gt; import requests
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;https://api.github.com&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="s">&#39;pass&#39;</span><span class="p">))</span>
+&gt;&gt;&gt; r = requests.get('https://api.github.com', auth=('user', 'pass'))
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span>
+&gt;&gt;&gt; r.status_code
 
-<span class="mi">204</span>
+204
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">&#39;content-type&#39;</span><span class="p">]</span>
+&gt;&gt;&gt; r.headers['content-type']
 
-<span class="s">&#39;application/json&#39;</span>
+'application/json'
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+&gt;&gt;&gt; r.content
 
-<span class="o">...</span>
-</code></pre></div>
+...
+</code></pre>
 
 <p><a href="http://docs.python-requests.org/en/latest/index.html">Requests documentation</a></p>
 
@@ -638,36 +638,36 @@ Installing pip.....................done.
 
 <p>Install it with <code>pip</code>:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip install Flask
-</code></pre></div>
+<pre><code>$ pip install Flask
+</code></pre>
 
 <p>Here's a simple example:</p>
 
-<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<pre><code>from flask import Flask
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-
-
-
-<span class="nd">@app.route</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
-
-    <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+app = Flask(__name__)
 
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+@app.route("/")
 
-    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</code></pre></div>
+def hello():
+
+    return "Hello World!"
+
+
+
+if __name__ == "__main__":
+
+    app.run()
+</code></pre>
 
 <p>Run it like so:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>python hello.py
+<pre><code>$ python hello.py
 
  * Running on http://localhost:5000/
-</code></pre></div>
+</code></pre>
 
 <p><a href="http://flask.pocoo.org/">Flask website</a></p>
 
@@ -677,8 +677,8 @@ Installing pip.....................done.
 
 <p>Install with <code>pip</code>, like so:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip install Django
-</code></pre></div>
+<pre><code>$ pip install Django
+</code></pre>
 
 <p>Head over to the <a href="http://djangoproject.com">Django website</a> and follow the documentation to learn it. It's quite easy.</p>
 
@@ -690,34 +690,34 @@ Installing pip.....................done.
 
 <p>You can install Fabric with <code>pip</code>:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>pip install fabric
-</code></pre></div>
+<pre><code>$ pip install fabric
+</code></pre>
 
 <p>Here's a simple task written with Fabric:</p>
 
-<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+<pre><code>from fabric.api import run
 
 
 
-<span class="k">def</span> <span class="nf">host_type</span><span class="p">():</span>
+def host_type():
 
-    <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -s&#39;</span><span class="p">)</span>
-</code></pre></div>
+    run('uname -s')
+</code></pre>
 
 <p>Then you execute the ask on one or more servers like:</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>fab -H localhost host_type
+<pre><code>$ fab -H localhost host_type
 
-<span class="o">[</span>localhost<span class="o">]</span> run: uname -s
+[localhost] run: uname -s
 
-<span class="o">[</span>localhost<span class="o">]</span> out: Linux
+[localhost] out: Linux
 
 
 
 Done.
 
-Disconnecting from localhost... <span class="k">done</span>.
-</code></pre></div>
+Disconnecting from localhost... done.
+</code></pre>
 
 <p><a href="http://fabfile.org">Fabric website</a></p>
 
@@ -761,7 +761,7 @@ Disconnecting from localhost... <span class="k">done</span>.
 
 <p>I leave you with the <strong>Zen Of Python</strong>. Ponder. Contemplate. Be Enlightened! <em>Happy Pythoning</em></p>
 
-<div class="codehilite"><pre><code>&gt;&gt;&gt; import this
+<pre><code>&gt;&gt;&gt; import this
 
 The Zen of Python, by Tim Peters
 
@@ -781,7 +781,7 @@ Sparse is better than dense.
 
 Readability counts.
 
-Special cases aren&#39;t special enough to break the rules.
+Special cases aren't special enough to break the rules.
 
 Although practicality beats purity.
 
@@ -793,18 +793,18 @@ In the face of ambiguity, refuse the temptation to guess.
 
 There should be one-- and preferably only one --obvious way to do it.
 
-Although that way may not be obvious at first unless you&#39;re Dutch.
+Although that way may not be obvious at first unless you're Dutch.
 
 Now is better than never.
 
 Although never is often better than *right* now.
 
-If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is hard to explain, it's a bad idea.
 
 If the implementation is easy to explain, it may be a good idea.
 
-Namespaces are one honking great idea -- let&#39;s do more of those!
-</code></pre></div>
+Namespaces are one honking great idea -- let's do more of those!
+</code></pre>
 
 </div>
 <div class="meta">

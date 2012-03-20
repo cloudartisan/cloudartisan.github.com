@@ -27,23 +27,23 @@
 
 <p>Install the requirements(ruby, openssl etc.)</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo apt-get install ruby ruby1.8-dev rubygems1.8 libopenssl-ruby
-</code></pre></div>
+<pre><code>$ sudo apt-get install ruby ruby1.8-dev rubygems1.8 libopenssl-ruby
+</code></pre>
 
 <p>Install LocalTunnel itself</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>gem install localtunnel
-</code></pre></div>
+<pre><code>$ gem install localtunnel
+</code></pre>
 
 <p>Generate an ssh key(if not done already)</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>ssh-keygen -t rsa
-</code></pre></div>
+<pre><code>$ ssh-keygen -t rsa
+</code></pre>
 
 <p>Expose a the port for your local web-server</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>localtunnel -k ~/.ssh/id_rsa.pub 8080
-</code></pre></div>
+<pre><code>$ localtunnel -k ~/.ssh/id_rsa.pub 8080
+</code></pre>
 
 <p>You will get a public url like xyz.localtunnel.com for one time use. Enjoy!</p>
 

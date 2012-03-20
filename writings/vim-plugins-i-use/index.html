@@ -27,30 +27,30 @@
 
 <p>I manage my vim/bash configs in separate directory <code>~/dotfiles</code>. Here is what it looks like.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>ls
+<pre><code>$ ls
 
 bash  bin  desktop  utils  vim
-</code></pre></div>
+</code></pre>
 
 <p><code>bash</code> directory contains my my <code>.bashrc</code>, <code>.bash_aliases</code> etc. <code>bin</code> - not same as <code>~/bin</code>, contains scripts I use on day to day basis. <code>desktop</code> contains contains configurations exported from my Ubuntu desktop apps(e.g. my compiz-unity profile).</p>
 
 <p>Here is what my <code>vim</code> directory looks like</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>ls
+<pre><code>$ ls
 
 autoload  bundle  sessions  undodir  vimrc
-</code></pre></div>
+</code></pre>
 
 <p>Everything is <em>soft linked</em> to the relevant locations from here as shown by following commands: </p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>ln -s ~/dotfiles/vim ~/.vim           
+<pre><code>$ ln -s ~/dotfiles/vim ~/.vim           
 
-<span class="nv">$ </span>ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+$ ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 
-<span class="nv">$ </span>ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+$ ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 
-<span class="nv">$ </span>ln -s ~/dotfiles/bash/aliases ~/.bash_aliases
-</code></pre></div>
+$ ln -s ~/dotfiles/bash/aliases ~/.bash_aliases
+</code></pre>
 
 <h2>1. Pathogen: Vim package manager</h2>
 
@@ -62,32 +62,32 @@ autoload  bundle  sessions  undodir  vimrc
 
 <p>I recommend starting with a blank <code>.vim</code> directory. </p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>mv ~/.vim ~/vim_old                                           <span class="c"># 1. Backup your old .vim directory</span>
+<pre><code>$ mv ~/.vim ~/vim_old                                           # 1. Backup your old .vim directory
 
-<span class="nv">$ </span>mkdir .vim                                                    <span class="c"># 2. Creat a blank .vim directory</span>
+$ mkdir .vim                                                    # 2. Creat a blank .vim directory
 
-<span class="nv">$ </span>git clone git://github.com/tpope/vim-pathogen.git pathogen    <span class="c"># 3. Clone the pathogen repo</span>
+$ git clone git://github.com/tpope/vim-pathogen.git pathogen    # 3. Clone the pathogen repo
 
-<span class="nv">$ </span>mv pathogen/autoload ~/.vim/autoload                          <span class="c"># 4. Move pathogen to .vim directory</span>
-</code></pre></div>
+$ mv pathogen/autoload ~/.vim/autoload                          # 4. Move pathogen to .vim directory
+</code></pre>
 
 <p>I also track my configurations with git; you can use whatever version control system you prefer(Hg, Bzr or God forbid svn).</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> .vim
+<pre><code>$ cd .vim
 
-<span class="nv">$ </span>git init
+$ git init
 
-<span class="nv">$ </span>git add .
+$ git add .
 
-<span class="nv">$ </span>git commit -m <span class="s2">&quot;Initial commit&quot;</span>
-</code></pre></div>
+$ git commit -m "Initial commit"
+</code></pre>
 
 <p>Now edit your <code>.vimrc</code> and add following lines to the top</p>
 
-<div class="codehilite"><pre><code><span class="k">call</span> pathogen#runtime_append_all_bundles<span class="p">()</span>
+<pre><code>call pathogen#runtime_append_all_bundles()
 
-<span class="k">call</span> pathogen#<span class="k">helptags</span><span class="p">()</span>
-</code></pre></div>
+call pathogen#helptags()
+</code></pre>
 
 <p>That's it! Pathogen is now installed.</p>
 
@@ -95,17 +95,17 @@ autoload  bundle  sessions  undodir  vimrc
 
 <p>Any other plugins will be installed by simply copying the plugin files into <code>~/.vim/bundle/plugin_name</code> directory. Generally, you will download the plugin, extract it and move to <code>~/.vim/bundle/plugin_name</code>.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>mv /path/to/plugin ~/.vim/bundle/plugin_name
-</code></pre></div>
+<pre><code>$ mv /path/to/plugin ~/.vim/bundle/plugin_name
+</code></pre>
 
 <p>Although not required by pathogen, I prefer to manage plugins using <a href="http://progit.org/book/ch6-6.html">git submodules</a>. Let's install fugitive plugin for Git integration to demonstrate the process.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/tpope/vim-fugitive.git bundle/fugitive
+$ git submodule add git://github.com/tpope/vim-fugitive.git bundle/fugitive
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <p>Note: <code>git submodule init</code> and <code>git submodule update</code> need to be run every time a new submodule is added.  <code>git submodule foreach git pull</code> command is used to pull latest upstream changes. </p>
 
@@ -125,18 +125,18 @@ autoload  bundle  sessions  undodir  vimrc
 
 <p>Command-t is developed in ruby therefore ruby needs to be installed on your system. Here is how to installation on Ubuntu.</p>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo aptitude install ruby ruby-dev
+<pre><code>$ sudo aptitude install ruby ruby-dev
 
-<span class="nv">$ </span>git submodule add git://git.wincent.com/command-t.git bundle/command-t
+$ git submodule add git://git.wincent.com/command-t.git bundle/command-t
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
+$ git submodule init &amp;&amp; git submodule update
 
-<span class="nv">$ </span><span class="nb">cd</span> ~/.vim/bundle/command-t/ruby/command-t/
+$ cd ~/.vim/bundle/command-t/ruby/command-t/
 
-<span class="nv">$ </span>ruby extconf.rb
+$ ruby extconf.rb
 
-<span class="nv">$ </span>make
-</code></pre></div>
+$ make
+</code></pre>
 
 <p>Detailed installation instructions are available at <a href="https://wincent.com/products/command-t">Command-t homepage</a></p>
 
@@ -152,12 +152,12 @@ autoload  bundle  sessions  undodir  vimrc
 
 <p>I have mapped these functions as following:</p>
 
-<div class="codehilite"><pre><code><span class="nb">noremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">o</span> <span class="p">&lt;</span>Esc<span class="p">&gt;</span>:CommandT<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<pre><code>noremap &lt;leader&gt;o &lt;Esc&gt;:CommandT&lt;CR&gt;
 
-<span class="nb">noremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>O <span class="p">&lt;</span>Esc<span class="p">&gt;</span>:CommandTFlush<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+noremap &lt;leader&gt;O &lt;Esc&gt;:CommandTFlush&lt;CR&gt;
 
-<span class="nb">noremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">m</span> <span class="p">&lt;</span>Esc<span class="p">&gt;</span>:CommandTBuffer<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-</code></pre></div>
+noremap &lt;leader&gt;m &lt;Esc&gt;:CommandTBuffer&lt;CR&gt;
+</code></pre>
 
 <h2>3. DelimitMate: Intelligent autocompletion for quotes, parenthesis, brackets etc.</h2>
 
@@ -167,12 +167,12 @@ autoload  bundle  sessions  undodir  vimrc
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/Raimondi/delimitMate.git bundle/delmitmate
+$ git submodule add git://github.com/Raimondi/delimitMate.git bundle/delmitmate
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <h3>Usage</h3>
 
@@ -186,21 +186,21 @@ autoload  bundle  sessions  undodir  vimrc
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/docunext/closetag.vim.git bundle/closetag
+$ git submodule add git://github.com/docunext/closetag.vim.git bundle/closetag
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <h3>Usage</h3>
 
 <p>For efficiency purposes I have configured CloseTag to load only for html/xml like files. Here is my <code>vimrc</code> snippet for the same.</p>
 
-<div class="codehilite"><pre><code>autocmd <span class="nb">FileType</span> html<span class="p">,</span>htmldjango<span class="p">,</span>jinjahtml<span class="p">,</span>eruby<span class="p">,</span>mako <span class="k">let</span> <span class="k">b</span>:closetag_html_style<span class="p">=</span><span class="m">1</span>
+<pre><code>autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 
-autocmd <span class="nb">FileType</span> html<span class="p">,</span>xhtml<span class="p">,</span>xml<span class="p">,</span>htmldjango<span class="p">,</span>jinjahtml<span class="p">,</span>eruby<span class="p">,</span>mako source <span class="p">~</span><span class="sr">/.vim/</span>bundle<span class="sr">/closetag/</span>plugin/closetag.<span class="k">vim</span>
-</code></pre></div>
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+</code></pre>
 
 <h2>5. Pyflakes: Liniting for python files</h2>
 
@@ -214,12 +214,12 @@ autocmd <span class="nb">FileType</span> html<span class="p">,</span>xhtml<span 
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/kevinw/pyflakes-vim.git bundle/pyflakes
+$ git submodule add git://github.com/kevinw/pyflakes-vim.git bundle/pyflakes
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <h3>Usage</h3>
 
@@ -233,12 +233,12 @@ autocmd <span class="nb">FileType</span> html<span class="p">,</span>xhtml<span 
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/scrooloose/nerdcommenter.git bundle/nerdcommenter
+$ git submodule add git://github.com/scrooloose/nerdcommenter.git bundle/nerdcommenter
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <h3>Usage</h3>
 
@@ -261,12 +261,12 @@ autocmd <span class="nb">FileType</span> html<span class="p">,</span>xhtml<span 
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/vim-scripts/supertab.git bundle/supertab
+$ git submodule add git://github.com/vim-scripts/supertab.git bundle/supertab
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <h3>Usage</h3>
 
@@ -276,8 +276,8 @@ autocmd <span class="nb">FileType</span> html<span class="p">,</span>xhtml<span 
 
 <p>SuperTab also works with vim's builtin autocomplete feature OmniComplete. Just add following line after your OmniComplete configurations.</p>
 
-<div class="codehilite"><pre><code><span class="k">let</span> g:SuperTabDefaultCompletionType <span class="p">=</span> <span class="c">&quot;context&quot;</span>
-</code></pre></div>
+<pre><code>let g:SuperTabDefaultCompletionType = "context"
+</code></pre>
 
 <h2>8. Fugitive: Git integration</h2>
 
@@ -287,12 +287,12 @@ autocmd <span class="nb">FileType</span> html<span class="p">,</span>xhtml<span 
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/tpope/vim-fugitive.git bundle/fugitive
+$ git submodule add git://github.com/tpope/vim-fugitive.git bundle/fugitive
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <h3>Usage</h3>
 
@@ -308,21 +308,21 @@ autocmd <span class="nb">FileType</span> html<span class="p">,</span>xhtml<span 
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span>sudo aptitude install exuberant-ctags  <span class="c"># Required by Tagbar</span>
+<pre><code>$ sudo aptitude install exuberant-ctags  # Required by Tagbar
 
-<span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add git://github.com/majutsushi/tagbar.git bundle/tagbar
+$ git submodule add git://github.com/majutsushi/tagbar.git bundle/tagbar
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <p>Tagbar does not need any configuration by default and can be opened by <code>:TagbarOpen</code> or <code>:TagbarToggle</code>, but I have configured it as follows</p>
 
-<div class="codehilite"><pre><code><span class="k">let</span> g:tagbar_usearrows <span class="p">=</span> <span class="m">1</span>
+<pre><code>let g:tagbar_usearrows = 1
 
-nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">l</span> :TagbarToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-</code></pre></div>
+nnoremap &lt;leader&gt;l :TagbarToggle&lt;CR&gt;
+</code></pre>
 
 <h2>10. Solarized Colorscheme</h2>
 
@@ -334,34 +334,34 @@ nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class
 
 <h3>Installation</h3>
 
-<div class="codehilite"><pre><code><span class="nv">$ </span><span class="nb">cd</span> ~/.vim
+<pre><code>$ cd ~/.vim
 
-<span class="nv">$ </span>git submodule add  git://github.com/altercation/vim-colors-solarized.git bundle/solarized
+$ git submodule add  git://github.com/altercation/vim-colors-solarized.git bundle/solarized
 
-<span class="nv">$ </span>git submodule init <span class="o">&amp;&amp;</span> git submodule update
-</code></pre></div>
+$ git submodule init &amp;&amp; git submodule update
+</code></pre>
 
 <h3>Usage</h3>
 
 <p><a href="https://github.com/altercation/vim-colors-solarized/blob/master/README.mkd">Solarized Vim README</a> contains detailed configuration documentation; here is how I configured my instance</p>
 
-<div class="codehilite"><pre><code><span class="k">set</span> <span class="nb">background</span><span class="p">=</span><span class="nb">dark</span>
+<pre><code>set background=dark
 
-<span class="k">let</span> g:solarized_termtrans<span class="p">=</span><span class="m">1</span>
+let g:solarized_termtrans=1
 
-<span class="k">let</span> g:solarized_termcolors<span class="p">=</span><span class="m">256</span>
+let g:solarized_termcolors=256
 
-<span class="k">let</span> g:solarized_contrast<span class="p">=</span><span class="s2">&quot;high&quot;</span>
+let g:solarized_contrast="high"
 
-<span class="k">let</span> g:solarized_visibility<span class="p">=</span><span class="s2">&quot;high&quot;</span>
+let g:solarized_visibility="high"
 
-<span class="k">colorscheme</span> solarized
-</code></pre></div>
+colorscheme solarized
+</code></pre>
 
 <p>If you want to use solarized in the terminal vim you will need to set <code>TERM</code> environment variable.</p>
 
-<div class="codehilite"><pre><code><span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span><span class="s2">&quot;xterm-256color&quot;</span>
-</code></pre></div>
+<pre><code>export TERM="xterm-256color"
+</code></pre>
 
 <p>You can also use <a href="https://github.com/godlygeek/csapprox">CSAprox</a> plugin to use gvim themes inside terminal vim.</p>
 
