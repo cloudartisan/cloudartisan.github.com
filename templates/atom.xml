@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-<title>mirnazim.org</title>
-<subtitle>Mir Nazim's weblog</subtitle>
-<link href="http://mirnazim.org/atom.xml" rel="self" />
-<link href="http://mirnazim.org/" />
-<id>tag:mirnazim.org,{{ last_build }}:/</id>
+<title>cloudartisan.com</title>
+<subtitle>Cloud Artisan</subtitle>
+<link href="http://cloudartisan.com/atom.xml" rel="self" />
+<link href="http://cloudartisan.com/" />
+<id>tag:cloudartisan.com,{{ last_build }}:/</id>
 <updated>{{ last_build }}</updated>
 <author>
-  <name>Mir Nazim</name>
-  <email>me@mirnazim.org</email>
+  <name>David Taylor</name>
+  <email>david@cloudartisan.com</email>
 </author>
 
 {% for entry in entries %}
@@ -17,7 +17,7 @@
   <link href="{{ site_url }}{{ entry.permalink }}" />
   <id>{{ entry.atom_id }}</id>
   <updated>{{ entry.published_atom }}</updated>
-  <content type="xhtml" xml:base="http://mirnazim.org">
+  <content type="xhtml" xml:base="http://cloudartisan.com">
     <div xmlns="http://www.w3.org/1999/xhtml">{{ entry.summary_atom }}</div>
   </content>
 </entry>
