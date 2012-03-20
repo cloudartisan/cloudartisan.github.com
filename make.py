@@ -29,8 +29,8 @@ GLOBAL_TEMPLATE_CONTEXT = {
 }
 
 KINDS = {
-    'writing': {
-        'name': 'writing', 'name_plural': 'writings',
+    'post': {
+        'name': 'post', 'name_plural': 'posts',
     },
     'note': {
         'name': 'note', 'name_plural': 'notes',
@@ -44,7 +44,6 @@ KINDS = {
     'page': {
         'name': 'page', 'name_plural': 'pages',
     },
-
 }
 
 
@@ -57,11 +56,11 @@ class Tag(object):
         self.name = name
         self.prepare()
 
-
     def prepare(self):
         _slug = self.name.lower()
         _slug = re.sub(r'[;;,. ]', '-', _slug)
         self.slug = _slug
+
 
 class Entry(object):
     def __init__(self, path):
