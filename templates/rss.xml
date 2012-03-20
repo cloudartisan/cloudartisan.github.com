@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel>
-  <title>mirnazim.org</title>
-  <link>http://mirnazim.org/</link>
-  <description>Mir Nazim's Weblog</description>
+  <title>cloudartisan.com</title>
+  <link>http://cloudartisan.com/</link>
+  <description>Cloud Artisan</description>
   <language>en</language>
   {% for entry in entries %} 
   <item>
