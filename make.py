@@ -2,22 +2,6 @@
 # -*- coding: utf-8
 
 
-# Copyleft (C) 2010 Mir Nazim <hello@mirnazim.org>
-# 
-# Everyone is permitted to copy and distribute verbatim or modified
-# copies of this license document, and changing it is allowed as long
-# as the name is changed.
-# 
-# TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-# 
-# 0. You just DO WHATEVER THE FUCK YOU WANT TO. (IT'S SLOPPY CODE ANYWAY)
-#
-# WARANTIES: 
-# 0. Are you kidding me?
-# 1. Seriously, Are you fucking kidding me?
-# 2. If anything goes wrong, sue the "The Empire".
-
-
 import os
 import re
 import datetime
@@ -40,7 +24,7 @@ CONFIG = {
 
 GLOBAL_TEMPLATE_CONTEXT = {
     'media_url': '/media/',
-    'site_url' : 'http://mirnazim.org',
+    'site_url' : 'http://cloudartisan.com',
     'last_build' : datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
 }
 
@@ -63,7 +47,9 @@ KINDS = {
 
 }
 
-jinja_env = Environment(loader=FileSystemLoader(CONFIG['templates']))
+
+JINJA_ENV = Environment(loader=FileSystemLoader(CONFIG['templates']))
+
 
 class Tag(object):
     def __init__(self, name):
@@ -82,33 +68,26 @@ class Entry(object):
         super(Entry, self).__init__()
         path = path.split('content/')[-1]
         self.path = path
-
         self.prepare()
-
 
     def __str__(self):
         return self.path
 
-
     def __repr__(self):
         return self.path
-
 
     @property
     def name(self):
         return os.path.splitext(os.path.basename(self.path))[0]
 
-
     @property
     def abspath(self):
         return os.path.abspath(os.path.join(CONFIG['content_root'], self.path))
-
 
     @property
     def destination(self):
         dest = "%s/%s/index.html" % (KINDS[self.kind]['name_plural'], self.name)
         return os.path.join(CONFIG['output_to'], dest)
-
 
     @property
     def title(self):
@@ -122,7 +101,6 @@ class Entry(object):
     def credits_html(self):
         return "%s" % markdown2.markdown(self.header['credits'].strip())
 
-
     @property
     def summary_atom(self):
         if self.kind == 'link':
@@ -135,13 +113,11 @@ class Entry(object):
             more,
         )
 
-
     @property
     def published_html(self):
         if self.kind in ['link', 'note', 'photo']:
             return self.header['published'].strftime("%B %d, %Y %I:%M %p")
         return self.header['published'].strftime("%B %d, %Y")
-
 
     @property
     def published_atom(self):
@@ -149,22 +125,19 @@ class Entry(object):
 
     @property
     def atom_id(self):
-        return "tag:mirnazim.org,%s:%s" % \
+        return "tag:cloudartisan.com,%s:%s" % \
                 (
                     self.published.strftime("%Y-%m-%d"),
                     self.permalink,
                 )
 
-
     @property
     def body_html(self):
         return markdown2.markdown(self.body, extras=['code-color'])
 
-
     @property
     def permalink(self):
         return "/%s/%s" % (KINDS[self.kind]['name_plural'], self.name)
-
 
     @property
     def tags(self):
@@ -172,7 +145,6 @@ class Entry(object):
         for t in self.header['tags']:
             tags.append(Tag(t))
         return tags
-
 
     def prepare(self):
         file = codecs.open(self.abspath, 'r')
@@ -190,7 +162,6 @@ class Entry(object):
                 except:
                     pass
 
-
         body = list()
         for line in file.readlines():
             body.append(line)
@@ -207,7 +178,6 @@ class Entry(object):
         elif self.kind == 'writing':
             pass
 
-
     def render(self):
         if not self.header['public']:
             return False
@@ -218,17 +188,17 @@ class Entry(object):
             pass
         context = GLOBAL_TEMPLATE_CONTEXT.copy()
         context['entry'] = self
-        template = jinja_env.get_template("entry.html")
+        template = JINJA_ENV.get_template("entry.html")
         html = template.render(context)
         destination = codecs.open(self.destination, 'w', CONFIG['content_encoding'])
         destination.write(html)
         destination.close()
         return True
 
+
 class Link(Entry):
     def __init__(self, path):
         super(Link, self).__init__(path)
-
 
     @property
     def permalink(self):
@@ -237,6 +207,7 @@ class Link(Entry):
 
 def entry_factory():
     pass
+
 
 def _sort_entries(entries):
     _entries = dict()
@@ -257,7 +228,7 @@ def _sort_entries(entries):
 def render_index(entries):
     context = GLOBAL_TEMPLATE_CONTEXT.copy()
     context['entries'] = entries
-    template = jinja_env.get_template('entry_index.html')
+    template = JINJA_ENV.get_template('entry_index.html')
     html = template.render(context)
     destination = codecs.open("%s/index.html" % CONFIG['output_to'], 'w', CONFIG['content_encoding'])
     destination.write(html)
@@ -267,13 +238,14 @@ def render_index(entries):
 def render_atom_feed(entries, render_to=None):
     context = GLOBAL_TEMPLATE_CONTEXT.copy()
     context['entries'] = entries[:10]
-    template = jinja_env.get_template('atom.xml')
+    template = JINJA_ENV.get_template('atom.xml')
     html = template.render(context)
     if not render_to:
         render_to = "%s/atom.xml" % CONFIG['output_to']
     destination = codecs.open(render_to, 'w', CONFIG['content_encoding'])
     destination.write(html)
     destination.close()
+
 
 def render_tag_pages(tag_tree):
     context = GLOBAL_TEMPLATE_CONTEXT.copy()
@@ -285,7 +257,7 @@ def render_tag_pages(tag_tree):
             os.makedirs(destination)
         except:
             pass
-        template = jinja_env.get_template('tag_index.html')
+        template = JINJA_ENV.get_template('tag_index.html')
         html = template.render(context)
         file = codecs.open("%s/index.html" % destination, 'w', CONFIG['content_encoding'])
         file.write(html)
@@ -303,6 +275,7 @@ def build():
     tags = dict()
     for root, dirs, files in os.walk(CONFIG['content_root']):
         for file in files:
+            print " %s" % os.path.join(root, file)
             entry = Entry(os.path.join(root, file))
             if entry.render():
                 entries.append(entry)
