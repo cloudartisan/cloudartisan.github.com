@@ -6,10 +6,10 @@ import os
 import re
 import datetime
 import yaml
-from StringIO import StringIO
 import codecs
-from jinja2 import Environment, FileSystemLoader
 import markdown2
+from cStringIO import StringIO
+from jinja2 import Environment, FileSystemLoader
 
 
 CONFIG = {
@@ -146,13 +146,15 @@ class Entry(object):
         return tags
 
     def prepare(self):
-        file = codecs.open(self.abspath, 'r')
+        f = codecs.open(self.abspath, 'r')
         header = ['---']
-        while True:
-            line = file.readline()
-            line = line.rstrip()
-            if not line: break
+        line = f.readline()
+        line = line.rstrip()
+        while line:
             header.append(line)
+            line = f.readline()
+            line = line.rstrip()
+        print header
         self.header = yaml.load(StringIO('\n'.join(header)))
         for h in self.header.items():
             if h:
@@ -162,10 +164,10 @@ class Entry(object):
                     pass
 
         body = list()
-        for line in file.readlines():
+        for line in f.readlines():
             body.append(line)
         self.body = '\n'.join(body)
-        file.close()
+        f.close()
 
         if self.kind == 'link':
             from urlparse import urlparse
@@ -178,7 +180,7 @@ class Entry(object):
             pass
 
     def render(self):
-        if not self.header['public']:
+        if not self.header.has_key('public') or not self.header['public']:
             return False
 
         try:
@@ -258,9 +260,9 @@ def render_tag_pages(tag_tree):
             pass
         template = JINJA_ENV.get_template('tag_index.html')
         html = template.render(context)
-        file = codecs.open("%s/index.html" % destination, 'w', CONFIG['content_encoding'])
-        file.write(html)
-        file.close()
+        f = codecs.open("%s/index.html" % destination, 'w', CONFIG['content_encoding'])
+        f.write(html)
+        f.close()
         print "    tags/%s" % (context['tag'].slug, )
         render_atom_feed(context['entries'], render_to="%s/atom.xml" % destination)
 
@@ -273,9 +275,11 @@ def build():
     entries = list()
     tags = dict()
     for root, dirs, files in os.walk(CONFIG['content_root']):
-        for file in files:
-            print " %s" % os.path.join(root, file)
-            entry = Entry(os.path.join(root, file))
+        for filename in files:
+            if not os.path.splitext(filename)[-1] in ('.markdown', '.md'):
+                continue
+            print " %s" % os.path.join(root, filename)
+            entry = Entry(os.path.join(root, filename))
             if entry.render():
                 entries.append(entry)
                 for tag in entry.tags:

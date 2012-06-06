@@ -4,7 +4,7 @@ chronological: yes
 author: David Taylor
 tags: ['google app engine', 'paas', 'python']
 published: 2011-08-22
-title: Google App Engine for Python: Getting Started On Mac
+title: "Google App Engine for Python: Getting Started On Mac"
 slug: google_app_engine_python_getting_started_on_mac
 
 Download the DMG package from [http://code.google.com/appengine/downloads.html](http://code.google.com/appengine/downloads.html) and open it.

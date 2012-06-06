@@ -4,7 +4,7 @@ chronological: yes
 author: David Taylor
 tags: ['mail', 'python', 'software development', 'system administration']
 published: 2010-10-03
-title: Python One-Liner: Debug Mail Server
+title: "Python One-Liner: Debug Mail Server"
 slug: python-one-liner-debug-mail-server
 
 Need a pretend mail server that you can use for debugging? Try this:

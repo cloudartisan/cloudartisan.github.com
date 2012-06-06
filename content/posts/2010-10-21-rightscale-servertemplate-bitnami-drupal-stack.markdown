@@ -4,7 +4,7 @@ chronological: yes
 author: David Taylor
 tags: ['drupal', 'rightscale', 'rightscale', 'servertemplate']
 published: 2010-10-21
-title: RightScale ServerTemplate: Bitnami Drupal Stack
+title: "RightScale ServerTemplate: Bitnami Drupal Stack"
 slug: rightscale-servertemplate-bitnami-drupal-stack
 
 I've published a [RightScale](http://www.rightscale.com) ServerTemplate for installing [Bitnami's Drupal stack](http://bitnami.org/stack/drupal) on Amazon EC2.

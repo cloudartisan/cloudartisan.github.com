@@ -4,7 +4,7 @@ chronological: yes
 author: David Taylor
 tags: ['google app engine', 'paas', 'paas', 'python']
 published: 2010-06-27
-title: Google App Engine: Gotcha #1
+title: Google App Engine Gotcha #1
 slug: google-app-engine-gotcha-1
 
 I like Google App Engine.  However, there are a number of _gotchas_ that can creep up on you.  Especially if you dive right in without doing any reading first.

@@ -6,13 +6,10 @@ tags: ['djangy', 'djangy', 'general', 'paas', 'paas', 'python', 'software develo
 published: 2010-12-02
 title: My first Djangy project (initial testing)
 slug: my-first-djangy-project-initial-testing
-My first Djangy project will be an application called `rightscalefeed`. It
-will pull down a user's RightScale event feed. Ideally, I'd like to transform
-the feed into a WebSocket, suitable for continuous updates, perhaps for
-display in a data centre or network operations centre.
 
-I may have bitten off more than I can chew, as I'm not sure Django (or
-Djangy's environment) has WebSocket support yet, but we'll see...
+My first Djangy project will be an application called `rightscalefeed`. It will pull down a user's RightScale event feed. Ideally, I'd like to transform the feed into a WebSocket, suitable for continuous updates, perhaps for display in a data centre or network operations centre.
+
+I may have bitten off more than I can chew, as I'm not sure Django (or Djangy's environment) has WebSocket support yet, but we'll see...
 
 First, I need Djangy:
 
@@ -39,8 +36,7 @@ Next, I get started creating the Djangy application:
     Application created.  Now you can run 'git push djangy master'.
 
 
-That's the Djangy side of things, but before I push the project I need to take
-care of the Django side of things (ie, write some code).
+That's the Djangy side of things, but before I push the project I need to take care of the Django side of things (ie, write some code).
 
 
     # django-admin.py startproject rightscalefeed

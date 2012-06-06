@@ -4,7 +4,7 @@ chronological: yes
 author: David Taylor
 tags: ['rightscale', 'rightscale', 'servertemplate', 'wordpress']
 published: 2010-10-21
-title: RightScale ServerTemplate: Bitnami WordPress Stack
+title: "RightScale ServerTemplate: Bitnami WordPress Stack"
 slug: rightscale-servertemplate-bitnami-wordpress-stack
 
 I've published a [RightScale](http://www.rightscale.com) ServerTemplate for installing [Bitnami's WordPress stack](http://bitnami.org/stack/wordpress) on Amazon EC2.
