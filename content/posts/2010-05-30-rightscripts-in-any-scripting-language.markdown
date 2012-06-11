@@ -1,3 +1,4 @@
+public: yes
 title: RightScripts In Any Scripting Language
 author: David Taylor
 published: 2010-05-30

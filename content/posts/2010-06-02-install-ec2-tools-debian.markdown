@@ -1,3 +1,4 @@
+public: yes
 title: Install EC2 AMI & API Tools in Debian
 author: David Taylor
 published: 2010-06-02
