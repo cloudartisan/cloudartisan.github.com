@@ -1,3 +1,4 @@
+public: yes
 status: publish
 kind: post
 chronological: yes
