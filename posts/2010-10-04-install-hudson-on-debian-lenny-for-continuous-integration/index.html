@@ -1,0 +1,139 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Install Hudson on Debian Lenny for Continuous Integration  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; October 04, 2010</div>
+<h1>Install Hudson on Debian Lenny for Continuous Integration</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>I found that Hudson depends on <code>daemon</code> but it doesn't install automatically.  So, before we get started:</p>
+
+<div class="codehilite"><pre><code>apt-get install daemon
+</code></pre></div>
+
+<p>Now that's out of the way, we need to grab the Hudson key and install the package:</p>
+
+<div class="codehilite"><pre><code>wget -q -O - http://hudson-ci.org/debian/hudson-ci.org.key | apt-key add -
+
+<span class="nb">cd</span> /tmp
+
+wget http://hudson-ci.org/latest/debian/hudson.deb
+
+dpkg --install ./hudson.deb
+</code></pre></div>
+
+<p>If everything went well you'll see Hudson running:</p>
+
+<pre><code>ps auxw | grep hudson
+
+hudson 9101 0.0 0.1 2108 516 ? Ss 09:59 0:00 /usr/bin/daemon --name=hudson --inherit --env=HUDSON_HOME=/var/lib/hudson --output=/var/log/hudson/hudson.log --pidfile=/var/run/hudson/hudson.pid -- /usr/bin/java -jar /usr/share/hudson/hudson.war --webroot=/var/run/hudson/war --httpPort=8080 --ajp13Port=-1
+
+hudson 9103 18.9 10.3 297064 52660 ? Sl 09:59 0:03 /usr/bin/java -jar /usr/share/hudson/hudson.war --webroot=/var/run/hudson/war --httpPort=8080 --ajp13Port=-1
+</code></pre>
+
+<p>... and listening on port 8080:</p>
+
+<pre><code>root@hal:/tmp# netstat -lnp | grep 8080
+
+tcp6 0 0 :::8080 :::* LISTEN 9103/java
+</code></pre>
+
+<p>It's installed... but it isn't secured. By default the package has security disabled and anyone can do anything they want. Not awesome.</p>
+
+<p>Using your browser, go to your installation of Hudson (<code>http://&lt;your server&gt;:8080</code>).</p>
+
+<p>Click on Manage Hudson:</p>
+
+<p>[caption id="attachment_254" align="aligncenter" width="660" caption="Hudson Main Page"][![Hudson Main Page](http://www.cloudartisan.com/wp-content/uploads/2010/10/Hudson-Main-Page.png)](http://www.cloudartisan.com/wp-content/uploads/2010/10/Hudson-Main-Page.png)[/caption]</p>
+
+<p>Click on Configure System:</p>
+
+<p>[caption id="attachment_255" align="aligncenter" width="851" caption="Manage Hudson"][![Manage Hudson](http://www.cloudartisan.com/wp-content/uploads/2010/10/Manage-Hudson.png)](http://www.cloudartisan.com/wp-content/uploads/2010/10/Manage-Hudson.png)[/caption]</p>
+
+<p>In your Hudson configuration look for the <em>Enable security</em> setting:</p>
+
+<p>[caption id="attachment_256" align="aligncenter" width="919" caption="Hudson Settings"][![Hudson Settings](http://www.cloudartisan.com/wp-content/uploads/2010/10/Hudson-Settings.png)](http://www.cloudartisan.com/wp-content/uploads/2010/10/Hudson-Settings.png)[/caption]</p>
+
+<p>If you trust your system users the the simplest approach is to select <em>Enable security</em>, select <em>Unix user/group database</em>, and select <em>Logged-in users can do anything</em>:</p>
+
+<p>[caption id="attachment_260" align="aligncenter" width="653" caption="Hudson Enable Security"][![Hudson Enable Security](http://www.cloudartisan.com/wp-content/uploads/2010/10/Hudson-Enable-Security.png)](http://www.cloudartisan.com/wp-content/uploads/2010/10/Hudson-Enable-Security.png)[/caption]</p>
+
+<p>Lastly, click <em>Save</em>.</p>
+
+<p>There you have it, Hudson installed on Debian Lenny with some basic security.</p>
+
+<p>You should <a href="http://twitter.com/davidltaylor">follow me on twitter</a>.</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/debian"><span>debian</span></a>, 
+  
+  <a class="tag" href="/tags/general"><span>general</span></a>, 
+  
+  <a class="tag" href="/tags/hudson"><span>hudson</span></a>, 
+  
+  <a class="tag" href="/tags/software-development"><span>software development</span></a>, 
+  
+  <a class="tag" href="/tags/system-administration"><span>system administration</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Cherokee failing to exec spawn-fcgi  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; October 04, 2010</div>
+<h1>Cherokee failing to exec spawn-fcgi</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>If you're using <code>spawn-fcgi</code> with Cherokee (probably to get a wiki or PHP application or similar working) and you see:</p>
+
+<pre><code>503 Service Unavailable
+</code></pre>
+
+<p>... you might be having the same problem I had. That is, Cherokee was failing to launch <code>spawn-fcgi</code>.</p>
+
+<p>To verify this is the cause of your problem, stop Cherokee, then start it manually at the command line:</p>
+
+<pre><code># /usr/sbin/cherokee --admin_child -C /etc/cherokee/cherokee.conf
+
+Cherokee Web Server 1.0.8 (Aug 18 2010): Listening on port ALL:80, TLS disabled, IPv6 enabled, using epoll, 4096 fds system limit, max. 2041 connections, caching I/O, 20 threads, 102 connections per thread, standard scheduling policy
+</code></pre>
+
+<p>Next, try to visit the site giving you the problem. If you see the following in your terminal then you've probably got the same problem I had:</p>
+
+<pre><code>PID 22960: launched '/bin/sh -c exec /usr/bin/spawn-fcgi -n -a 127.0.0.1 -p 53993 -- /usr/share/moin/server/moin.fcg' with uid=33, gid=33, env=inherited
+
+PID 22960: exited re=1
+
+PID 22961: launched '/bin/sh -c exec /usr/bin/spawn-fcgi -n -a 127.0.0.1 -p 53993 -- /usr/share/moin/server/moin.fcg' with uid=33, gid=33, env=inherited
+
+PID 22961: exited re=1
+
+PID 22962: launched '/bin/sh -c exec /usr/bin/spawn-fcgi -n -a 127.0.0.1 -p 53993 -- /usr/share/moin/server/moin.fcg' with uid=33, gid=33, env=inherited
+
+PID 22962: exited re=1
+</code></pre>
+
+<p>That's Cherokee trying <em>and failing</em> to launch <code>spawn-fcgi</code>.</p>
+
+<p>In my case, I had no idea <em>why</em> it was failing, but I found that when I enabled error logging for that vServer then <code>spawn-fcgi</code> would magically start to work. Go figure.</p>
+
+<p>This should do it...</p>
+
+<p>[caption id="attachment_244" align="aligncenter" width="654" caption="Cherokee Error Logging"][![Cherokee Error Logging](http://www.cloudartisan.com/wp-content/uploads/2010/10/Cherokee-Error-Logging.png)](http://www.cloudartisan.com/wp-content/uploads/2010/10/Cherokee-Error-Logging.png)[/caption]</p>
+
+<p>You should <a href="http://twitter.com/davidltaylor">follow me on twitter</a>.</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/general"><span>general</span></a>, 
+  
+  <a class="tag" href="/tags/spawn-fcgi"><span>spawn-fcgi</span></a>, 
+  
+  <a class="tag" href="/tags/system-administration"><span>system administration</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

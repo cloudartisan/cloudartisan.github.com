@@ -1,0 +1,201 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Install Ruby 1.9.2 and Rails 3.0.3 using rvm on Ubuntu 10.10  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; December 10, 2010</div>
+<h1>Install Ruby 1.9.2 and Rails 3.0.3 using rvm on Ubuntu 10.10</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>It's terse, probably more for my benefit than yours, but let's dive in...</p>
+
+<p>Install the packages required by <code>rvm</code>:</p>
+
+<pre><code>david@continuity:~$ sudo apt-get install curl git
+</code></pre>
+
+<p>Install <code>rvm</code>:</p>
+
+<pre><code>david@continuity:~$ bash &lt; &lt;( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+
+% Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed
+
+100 986 100 986 0 0 524 0 0:00:01 0:00:01 --:--:-- 4522
+
+Initialized empty Git repository in /home/david/.rvm/src/rvm/.git/
+
+remote: Counting objects: 16240, done.
+
+remote: Compressing objects: 100% (4166/4166), done.
+
+remote: Total 16240 (delta 10951), reused 15861 (delta 10649)
+
+Receiving objects: 100% (16240/16240), 2.91 MiB | 457 KiB/s, done.
+
+Resolving deltas: 100% (10951/10951), done.
+
+
+
+RVM: Shell scripts enabling management of multiple ruby environments.
+
+RTFM: http://rvm.beginrescueend.com/
+
+HELP: http://webchat.freenode.net/?channels=rvm (#rvm on irc.freenode.net)
+
+
+
+Installing RVM to /home/david/.rvm/
+
+Correct permissions for base binaries in /home/david/.rvm/bin...
+
+Copying manpages into place.
+</code></pre>
+
+<p>Backup and update your <code>.bashrc</code> to make sure <code>rvm</code> is ready whenever you fire up a terminal:</p>
+
+<pre><code>david@continuity:~$ cp -v ~/.bashrc ~/.bashrc-`date '+%s'`
+
+/home/david/.bashrc -&gt; /home/david/.bashrc-1291952792
+
+david@continuity:~$ cat &lt;&lt;~/.bashrc &gt;&gt;EOF
+
+&gt; # This loads RVM into a shell session
+
+&gt; [[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"
+
+&gt; EOF
+
+david@continuity:~$
+</code></pre>
+
+<p>Load <code>rvm</code> into the current shell session:</p>
+
+<pre><code>david@continuity:~$ source ~/.rvm/scripts/rvm
+</code></pre>
+
+<p>Now, for installing Ruby 1.9.2, we can check the requirements using <code>rvm notes</code>:</p>
+
+<pre><code>david@continuity:~$ rvm notes | grep "^[ \t]*ruby:"
+
+ruby: aptitude install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+
+david@continuity:~$ `
+</code></pre>
+
+<p>Install those packages:</p>
+
+<pre><code>david@continuity:~$ sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+
+[sudo] password for david: . . . `
+</code></pre>
+
+<p>Now install Ruby 1.9.2:</p>
+
+<pre><code>david@continuity:~$ rvm install 1.9.2
+
+/home/david/.rvm/rubies/ruby-1.9.2-p0, this may take a while depending on your cpu(s)...
+</code></pre>
+
+<p>Now make Ruby 1.9.2 your default:</p>
+
+<pre><code>david@continuity:~$ rvm use 1.9.2 --default Using
+
+/home/david/.rvm/gems/ruby-1.9.2-p0
+
+david@continuity:~$
+</code></pre>
+
+<p>Install the Rails gem:</p>
+
+<pre><code>david@continuity:~$ gem install rails
+</code></pre>
+
+<p>So that's it, we now have Ruby 1.9.2 and Rails 3.0.3. To verify this:</p>
+
+<pre><code>david@continuity:~$ ruby -v
+
+ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-linux]
+
+david@continuity:~$ rails -v
+
+Rails 3.0.3
+</code></pre>
+
+<p><em>Note: of course, this only applies to your user account. These changes do not apply system-wide and do not affect other users.</em></p>
+
+<p><a href="http://twitter.com/davidltaylor">Follow me on twitter</a>. It's free!</p>
+
+<p>Cheers.</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/rails"><span>rails</span></a>, 
+  
+  <a class="tag" href="/tags/ruby"><span>ruby</span></a>, 
+  
+  <a class="tag" href="/tags/rvm"><span>rvm</span></a>, 
+  
+  <a class="tag" href="/tags/software-development"><span>software development</span></a>, 
+  
+  <a class="tag" href="/tags/ubuntu"><span>ubuntu</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

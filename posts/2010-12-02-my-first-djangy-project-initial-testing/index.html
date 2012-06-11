@@ -1,0 +1,245 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> My first Djangy project (initial testing)  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; December 02, 2010</div>
+<h1>My first Djangy project (initial testing)</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>My first Djangy project will be an application called <code>rightscalefeed</code>. It will pull down a user's RightScale event feed. Ideally, I'd like to transform the feed into a WebSocket, suitable for continuous updates, perhaps for display in a data centre or network operations centre.</p>
+
+<p>I may have bitten off more than I can chew, as I'm not sure Django (or Djangy's environment) has WebSocket support yet, but we'll see...</p>
+
+<p>First, I need Djangy:</p>
+
+<pre><code># sudo easy_install djangy
+</code></pre>
+
+<p>I need a work environment for the project. Djangy uses git for releases, so:</p>
+
+<pre><code># mkdir -p Projects/djangy/rightscalefeed
+
+# cd Projects/djangy/rightscalefeed
+
+# git init .
+</code></pre>
+
+<p>Next, I get started creating the Djangy application:</p>
+
+<pre><code># djangy create
+
+Please enter your application name: rightscalefeed  
+
+Enter your email address: david@cloudartisan.com
+
+Please enter your password:  
+
+Using /home/david/.ssh/id_rsa.pub as your public key...  
+
+Application created.  Now you can run 'git push djangy master'.
+</code></pre>
+
+<p>That's the Djangy side of things, but before I push the project I need to take care of the Django side of things (ie, write some code).</p>
+
+<pre><code># django-admin.py startproject rightscalefeed
+
+# cd rightscalefeed
+
+# django-admin.py startapp feed2ws
+</code></pre>
+
+<p>In <code>rightscalefeed/urls.py</code> I have:</p>
+
+<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">django.conf.urls.defaults</span> <span class="kn">import</span> <span class="o">*</span>  
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+
+    <span class="p">(</span><span class="s">r&#39;^$&#39;</span><span class="p">,</span> <span class="s">&#39;feed2ws.views.index&#39;</span><span class="p">)</span>
+
+<span class="p">)</span>
+</code></pre></div>
+
+<p>In <code>rightscalefeed/feed2ws/views.py</code> I have:</p>
+
+<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>  
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&#39;testing&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>I intend to use <code>feedparser</code>, so I have added it to <code>djangy.eggs</code>:</p>
+
+<pre><code>Django
+
+South
+
+feedparser
+</code></pre>
+
+<p>Now to commit everything, push it to Djangy, and test:</p>
+
+<pre><code># git add .
+
+# git commit -a -m 'Initial release'
+
+[master fa7b52b] Initial release
+
+ 2 files changed, 10 insertions(+), 1 deletions(-)
+
+# git push djangy master
+
+The authenticity of host 'api.djangy.com (184.73.176.148)' can't be established.
+
+RSA key fingerprint is e0:03:fd:46:b2:3d:22:bc:d3:f8:96:6f:c4:62:b2:d5.
+
+Are you sure you want to continue connecting (yes/no)? yes
+
+Warning: Permanently added 'api.djangy.com,184.73.176.148' (RSA) to the list of known hosts.
+
+Counting objects: 22, done.
+
+Delta compression using up to 2 threads.
+
+Compressing objects: 100% (18/18), done.
+
+Writing objects: 100% (22/22), 3.83 KiB, done.
+
+Total 22 (delta 4), reused 0 (delta 0)
+
+remote: 
+
+remote: 
+
+remote: Welcome to Djangy!
+
+remote: 
+
+remote: Deploying project rightscalefeed.
+
+remote: 
+
+remote: Cloning git repository... Done.
+
+remote: 
+
+remote: Creating production settings.py file... Done.
+
+remote: 
+
+remote: Installing dependencies...
+
+remote: Installing Django... Success.
+
+remote: Installing South... Success.
+
+remote: Installing feedparser... Success.
+
+remote: Installing gunicorn... Success.
+
+remote: Done.
+
+remote: 
+
+remote: Saving bundle info... Done.
+
+remote: 
+
+remote: Deploying to worker hosts... Done.
+
+remote: 
+
+To git@api.djangy.com:rightscalefeed.git
+
+ * [new branch]      master -&gt; master
+</code></pre>
+
+<p>Now I can test the project by visiting <a href="http://rightscalefeed.djangy.com">http://rightscalefeed.djangy.com</a> in my browser:</p>
+
+<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/rightscalefeed.djangy.com-testing.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/rightscalefeed.djangy.com-testing-300x174.png" alt="Testing rightscalefeed.djangy.com" /></a></p>
+
+<p>Awesome! It worked.</p>
+
+<p>I haven't done anything interesting with RightScale feeds yet, but I've shown how easy it can be to deploy a simple Django project to Djangy.</p>
+
+<p>Stay tuned to see if I've bitten off more than I can chew. <a href="http://feedburner.google.com/cloudartisan">Subscribe to my feed</a> and <a href="http://twitter.com/davidltaylor">follow me on Twitter</a>. It's free.</p>
+
+<p>Cheers!</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/djangy"><span>djangy</span></a>, 
+  
+  <a class="tag" href="/tags/djangy"><span>djangy</span></a>, 
+  
+  <a class="tag" href="/tags/general"><span>general</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/python"><span>python</span></a>, 
+  
+  <a class="tag" href="/tags/software-development"><span>software development</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

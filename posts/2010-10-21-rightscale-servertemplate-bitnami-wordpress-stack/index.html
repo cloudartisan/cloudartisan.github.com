@@ -1,0 +1,114 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> RightScale ServerTemplate: Bitnami WordPress Stack  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; October 21, 2010</div>
+<h1>RightScale ServerTemplate: Bitnami WordPress Stack</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>I've published a <a href="http://www.rightscale.com">RightScale</a> ServerTemplate for installing <a href="http://bitnami.org/stack/wordpress">Bitnami's WordPress stack</a> on Amazon EC2.</p>
+
+<blockquote>
+  <p>WordPress is web software you can use to create a beautiful website or blog.</p>
+</blockquote>
+
+<p>It is based on an existing ServerTemplate by Bitnami. It differs from Bitnami's existing WordPress ServerTemplate in a few ways:</p>
+
+<ol>
+<li><p>it uses an Ubuntu RightScale MultiCloud Image as its base</p></li>
+<li><p>it has some of RightScale's RightScripts for logging and monitoring added</p></li>
+<li><p>it installs the WordPress stack from a supplied URL, meaning you can trial different versions of the WordPress stack easily</p></li>
+</ol>
+
+<p>Using this ServerTemplate you can easily fire up a WordPress instance to:</p>
+
+<ol>
+<li><p>build and run a blog, or</p></li>
+<li><p>trial/compare different versions of Bitnami's WordPress stack</p></li>
+</ol>
+
+<p>I've used it for the latter.</p>
+
+<p>To try it out, simply <a href="http://www.rightscale.com/products/free_edition.php">grab a free RightScale account</a>, then <a href="http://www.rightscale.com/library/server_templates/Bitnami-WordPress-Stack/14485">import my ServerTemplate</a>.</p>
+
+<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/10/Bitnami-WordPress-Stack-ServerTemplate.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/10/Bitnami-WordPress-Stack-ServerTemplate.png" alt="Bitnami WordPress Stack" /></a></p>
+
+<p>Next, add it to a deployment and fire it up. Once it's running you'll see something like:</p>
+
+<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/10/Bitnami-WordPress-Welcome-Page.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/10/Bitnami-WordPress-Welcome-Page-1024x575.png" alt="Bitnami WordPress Welcome Page" /></a></p>
+
+<p>I've published this as part of RightScale's ServerTemplate Showdown. It's nothing spectacular, but I found it useful and hopefully it will be of some use to someone else. I have a draft version that has some basic support for preparing and installing on an EBS volume, which would add persistence. I haven't released that version yet.</p>
+
+<p><a href="http://twitter.com/davidltaylor">Follow me on twitter</a> and if you use it, please let me know, if you have any questions or suggestions, fire away.</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/rightscale"><span>rightscale</span></a>, 
+  
+  <a class="tag" href="/tags/rightscale"><span>rightscale</span></a>, 
+  
+  <a class="tag" href="/tags/servertemplate"><span>servertemplate</span></a>, 
+  
+  <a class="tag" href="/tags/wordpress"><span>wordpress</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Google App Engine Gotcha  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; June 27, 2010</div>
+<h1>Google App Engine Gotcha</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>I like Google App Engine.  However, there are a number of <em>gotchas</em> that can creep up on you.  Especially if you dive right in without doing any reading first.</p>
+
+<p>Here's gotcha #1...</p>
+
+<p>A number of standard Python modules are not available or only provide limited functionality.  Click <a href="http://code.google.com/appengine/kb/libraries.html">here</a> to see Google App Engine's list of enabled, partially-enabled and empty modules.</p>
+
+<p>Sometimes developing for Google App Engine isn't straightforward and requires a little imagination.  However, most of the time there's a simple alternative; it just takes a little reading.  For example, if you want to send e-mail on Google App Engine you can't use Python's <em>smtplib</em> (because it relies on <em>socket</em>, which is implemented as an empty module).  Instead, you would do the following:</p>
+
+<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">google.appengine.api</span> <span class="kn">import</span> <span class="n">mail</span>
+
+<span class="n">mail</span><span class="o">.</span><span class="n">send_mail</span><span class="p">(</span>
+
+    <span class="n">sender</span><span class="o">=</span><span class="s">&quot;&lt;from address&gt;&quot;</span><span class="p">,</span>
+
+    <span class="n">to</span><span class="o">=</span><span class="s">&quot;&lt;to address&gt;&quot;</span><span class="p">,</span>
+
+    <span class="n">subject</span><span class="o">=</span><span class="s">&quot;sending e-mail on Google App Engine...&quot;</span><span class="p">,</span>
+
+    <span class="n">body</span><span class="o">=</span><span class="s">&quot;... is easy once you know how&quot;</span>
+
+<span class="p">)</span>
+</code></pre></div>
+
+<p>There are more gotchas, this is just the first that I've had time to write about. Stay tuned...</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/google-app-engine"><span>google app engine</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/python"><span>python</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

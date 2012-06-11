@@ -1,0 +1,115 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> My first Djangy project (local testing)  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; December 04, 2010</div>
+<h1>My first Djangy project (local testing)</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>In my <a href="http://www.cloudartisan.com/2010/12/my-first-djangy-project-initial-testing/">previous post</a> I knocked out some simple code and pushed it straight to Djangy. I didn't even test it locally first (<em>gosh shock horror aghast</em>)! Well, that must end... now.</p>
+
+<p>A Djangy project is, in it's heart of hearts, a Django project that you've shoved out your door into the big bad world. And the great thing about Django projects... you can run them locally for testing.</p>
+
+<p>Simply go to your project's directory. In there you'll find <code>manage.py</code>. This handy script will do a lot of project management tasks, but the main one I'm interested in is running a local version of my project.</p>
+
+<pre><code>david@continuity:~/Git/djangy/rightscalefeed/rightscalefeed$ python manage.py runserver
+
+Validating models...
+
+0 errors found  
+
+Django version 1.2.3, using settings 'rightscalefeed.settings'
+
+Development server is running at http://127.0.0.1:8000/
+
+Quit the server with CONTROL-C.
+</code></pre>
+
+<p>It's as simple as that. When I visit the address I can see my site is working.  I can also go back to my terminal and check the log:</p>
+
+<pre><code>[04/Dec/2010 05:19:36] "GET / HTTP/1.1" 200 1001
+</code></pre>
+
+<p>In this installment I've shown how easy it is to test your Djangy site locally before pushing it out the door. Stay tuned, next time I'll tackle something more meaty: user registration.</p>
+
+<p><a href="http://twitter.com/davidltaylor">Follow me on Twitter</a>. It’s free.</p>
+
+<p>Cheers!</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/djangy"><span>djangy</span></a>, 
+  
+  <a class="tag" href="/tags/djangy"><span>djangy</span></a>, 
+  
+  <a class="tag" href="/tags/general"><span>general</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/python"><span>python</span></a>, 
+  
+  <a class="tag" href="/tags/software-development"><span>software development</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

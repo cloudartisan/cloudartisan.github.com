@@ -1,0 +1,130 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Installing newrelic_api gem from GitHub  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; March 07, 2011</div>
+<h1>Installing newrelic_api gem from GitHub</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>I needed to correlate some logs with New Relic monitoring data. I started doing this manually... and got bored very quickly. It was too slow and painstaking. After some poking around I came across <a href="https://github.com/newrelic/newrelic_api">newrelic_api</a> (not to be confused with <a href="https://github.com/newrelic/rpm">rpm</a>, which is the monitoring agent).</p>
+
+<p>Next thing I discovered... I had no idea how to install gems from GitHub!</p>
+
+<p>No longer!</p>
+
+<pre><code>wintermute:~/Git $ mkdir newrelic
+
+wintermute:~/Git $ cd newrelic/
+
+wintermute:~/Git/newrelic $ git clone git://github.com/newrelic/newrelic_api.git
+
+Cloning into newrelic_api...
+
+remote: Counting objects: 132, done.
+
+remote: Compressing objects: 100% (116/116), done.
+
+remote: Total 132 (delta 59), reused 0 (delta 0) Receiving objects: 100% (132/132), 26.02 KiB, done.
+
+Resolving deltas: 100% (59/59), done.
+
+wintermute:~/Git/newrelic $ cd newrelic_api/
+
+wintermute:~/Git/newrelic/newrelic_api (master)$ ls
+
+CHANGELOG Gemfile.lock README.rdoc VERSION log test Gemfile LICENSE.txt Rakefile lib newrelic_api.gemspec
+
+wintermute:~/Git/newrelic/newrelic_api (master)$ gem build newrelic_api.gemspec
+
+Successfully built RubyGem
+
+Name: newrelic_api
+
+Version: 1.1.1
+
+File: newrelic_api-1.1.1.gem
+
+wintermute:~/Git/newrelic/newrelic_api (master)$ gem install newrelic_api-1.1.1.gem
+
+Successfully installed newrelic_api-1.1.1
+
+1 gem installed
+
+Installing ri documentation for newrelic_api-1.1.1...
+
+Installing RDoc documentation for newrelic_api-1.1.1...
+
+wintermute:~/Git/newrelic/newrelic_api (master)$
+</code></pre>
+
+<p>It's as simple as that.</p>
+
+<p>Follow me on <a href="http://twitter.com/davidltaylor">twitter</a>.</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/software-development"><span>software development</span></a>, 
+  
+  <a class="tag" href="/tags/system-administration"><span>system administration</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

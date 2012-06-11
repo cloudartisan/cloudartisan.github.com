@@ -1,0 +1,226 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Using PHP APC with Cherokee  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; November 28, 2010</div>
+<h1>Using PHP APC with Cherokee</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>If you're using Cherokee as your web server, you're probably already interested in squeezing every drop of performance out of your server.  If you're hosting PHP sites with Cherokee, using APC (Alternative PHP Cache) could enable you to squeeze out even more drops.</p>
+
+<blockquote>
+  <p>The Alternative PHP Cache (APC) is a free and open opcode cache for PHP. Its goal is to provide a free, open, and robust framework for caching and optimizing PHP intermediate code.</p>
+</blockquote>
+
+<p>Before we get started with <code>php-apc</code> let's get a simple `phpinfo() page working.  This will enable us to check the installed PHP modules and other aspects of the PHP configuration.</p>
+
+<p>Create the file</p>
+
+<div class="codehilite"><pre><code><span class="c"># cat &gt;/var/www/phpinfo.php &lt;&lt;EOF</span>
+
+&lt;?php
+
+  phpinfo<span class="o">()</span>;
+
+?&gt;
+
+EOF
+
+<span class="c"># chown www-data.www-data /var/www/phpinfo.php</span>
+
+<span class="c"># chmod 750 /var/www/phpinfo.php</span>
+</code></pre></div>
+
+<p>Fire up <code>cherokee-admin</code>:</p>
+
+<div class="codehilite"><pre><code><span class="c"># cherokee-admin -b</span>
+
+Cherokee Web Server 1.0.10 <span class="o">(</span>Nov 25 2010<span class="o">)</span>: Listening on port ALL:9090, TLS disabled, IPv6 enabled, using epoll, 4096 fds system limit, max. 2041 connections, caching I/O, 20 threads, 102 connections per thread, standard scheduling policy
+
+Login:
+
+  User:              admin
+
+  One-time Password: 5r1cxh4Bb2ZDLJc2a&lt;br&gt;Web Interface:
+
+  URL:               http://localhost:9090/
+</code></pre></div>
+
+<p>Visit <code>http://your.server.address:9090 in your browser and login using the credentials provided by</code>cherokee-admin<code>.  We need to add a</code>Behaviour Rule<code>to the</code>Default vServer<code>.  Click</code>Next<code>then</code>Create<code>, then click on the</code>SAVE<code>button followed by</code>Graceful restart`.</p>
+
+<p>Once that's done, visit <code>http://your.server.address/phpinfo.php</code> and look through the page for <code>APC Support</code>.  If you already have it installed, you can skip the next step.  Otherwise, let's install <code>php-apc</code>.</p>
+
+<pre><code># apt-get install php-apc
+
+Reading package lists... Done
+
+Building dependency tree       
+
+Reading state information... Done
+
+The following NEW packages will be installed:
+
+  php-apc
+
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+
+Need to get 77.2kB of archives.
+
+After this operation, 217kB of additional disk space will be used.
+
+Get:1 http://us.archive.ubuntu.com/ubuntu/ maverick/universe php-apc i386 3.1.3p1-2 [77.2kB]
+
+Fetched 77.2kB in 0s (95.6kB/s)
+
+Selecting previously deselected package php-apc.
+
+(Reading database ... 42954 files and directories currently installed.)
+
+Unpacking php-apc (from .../php-apc_3.1.3p1-2_i386.deb) ...
+
+Setting up php-apc (3.1.3p1-2) ...
+</code></pre>
+
+<p>After installing <code>php-apc</code> you'll have the following files installed:<br><blockquote># dpkg -L php-apc</p>
+
+<p>/.</p>
+
+<p>/usr</p>
+
+<p>/usr/lib</p>
+
+<p>/usr/lib/php5</p>
+
+<p>/usr/lib/php5/20090626+lfs</p>
+
+<p>/usr/lib/php5/20090626+lfs/apc.so</p>
+
+<p>/usr/share</p>
+
+<p>/usr/share/doc</p>
+
+<p>/usr/share/doc/php-apc</p>
+
+<p>/usr/share/doc/php-apc/TODO</p>
+
+<p>/usr/share/doc/php-apc/README.Debian</p>
+
+<p>/usr/share/doc/php-apc/copyright</p>
+
+<p>/usr/share/doc/php-apc/changelog.gz</p>
+
+<p>/usr/share/doc/php-apc/apc.php.gz</p>
+
+<p>/usr/share/doc/php-apc/changelog.Debian.gz</p>
+
+<p>/etc</p>
+
+<p>/etc/php5</p>
+
+<p>/etc/php5/conf.d</p>
+
+<p>/etc/php5/conf.d/apc.ini</blockquote><br>In <code>/etc/php5/conf.d/apc.ini</code> you can see that the APC extension is enabled, but it is not yet configured:<br><blockquote># cat /etc/php5/conf.d/apc.ini</p>
+
+<p>extension=apc.so</blockquote><br>The default settings might be fine for you.  This is really only something you can find out by monitoring your server, reading and understanding the various settings, and experimenting with changes.  To help with that, <code>php-apc</code> comes with <code>apc.php</code>, which provides detailed information about the APC opcode cache.<br><blockquote># zcat /usr/share/doc/php-apc/apc.php.gz &gt; /var/www/apc.php</p>
+
+<h1>chown www-data.www-data /var/www/apc.php</h1>
+
+<h1>chmod 750 /var/www/apc.php</blockquote><br>Next, we'll install <code>php5-gd</code> so we'll have some sexy graphics to help us understand what's happening in the cache.<br><blockquote># apt-get install php5-gd</blockquote><br>Once that's done, visit <em>http://your.server.address/apc.php</em> and you should see something like the following:<br><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/APC-Opcode-Cache.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/APC-Opcode-Cache-300x171.png" alt="APC Opcode Cache" title="APC Opcode Cache" width="300" height="171" class="aligncenter size-medium wp-image-364" /></a><br>You'll need to run your site(s) with APC for a while before you have sufficient information to start tuning.  I suggest letting things tick along for a day or so, gathering statistics from typical usage, before you make any changes to the APC configuration.<br>In the meantime, I recommend disabling <code>phpinfo()</code> and <code>apc.php</code> until you're ready to tune your configuration.  To do this, click on the <em>Default vServer</em>, click on the <code>Behaviour</code> tab, then click on the <code>Rule Management</code> button.<br><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Default-Behaviour-Rules.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Default-Behaviour-Rules-300x159.png" alt="Default Behaviour Rules" title="Default Behaviour Rules" width="300" height="159" class="aligncenter size-medium wp-image-365" /></a><br>Each of the rules has a green indicator next to them.  Click on the green indicator of the <code>Extensions php</code> rule that we added earlier.<br><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Behaviour-Rules-All-Enabled.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Behaviour-Rules-All-Enabled-193x300.png" alt="Behaviour Rules All Enabled" title="Behaviour Rules All Enabled" width="193" height="300" class="aligncenter size-medium wp-image-366" /></a><br>Then click on the <code>SAVE</code> and <code>Graceful restart</code> buttons.  This will disable it.<br>When you're ready again to tune APC, click on the grey indicator of the <code>Extensions php</code> rule, then <code>SAVE</code> then <code>Graceful restart</code>.  This will enable it again.<br>If you want to force some basic load tests, make some configuration changes, rinse, repeat, you could do something like:<br><blockquote># apt-get install httperf</h1>
+
+<h1>httperf --hog --server=your.site.com --num-conns=1000 --rate=20 --timeout=5</h1>
+
+<p>httperf --hog --timeout=10 --client=0/1 --server=www.cloudartisan.com --port=80 --uri=/ --rate=20 --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=1</p>
+
+<p>Maximum connect burst length: 1<br>Total: connections 1000 requests 1000 replies 1000 test-duration 49.956 s<br>Connection rate: 20.0 conn/s (50.0 ms/conn, &lt;=50 concurrent connections)</p>
+
+<p>Connection time [ms]: min 5.1 avg 74.0 max 2624.2 median 5.5 stddev 332.8</p>
+
+<p>Connection time [ms]: connect 0.0</p>
+
+<p>Connection length [replies/conn]: 1.000<br>Request rate: 20.0 req/s (50.0 ms/req)</p>
+
+<p>Request size [B]: 73.0<br>Reply rate [replies/s]: min 20.0 avg 20.0 max 20.0 stddev 0.0 (9 samples)</p>
+
+<p>Reply time [ms]: response 73.5 transfer 0.5</p>
+
+<p>Reply size [B]: header 508.0 content 42599.0 footer 2.0 (total 43109.0)</p>
+
+<p>Reply status: 1xx=0 2xx=1000 3xx=0 4xx=0 5xx=0<br>CPU time [s]: user 15.17 system 34.78 (user 30.4% system 69.6% total 100.0%)</p>
+
+<p>Net I/O: 844.1 KB/s (6.9*10^6 bps)<br>Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0</p>
+
+<p>Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0</blockquote><br>Make your configuration changes in <code>/etc/php5/conf.d/apc.ini</code>.  The setting you're most likely going to want to play with is <code>apc.shm_size</code>.  Be mindful of the amount of memory you have available.  Also, be sure to repeat the monitoring and tuning a few times.<br>There's more documentation on tuning <code>php-apc</code> at <a href="http://php.net/apc">http://php.net/apc</a>.</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/cherokee"><span>cherokee</span></a>, 
+  
+  <a class="tag" href="/tags/general"><span>general</span></a>, 
+  
+  <a class="tag" href="/tags/php-apc"><span>php-apc</span></a>, 
+  
+  <a class="tag" href="/tags/system-administration"><span>system administration</span></a>, 
+  
+  <a class="tag" href="/tags/ubuntu"><span>ubuntu</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

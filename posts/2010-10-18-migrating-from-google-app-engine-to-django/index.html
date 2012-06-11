@@ -1,0 +1,181 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Migrating from Google App Engine to Django  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; October 18, 2010</div>
+<h1>Migrating from Google App Engine to Django</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>Unfortunately, I had to migrate one of my projects from Google App Engine to Django on a self-managed server. I didn't want to do this. See <a href="http://www.cloudartisan.com/2010/08/google-app-engine-gotcha-2/">Google App Engine Gotcha #2</a> and <a href="http://www.cloudartisan.com/2010/08/google-app-engine-gotcha-3/">Google App Engine Gotcha #3</a> for the main reasons. Those headaches became bad enough that I had to bite the bullet and migrate out of Google App Engine.</p>
+
+<p><em>It's not for the faint-hearted...</em></p>
+
+<h2>Why Google App Engine In The First Place?</h2>
+
+<p>Google App Engine is a PaaS (Platform as a Service). PaaS products eliminate the need for lower-level server management and, if they're good, make it very easy to write and maintain code for that platform.</p>
+
+<p>Migrating away from a PaaS means having to handle the server management again and having to deal with niggly code problems you'd prefer to forget.</p>
+
+<h2>Is Django Hard?</h2>
+
+<p>No. It's just very different to using Google App Engine's <code>webapp</code> approach.</p>
+
+<p>Note, it's even possible to <a href="http://code.google.com/appengine/articles/django.html">run Django on Google App Engine</a>. If you started out using Django on Google App Engine, this article ain't for you... you've got it easy... you already know what you're doing. This article is for those, like me, who started with <code>webapp</code> on Google App Engine.</p>
+
+<p>I've tried to gather together the resources I found most useful in moving from Google App Engine to Django. I've also tried to provide some helpful advice and snippets on translating certain features between the two. Hopefully this stuff will help someone get through it a bit quicker than I did...</p>
+
+<h2>A Gentle Overview of Django</h2>
+
+<p>IBM have an article in their DeveloperWorks library titled <a href="http://www.ibm.com/developerworks/opensource/library/os-django/">Deploying Django applications to a production server</a>.  As an article on deploying Django projects to production... well... it sucks.  However, as a gentle overview of Django concepts, it rocks. It also provides some insight into the differences between development and production environments.</p>
+
+<h2>Project/Application Layout</h2>
+
+<p>OK, this seems a persnickety subject in Django circles.  The best overall guide I could find is <a href="http://blog.zacharyvoase.com/2010/02/03/django-project-conventions/">http://blog.zacharyvoase.com/2010/02/03/django-project-conventions/</a>.</p>
+
+<p>While you're at it, you'll want to think about how to deal with filesystem paths:</p>
+
+<ul>
+<li><p><a href="http://morethanseven.net/2009/02/11/django-settings-tip-setting-relative-paths.html">http://morethanseven.net/2009/02/11/django-settings-tip-setting-relative-paths.html</a></p></li>
+<li><p><a href="http://gnuvince.wordpress.com/2007/12/22/django-paths-and-urls/">http://gnuvince.wordpress.com/2007/12/22/django-paths-and-urls/</a></p></li>
+</ul>
+
+<p>Yup, filesystems... I bet you forgot about those while you were living it up on Google App Engine!</p>
+
+<h2>User Management</h2>
+
+<p>Depending on what you're hoping to achieve, you can take care of this with initial data, fixtures, and the administrative interface.</p>
+
+<h2>Prepopulate Data</h2>
+
+<p>This is actually easier with Django than it is with Google App Engine. Of course, that's partly because we now have access to files. FILES!</p>
+
+<p>Django takes care of prepopulating data with fixtures (which can be JSON, XML, or even Python code) or simple hooks into events. Check out <a href="http://docs.djangoproject.com/en/dev/howto/initial-data/">http://docs.djangoproject.com/en/dev/howto/initial-data/</a>.</p>
+
+<p>The most common use for this is prepopulating users and groups.</p>
+
+<h2>Administration Interface</h2>
+
+<p>You can add an administration interface to your application by adding something like the following to your project's <code>urls.py</code>:</p>
+
+<div class="codehilite"><pre><code><span class="c"># Enable the administration interface</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">autodiscover</span><span class="p">()</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+
+    <span class="c"># Using the admin/doc line below, add &#39;django.contrib.admindocs&#39;</span>
+
+    <span class="c"># to INSTALLED_APPS to enable admin documentation:</span>
+
+    <span class="p">(</span><span class="s">r&#39;^admin/doc/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">&#39;django.contrib.admindocs.urls&#39;</span><span class="p">)),</span>
+
+    <span class="c"># Enable the admin interface</span>
+
+    <span class="p">(</span><span class="s">r&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+
+<span class="p">)</span>
+</code></pre></div>
+
+<p>This will come in handy when you need to play around with users, groups, permissions, etc.</p>
+
+<h2>Performance / Scaling</h2>
+
+<p>Now that you're responsible for the underlying platform, you'll need to give some thought to performance and scaling. There are some helpful responses in this Stack Overflow thread: <a href="http://stackoverflow.com/questions/886221/does-django-scale">http://stackoverflow.com/questions/886221/does-django-scale</a>.</p>
+
+<h2>The Case For Django</h2>
+
+<p>Django does give you something that Google App Engine doesn't: <em>flexibility</em>.</p>
+
+<p>If you want to use an RDBMS, go nuts, it'll be easy. It's much harder to model relationships in Google App Engine.</p>
+
+<p>Also, there's inter-application reuse. Django requires that you define URLs and import applications into your site/project. This means you can reuse applications in other sites by simply importing them. If you develop an awesome social data mining application, you can reuse it in multiple Django sites/projects by simply importing it. However, in Google App Engine you'd need to maintain multiple copies of the code in each site and upload it along with each site. Any time you add somebody else's awesome Google App Engine library to your own application you'll feel this pain.</p>
+
+<h2>Summary</h2>
+
+<p>Django is awesome... for what it is... a framework for developing web applications when you need (or want) to be responsible for everything from the ground up. The same can be said if you've had to move from Heroku or Engine Yard to running your own Ruby on Rails or Sinatra application.</p>
+
+<p>For some, Google App Engine can be considered Django without the irritating server management bits. For others, Django can feel like Google App Engine with a healthy dose of flexibility thrown in. Personally, I just want to get the code out of the way. If Google ever <em>fixes</em> the limitations I've come across I'll jump back over to Google App Engine.</p>
+
+<p>If you've got some helpful tidbits for people moving from Google App Engine to Django, let me know, I'll add them to the post.</p>
+
+<p>In the meantime, <a href="http://twitter.com/davidltaylor">follow me on twitter...</a></p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/general"><span>general</span></a>, 
+  
+  <a class="tag" href="/tags/google-app-engine"><span>google app engine</span></a>, 
+  
+  <a class="tag" href="/tags/google-app-engine"><span>google app engine</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/paas"><span>paas</span></a>, 
+  
+  <a class="tag" href="/tags/python"><span>python</span></a>, 
+  
+  <a class="tag" href="/tags/software-development"><span>software development</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>

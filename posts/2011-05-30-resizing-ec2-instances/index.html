@@ -1,0 +1,108 @@
+<html>
+<head>
+  <meta name="google-site-verification" content="FIXME FIXME FIXME" />
+  <title> Resizing EC2 Instances  &raquo; cloudartisan.com</title>
+  <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
+  <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="cloudartisan.com &raquo; Cloud Artisan" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.devslide.com/public/labs/browser-detection/browser-detection.css" />
+</head>
+<body>
+<div id="page" class="loading">
+  <div id="header">
+    
+<div class="published"><a href="/">David Taylor</a> &ndash; May 30, 2011</div>
+<h1>Resizing EC2 Instances</h1>
+
+  </div><!--/#header-->
+  <div id="content">
+    
+<div class="body">
+  <p>An EC2 instance needs to be stopped before it can be resized. Also, it can only be resized to a "compatible" type (ie, one with a compatible kernel, 32 bit or 64 bit). So, if you started with a 32 bit <code>t1.micro</code> you can only resize up to a 32 bit <code>m1.small</code>. If you started with a 64 bit <code>t1.micro</code> you could resize up to a 64 bit <code>m1.large</code>.</p>
+
+<pre><code>wintermute:~ $ ec2-stop-instances i-3e15ff51
+
+INSTANCE        i-3e15ff51      running stopping
+
+wintermute:~ $ ec2-modify-instance-attribute -t m2.2xlarge i-3e15ff51
+
+Client.IncorrectInstanceState: The instance 'i-3e15ff51' is not in the 'stopped' state.
+
+wintermute:~ $ ec2-modify-instance-attribute -t m2.2xlarge i-3e15ff51
+
+instanceType    i-3e15ff51      m2.2xlarge
+
+wintermute:~ $ ec2-start-instances i-3e15ff51
+
+INSTANCE        i-3e15ff51      stopped pending
+</code></pre>
+
+<p>By the way, these short posts are essentially notes to myself while working (I keep forgetting the syntax!). I've got some Cherokee-related posts in the pipeline, I just need to find some extra spare time at night.</p>
+
+<p>In the meantime, <a href="http://twitter.com/davidltaylor">follow me on Twitter</a>, it's free.</p>
+
+</div>
+<div class="meta">
+  
+</div>
+<div class="tags">
+  <p>This entry was tagged 
+  
+  <a class="tag" href="/tags/aws"><span>aws</span></a>, 
+  
+  <a class="tag" href="/tags/ec2"><span>ec2</span></a>, 
+  
+  <a class="tag" href="/tags/iaas"><span>iaas</span></a>, 
+  
+  <a class="tag" href="/tags/instance"><span>instance</span></a>, 
+  
+  <a class="tag" href="/tags/instances"><span>instances</span></a>, 
+  
+  <a class="tag" href="/tags/resize"><span>resize</span></a>, 
+  
+  <a class="tag" href="/tags/system-administration"><span>system administration</span></a>
+  
+</div>
+<div id="underpost">
+  <h3>Discussions/Feedback.</h3>
+  
+  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+
+  
+</div>
+
+  </div><!--/#content-->
+  <div id="footer">
+    <p>&copy; David Taylor 2010</p>
+    <p>Licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
+  </div>
+</div><!--/#page-->
+
+<div id="nav">
+  <!-- <div><img src="/media/img/mirnazim.face.png"></div> -->
+  <a title="Home" href="/">home</a>
+  <a title="About" class="about" href="/about/">about</a>
+  <a title="Atom feeds" href="/atom.xml">atom</a>
+  <!--<span class="spacer">&nbsp;</span>-->
+  <a title="Twitter" href="http://twitter.com/davidltaylor">twitter</a>
+  <a title="LinkedIn" href="http://in.linkedin.com/in/davidleslietaylor">linkedIn</a>
+  <a title="Github" href="http://github.com/cloudartisan">github</a>
+</div>
+
+<!-- Google Analytics--> 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'FIXME FIXME FIXME']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End Google Analytics-->
+<script type="text/javascript" src="/media/js/googlefonts.js"></script>
+</body>
+</html>
