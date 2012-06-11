@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>cloudartisan.com</title>
+<subtitle>Cloud Artisan</subtitle>
+<link href="http://cloudartisan.com/atom.xml" rel="self" />
+<link href="http://cloudartisan.com/" />
+<id>tag:cloudartisan.com,2012-06-11T21:31:34Z:/</id>
+<updated>2012-06-11T21:31:34Z</updated>
+<author>
+  <name>David Taylor</name>
+  <email>david@cloudartisan.com</email>
+</author>
+
+
+<entry>
+  <title>Installing newrelic_api gem from GitHub</title>
+  <link href="http://cloudartisan.com/posts/2011-03-07-installing-newrelic_api-gem-from-github" />
+  <id>tag:cloudartisan.com,2011-03-07:/posts/2011-03-07-installing-newrelic_api-gem-from-github</id>
+  <updated>2011-03-07T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Install Ruby 1.9.2 and Rails 3.0.3 using rvm on Ubuntu 10.10</title>
+  <link href="http://cloudartisan.com/posts/2010-12-10-install-ruby-1-9-rails-3-using-rvm-on-ubuntu-10-10" />
+  <id>tag:cloudartisan.com,2010-12-10:/posts/2010-12-10-install-ruby-1-9-rails-3-using-rvm-on-ubuntu-10-10</id>
+  <updated>2010-12-10T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>My first Djangy project (local testing)</title>
+  <link href="http://cloudartisan.com/posts/2010-12-04-my-first-djangy-project-local-testing" />
+  <id>tag:cloudartisan.com,2010-12-04:/posts/2010-12-04-my-first-djangy-project-local-testing</id>
+  <updated>2010-12-04T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>My first Djangy project (initial testing)</title>
+  <link href="http://cloudartisan.com/posts/2010-12-02-my-first-djangy-project-initial-testing" />
+  <id>tag:cloudartisan.com,2010-12-02:/posts/2010-12-02-my-first-djangy-project-initial-testing</id>
+  <updated>2010-12-02T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Migrating from Google App Engine to Django</title>
+  <link href="http://cloudartisan.com/posts/2010-10-18-migrating-from-google-app-engine-to-django" />
+  <id>tag:cloudartisan.com,2010-10-18:/posts/2010-10-18-migrating-from-google-app-engine-to-django</id>
+  <updated>2010-10-18T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Install uWSGI (latest) on Debian Lenny</title>
+  <link href="http://cloudartisan.com/posts/2010-10-04-install-uwsgi-latest-on-debian-lenny" />
+  <id>tag:cloudartisan.com,2010-10-04:/posts/2010-10-04-install-uwsgi-latest-on-debian-lenny</id>
+  <updated>2010-10-04T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Python One-Liner: Debug Mail Server</title>
+  <link href="http://cloudartisan.com/posts/2010-10-03-python-one-liner-debug-mail-server" />
+  <id>tag:cloudartisan.com,2010-10-03:/posts/2010-10-03-python-one-liner-debug-mail-server</id>
+  <updated>2010-10-03T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+</feed>

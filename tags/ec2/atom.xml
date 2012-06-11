@@ -4,13 +4,33 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-06T00:10:47Z:/</id>
-<updated>2012-06-06T00:10:47Z</updated>
+<id>tag:cloudartisan.com,2012-06-11T21:31:34Z:/</id>
+<updated>2012-06-11T21:31:34Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
 </author>
 
+
+<entry>
+  <title>Resizing EC2 Instances</title>
+  <link href="http://cloudartisan.com/posts/2011-05-30-resizing-ec2-instances" />
+  <id>tag:cloudartisan.com,2011-05-30:/posts/2011-05-30-resizing-ec2-instances</id>
+  <updated>2011-05-30T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Getting Started With AWS Identity Access Management</title>
+  <link href="http://cloudartisan.com/posts/2011-04-18-getting-started-with-aws-identity-access-management" />
+  <id>tag:cloudartisan.com,2011-04-18:/posts/2011-04-18-getting-started-with-aws-identity-access-management</id>
+  <updated>2011-04-18T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
 
 <entry>
   <title>Install EC2 AMI & API Tools in Debian</title>

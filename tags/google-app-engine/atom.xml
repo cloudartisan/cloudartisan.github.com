@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>cloudartisan.com</title>
+<subtitle>Cloud Artisan</subtitle>
+<link href="http://cloudartisan.com/atom.xml" rel="self" />
+<link href="http://cloudartisan.com/" />
+<id>tag:cloudartisan.com,2012-06-11T21:31:34Z:/</id>
+<updated>2012-06-11T21:31:34Z</updated>
+<author>
+  <name>David Taylor</name>
+  <email>david@cloudartisan.com</email>
+</author>
+
+
+<entry>
+  <title>Google App Engine for Python: Getting Started On Mac</title>
+  <link href="http://cloudartisan.com/posts/2011-08-22-google_app_engine_python_getting_started_on_mac" />
+  <id>tag:cloudartisan.com,2011-08-22:/posts/2011-08-22-google_app_engine_python_getting_started_on_mac</id>
+  <updated>2011-08-22T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Buddypoke on Google App Engine</title>
+  <link href="http://cloudartisan.com/posts/2010-11-23-buddypoke-on-google-app-engine" />
+  <id>tag:cloudartisan.com,2010-11-23:/posts/2010-11-23-buddypoke-on-google-app-engine</id>
+  <updated>2010-11-23T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Google App Engine SDK broken on Ubuntu Maverick 10.10</title>
+  <link href="http://cloudartisan.com/posts/2010-10-24-google-app-engine-sdk-broken-on-ubuntu-maverick-10-10" />
+  <id>tag:cloudartisan.com,2010-10-24:/posts/2010-10-24-google-app-engine-sdk-broken-on-ubuntu-maverick-10-10</id>
+  <updated>2010-10-24T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Migrating from Google App Engine to Django</title>
+  <link href="http://cloudartisan.com/posts/2010-10-18-migrating-from-google-app-engine-to-django" />
+  <id>tag:cloudartisan.com,2010-10-18:/posts/2010-10-18-migrating-from-google-app-engine-to-django</id>
+  <updated>2010-10-18T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Migrating from Google App Engine to Django... a preamble</title>
+  <link href="http://cloudartisan.com/posts/2010-09-29-migrating-from-google-app-engine-to-django-preamble" />
+  <id>tag:cloudartisan.com,2010-09-29:/posts/2010-09-29-migrating-from-google-app-engine-to-django-preamble</id>
+  <updated>2010-09-29T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Google App Engine Gotcha</title>
+  <link href="http://cloudartisan.com/posts/2010-08-29-google-app-engine-gotcha-3" />
+  <id>tag:cloudartisan.com,2010-08-29:/posts/2010-08-29-google-app-engine-gotcha-3</id>
+  <updated>2010-08-29T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Google App Engine - unknown URL handler type</title>
+  <link href="http://cloudartisan.com/posts/2010-08-15-google-app-engine-unknown-url-handler-type" />
+  <id>tag:cloudartisan.com,2010-08-15:/posts/2010-08-15-google-app-engine-unknown-url-handler-type</id>
+  <updated>2010-08-15T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>appengine-jruby "no such file to load -- builtin/core_ext/symbol"</title>
+  <link href="http://cloudartisan.com/posts/2010-08-13-appengine-jruby-no-such-file-to-load-builtincore_extsymbol" />
+  <id>tag:cloudartisan.com,2010-08-13:/posts/2010-08-13-appengine-jruby-no-such-file-to-load-builtincore_extsymbol</id>
+  <updated>2010-08-13T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Google App Engine Gotcha</title>
+  <link href="http://cloudartisan.com/posts/2010-08-09-google-app-engine-gotcha-2" />
+  <id>tag:cloudartisan.com,2010-08-09:/posts/2010-08-09-google-app-engine-gotcha-2</id>
+  <updated>2010-08-09T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Google App Engine Gotcha</title>
+  <link href="http://cloudartisan.com/posts/2010-06-27-google-app-engine-gotcha-1" />
+  <id>tag:cloudartisan.com,2010-06-27:/posts/2010-06-27-google-app-engine-gotcha-1</id>
+  <updated>2010-06-27T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+</feed>
