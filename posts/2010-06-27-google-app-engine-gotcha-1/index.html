@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta name="google-site-verification" content="FIXME FIXME FIXME" />
-  <title> Google App Engine Gotcha  &raquo; cloudartisan.com</title>
+  <title> Google App Engine Gotcha 1  &raquo; cloudartisan.com</title>
   <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
   <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
   
@@ -13,19 +13,19 @@
   <div id="header">
     
 <div class="published"><a href="/">David Taylor</a> &ndash; June 27, 2010</div>
-<h1>Google App Engine Gotcha</h1>
+<h1>Google App Engine Gotcha 1</h1>
 
   </div><!--/#header-->
   <div id="content">
     
 <div class="body">
-  <p>I like Google App Engine.  However, there are a number of <em>gotchas</em> that can creep up on you.  Especially if you dive right in without doing any reading first.</p>
+  <p>I like Google App Engine. However, there are a number of <em>gotchas</em> that can creep up on you. Especially if you dive right in without doing any reading first.</p>
 
 <p>Here's gotcha #1...</p>
 
-<p>A number of standard Python modules are not available or only provide limited functionality.  Click <a href="http://code.google.com/appengine/kb/libraries.html">here</a> to see Google App Engine's list of enabled, partially-enabled and empty modules.</p>
+<p>A number of standard Python modules are not available or only provide limited functionality. Click <a href="http://code.google.com/appengine/kb/libraries.html">here</a> to see Google App Engine's list of enabled, partially-enabled and empty modules.</p>
 
-<p>Sometimes developing for Google App Engine isn't straightforward and requires a little imagination.  However, most of the time there's a simple alternative; it just takes a little reading.  For example, if you want to send e-mail on Google App Engine you can't use Python's <em>smtplib</em> (because it relies on <em>socket</em>, which is implemented as an empty module).  Instead, you would do the following:</p>
+<p>Sometimes developing for Google App Engine isn't straightforward and requires a little imagination. However, most of the time there's a simple alternative; it just takes a little reading. For example, if you want to send e-mail on Google App Engine you can't use Python's <em>smtplib</em> (because it relies on <em>socket</em>, which is implemented as an empty module). Instead, you would do the following:</p>
 
 <div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">google.appengine.api</span> <span class="kn">import</span> <span class="n">mail</span>
 

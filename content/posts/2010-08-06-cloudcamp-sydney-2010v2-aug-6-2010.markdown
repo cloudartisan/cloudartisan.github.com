@@ -10,7 +10,7 @@ slug: cloudcamp-sydney-2010v2-aug-6-2010
 
 I've just come back from [CloudCamp Sydney 2010v2](http://www.cloudcamp.org/sydney/2010-08-06) and I have some mixed thoughts about the event...
 
-**Event Format**
+# Event Format
 
 The event format is an [unconference](http://en.wikipedia.org/wiki/Unconference).
 
@@ -18,7 +18,7 @@ The event format is an [unconference](http://en.wikipedia.org/wiki/Unconference)
 
 Basically, the format is an effort to break away from the staid conferences of old, where the audience would fight boredom and stave off sleep by hyper-caffeinating themselves and perching uncomfortably on plastic seats. For the most part, the format worked very well.
 
-**Lightning Talks**
+# Lightning Talks
 
 This unconference started with [lightning talks](http://en.wikipedia.org/wiki/Lightning_Talk) by each of the sponsors.  The sponsors included [NetSuite](http://www.netsuite.com/), [enStratus](http://www.enstratus.com/), [IBM](http://www.ibm.com/), [Quest Software](http://www.quest.com/), [Ultra Serve](http://www.ultraserve.com.au/), [Vadis Systems](http://www.vadis.com.au/) (with possibly the tiniest sponsor logo ever!), [gen-i](http://www.gen-i.co.nz/Pages/Gen-iHomePage.aspx), [NetLeverage](http://www.netleverage.com.au/), and [zendesk](http://www.zendesk.com/).
 
@@ -32,13 +32,13 @@ The other memorable talk was for Quest Software. They make some product called T
 
 Lastly, the talk from NetLeverage was... strange. I'm still not sure what it was about, but there was definitely some passion in there. As well as some mention of caves. And community. And leaving caves. And... nope, I'm still not sure what it was about.
 
-**An Impromptu Panel Broke Out!**
+# An Impromptu Panel Broke Out!
 
 After the lightning talks an impromptu panel was formed using members picked from the audience. A colleague of mine, [Ameer](http://twitter.com/writeameer), suddenly became a panelist.
 
 The panel was given a range of questions from the audience and then asked to select a question or topic and discuss it, with no interjection or questioning, essentially allowing each panelist to become an unconference presenter. This is the point where the event transformed from being peopled by presenters with an audience, to an equal-footing group of attendees and invitees. This worked great!
 
-**State Of Cloud In Australia**
+# State Of Cloud In Australia
 
 Is it just me or is the Australian technology scene still at the indecisive window-shopping stage?
 
@@ -48,13 +48,13 @@ A question that stood out for me: What _is_ cloud computing?
 
 I guess someone has to ask this question of someone at some time. And, as the old saying goes, there's no such thing as a dumb question. But, what I can't understand is how we're still at the stage where the captains of Australian industry are only now hearing inklings of cloud computing... and they're still waiting for an executive summary. How have we not moved beyond this? Why does the local Australian industry lag so much? We all have relatively equal Internet access. Are we still too locally-focussed, which, in essence, is counter to the concept of cloud computing?
 
-**Conspicuously Absent...**
+# Conspicuously Absent...
 
 The veritable army of Microsoft Azure staff of 2010v1 had reduced to 1 person.  A wise move. It was a little... I don't know... daunting?... intimidating?...  (something like that, anyway) to be greeted by a wall of Microsoft logos and Azure logos last time.
 
 There was no sign at all of a Salesforce representative. Busy that day? Not cloudy enough?
 
-**Overall**
+# Overall
 
 Where the unconference fell down is the same place that almost all conferences fall down: the reliance on sponsors that get their _pound of flesh_ in the form of (lightning) talks. Paid talking spots are always hit and miss.
 

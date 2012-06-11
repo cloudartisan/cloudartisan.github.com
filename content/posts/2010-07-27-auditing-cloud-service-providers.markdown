@@ -8,7 +8,7 @@ published: 2010-07-27
 title: Auditing Cloud Service Providers
 slug: auditing-cloud-service-providers
 
-**What's Up?**  
+# What's Up?  
 
 I want to find existing documented best practice processes and questionnaires for auditing cloud service providers.
 
@@ -16,7 +16,7 @@ I was hoping to find existing surveys/questionnaires that can be reused to perfo
 
 Let's face it, no one enjoys an auditing. No cloud service provider thinks _"Oh, goody, another small prospect that wants me to respond to yet-another- time-consuming audit!"_ And I certainly do not want to write a lengthy document of intrusive questions about services I'm already using.
 
-**Early Research**  
+# Early Research  
 
 Unfortunately, so far I've found that cloud computing hasn't reached that stage... yet.
 
@@ -31,7 +31,7 @@ But, those articles were approximately one year old. A lot can happen in one yea
 
 I then came across some promising initiatives. _Happy days!_
 
-**Cloud Security Alliance**
+# Cloud Security Alliance
 
 The [Cloud Security Alliance](http://www.cloudsecurityalliance.org/About.html) are a non-profit organisation that document issues, best practices, and guides for cloud security. They have some very handy [research](http://www.cloudsecurityalliance.org/Research.html). The most relevant appears to be their [Security Guidance](http://www.cloudsecurityalliance.org/guidance.html) document and their [Controls Matrix](http://www.cloudsecurityalliance.org/cm.html) spreadsheet.
 
@@ -49,7 +49,7 @@ Is any cloud service provider going to take the time to respond to a prospect th
 
 I went back to the CSA's research page. Bottom-left corner.  [CloudAudit](http://cloudaudit.org/). Promising name.
 
-**Cloud Audit (A6)**  
+# Cloud Audit (A6)
 
 The blurb for [CloudAudit](http://cloudaudit.org/) states:
 
@@ -67,7 +67,7 @@ My guess is that this namespace ("which essentially looks like a directory struc
 
 Yes, it sounds promising, but it also sounds a bit further into the future than I can wait right now.
 
-**Summary... for now**  
+# Summary... for now
 
 So far my research paints the following picture:
 

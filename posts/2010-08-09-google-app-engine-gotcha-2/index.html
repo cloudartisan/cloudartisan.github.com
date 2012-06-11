@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta name="google-site-verification" content="FIXME FIXME FIXME" />
-  <title> Google App Engine Gotcha  &raquo; cloudartisan.com</title>
+  <title> Google App Engine Gotcha 2  &raquo; cloudartisan.com</title>
   <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
   <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
   
@@ -13,7 +13,7 @@
   <div id="header">
     
 <div class="published"><a href="/">David Taylor</a> &ndash; August 09, 2010</div>
-<h1>Google App Engine Gotcha</h1>
+<h1>Google App Engine Gotcha 2</h1>
 
   </div><!--/#header-->
   <div id="content">
@@ -42,32 +42,32 @@
 
 <p>If you're lucky enough to be talking to snappy APIs or zippy web sites, you'll be fine. If not, you'll soon stumble upon the following traceback:</p>
 
-<pre><code>ApplicationError: 2 timed out
+<div class="codehilite"><pre><code>ApplicationError: 2 timed out
 
 Traceback (most recent call last):
 
-  File "/path/to/webapp/__init__.py", line 507, in __call__
+  File &quot;/path/to/webapp/__init__.py&quot;, line 507, in __call__
 
     handler.get(*groups)
 
-  File "/path/to/myapp/main.py", line 62, in get
+  File &quot;/path/to/myapp/main.py&quot;, line 62, in get
 
     result = urlfetch.fetch(...)
 
-  File "/path/to/urlfetch.py", line 241, in fetch
+  File &quot;/path/to/urlfetch.py&quot;, line 241, in fetch
 
     return rpc.get_result()
 
-  File "/path/to/apiproxy_stub_map.py", line 501, in get_result
+  File &quot;/path/to/apiproxy_stub_map.py&quot;, line 501, in get_result
 
     return self.__get_result_hook(self)
 
-  File "/path/to/urlfetch.py", line 325, in _get_fetch_result
+  File &quot;/path/to/urlfetch.py&quot;, line 325, in _get_fetch_result
 
     raise DownloadError(str(err))
 
 DownloadError: ApplicationError: 2 timed out
-</code></pre>
+</code></pre></div>
 
 <p>Lucky you. If you're dealing with an external API, over which you have no control, and it is slow to respond... <strong>WHAMMO!</strong></p>
 

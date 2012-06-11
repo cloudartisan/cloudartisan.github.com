@@ -5,7 +5,7 @@ chronological: yes
 author: David Taylor
 tags: ['google app engine', 'paas', 'paas', 'python']
 published: 2010-08-09
-title: Google App Engine Gotcha #2
+title: Google App Engine Gotcha 2
 slug: google-app-engine-gotcha-2
 
 For _Google App Engine: Gotcha #2_ I choose the default 5 second timeout on `urlfetch`. This function is part of the Google App Engine's API and applies to both Python and Java.
@@ -19,18 +19,19 @@ The [Java documentation](http://code.google.com/appengine/docs/java/urlfetch/ove
 
 > You can set a deadline for a request, the most amount of time the service will wait for a response. By default, the deadline for a fetch is 5 seconds.  The maximum deadline is 10 seconds.
 
-  
+
 Sooner or later you'll find yourself writing code to fetch the contents of a URL or drive a RESTful API. Something like this:
 
-    
+
     :::python
     from google.appengine.api import urlfetch
     urlfetch.fetch('http://www.cloudartisan.com')
 
-  
+
 If you're lucky enough to be talking to snappy APIs or zippy web sites, you'll be fine. If not, you'll soon stumble upon the following traceback:
 
-    
+
+    :::text
     ApplicationError: 2 timed out
     Traceback (most recent call last):
       File "/path/to/webapp/__init__.py", line 507, in __call__
@@ -45,7 +46,7 @@ If you're lucky enough to be talking to snappy APIs or zippy web sites, you'll b
         raise DownloadError(str(err))
     DownloadError: ApplicationError: 2 timed out
 
-  
+
 Lucky you. If you're dealing with an external API, over which you have no control, and it is slow to respond... **WHAMMO!**
 
 What can you do about this? Well, you can increase the timeout to its maximum: 10 seconds.

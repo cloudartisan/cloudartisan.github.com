@@ -14,9 +14,11 @@ First, download and install the [Google App Engine SDK](http://code.google.com/a
 
 For example:
 
+
     :::bash
     wget http://googleappengine.googlecode.com/files/google_appengine_1.3.4.zip
     unzip google_appengine_1.3.4.zip
+
 
 Create a directory for your application:
 
@@ -47,7 +49,9 @@ Create your script (changing the e-mail addresses, of course):
     :::python
     #!/usr/bin/env python
     #
-    # Hello World via e-mailfrom google.appengine.api import mail
+    # Hello World via e-mail
+    
+    from google.appengine.api import mail
 
     mail.send_mail(
         sender="Your Email Address <you@example.com>",
@@ -63,6 +67,8 @@ Use appcfg.py inside the unzipped SDK to upload your application:
 
 Enter your username and password when prompted.  The output should look something like this:
 
+
+    :::text
     Application: helloworld; version: 1.
     Server: appengine.google.com.
     Scanning files on local disk.
@@ -78,5 +84,6 @@ Enter your username and password when prompted.  The output should look somethin
     Checking if new version is ready to serve.
     Closing update: new version is ready to start serving.
     Uploading cron entries.
+
 
 Simple as that.  Enjoy.

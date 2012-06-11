@@ -154,7 +154,6 @@ class Entry(object):
             header.append(line)
             line = f.readline()
             line = line.rstrip()
-        print header
         self.header = yaml.load(StringIO('\n'.join(header)))
         for h in self.header.items():
             if h:
@@ -278,7 +277,6 @@ def build():
         for filename in files:
             if not os.path.splitext(filename)[-1] in ('.markdown', '.md'):
                 continue
-            print " %s" % os.path.join(root, filename)
             entry = Entry(os.path.join(root, filename))
             if entry.render():
                 entries.append(entry)
