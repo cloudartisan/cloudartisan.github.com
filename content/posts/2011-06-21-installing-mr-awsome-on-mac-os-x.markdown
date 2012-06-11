@@ -1,3 +1,4 @@
+public: yes
 status: publish
 kind: post
 chronological: yes
@@ -22,4 +23,3 @@ Once you know the correct incantation, installing it is easy.
 Simple as that.
 
 [Follow me](http://twitter.com/davidltaylor) on Twitter. If you don't, kittens and fairies will die.
-
