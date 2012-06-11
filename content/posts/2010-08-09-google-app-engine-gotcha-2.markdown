@@ -1,3 +1,4 @@
+public: yes
 status: publish
 kind: post
 chronological: yes
@@ -56,4 +57,3 @@ Perhaps you could try breaking your request into multiple requests?
 Perhaps you could fire off the request, ignore the timeout, wait a short period, then query again for the results of the request?
 
 Just remember, your handler also has a maximum of 30 seconds to handle a web request, so don't take too long...
-
