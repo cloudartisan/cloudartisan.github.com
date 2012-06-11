@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-06T00:10:47Z:/</id>
-<updated>2012-06-06T00:10:47Z</updated>
+<id>tag:cloudartisan.com,2012-06-11T21:31:34Z:/</id>
+<updated>2012-06-11T21:31:34Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -13,24 +13,102 @@
 
 
 <entry>
-  <title>Install EC2 AMI & API Tools in Debian</title>
-  <link href="http://cloudartisan.com/posts/2010-06-02-install-ec2-tools-debian" />
-  <id>tag:cloudartisan.com,2010-06-02:/posts/2010-06-02-install-ec2-tools-debian</id>
-  <updated>2010-06-02T00:00:00Z</updated>
+  <title>Google App Engine for Python: Getting Started On Mac</title>
+  <link href="http://cloudartisan.com/posts/2011-08-22-google_app_engine_python_getting_started_on_mac" />
+  <id>tag:cloudartisan.com,2011-08-22:/posts/2011-08-22-google_app_engine_python_getting_started_on_mac</id>
+  <updated>2011-08-22T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"><p>A quick run-down on installing EC2 AMI &amp; API Tools in Debian</p>
-<a href="http://cloudartisan.com/posts/2010-06-02-install-ec2-tools-debian"> continue reading...</a></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
   </content>
 </entry>
 
 <entry>
-  <title>RightScripts In Any Scripting Language</title>
-  <link href="http://cloudartisan.com/posts/2010-05-30-rightscripts-in-any-scripting-language" />
-  <id>tag:cloudartisan.com,2010-05-30:/posts/2010-05-30-rightscripts-in-any-scripting-language</id>
-  <updated>2010-05-30T00:00:00Z</updated>
+  <title>Installing mr.awsome on Mac OS X</title>
+  <link href="http://cloudartisan.com/posts/2011-06-21-installing-mr-awsome-on-mac-os-x" />
+  <id>tag:cloudartisan.com,2011-06-21:/posts/2011-06-21-installing-mr-awsome-on-mac-os-x</id>
+  <updated>2011-06-21T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"><p>Write RightScripts in any scripting language</p>
-<a href="http://cloudartisan.com/posts/2010-05-30-rightscripts-in-any-scripting-language"> continue reading...</a></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Resizing EC2 Instances</title>
+  <link href="http://cloudartisan.com/posts/2011-05-30-resizing-ec2-instances" />
+  <id>tag:cloudartisan.com,2011-05-30:/posts/2011-05-30-resizing-ec2-instances</id>
+  <updated>2011-05-30T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Server Density Plugin for Monitoring Cherokee</title>
+  <link href="http://cloudartisan.com/posts/2011-05-07-server-density-plugin-for-monitoring-cherokee" />
+  <id>tag:cloudartisan.com,2011-05-07:/posts/2011-05-07-server-density-plugin-for-monitoring-cherokee</id>
+  <updated>2011-05-07T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Getting Started With AWS Identity Access Management</title>
+  <link href="http://cloudartisan.com/posts/2011-04-18-getting-started-with-aws-identity-access-management" />
+  <id>tag:cloudartisan.com,2011-04-18:/posts/2011-04-18-getting-started-with-aws-identity-access-management</id>
+  <updated>2011-04-18T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Installing newrelic_api gem from GitHub</title>
+  <link href="http://cloudartisan.com/posts/2011-03-07-installing-newrelic_api-gem-from-github" />
+  <id>tag:cloudartisan.com,2011-03-07:/posts/2011-03-07-installing-newrelic_api-gem-from-github</id>
+  <updated>2011-03-07T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Install Ruby 1.9.2 and Rails 3.0.3 using rvm on Ubuntu 10.10</title>
+  <link href="http://cloudartisan.com/posts/2010-12-10-install-ruby-1-9-rails-3-using-rvm-on-ubuntu-10-10" />
+  <id>tag:cloudartisan.com,2010-12-10:/posts/2010-12-10-install-ruby-1-9-rails-3-using-rvm-on-ubuntu-10-10</id>
+  <updated>2010-12-10T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Upgrading Djangy</title>
+  <link href="http://cloudartisan.com/posts/2010-12-08-upgrading-djangy" />
+  <id>tag:cloudartisan.com,2010-12-08:/posts/2010-12-08-upgrading-djangy</id>
+  <updated>2010-12-08T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>My first Djangy project (local testing)</title>
+  <link href="http://cloudartisan.com/posts/2010-12-04-my-first-djangy-project-local-testing" />
+  <id>tag:cloudartisan.com,2010-12-04:/posts/2010-12-04-my-first-djangy-project-local-testing</id>
+  <updated>2010-12-04T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+  </content>
+</entry>
+
+<entry>
+  <title>My first Djangy project (initial testing)</title>
+  <link href="http://cloudartisan.com/posts/2010-12-02-my-first-djangy-project-initial-testing" />
+  <id>tag:cloudartisan.com,2010-12-02:/posts/2010-12-02-my-first-djangy-project-initial-testing</id>
+  <updated>2010-12-02T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"></div>
   </content>
 </entry>
 
