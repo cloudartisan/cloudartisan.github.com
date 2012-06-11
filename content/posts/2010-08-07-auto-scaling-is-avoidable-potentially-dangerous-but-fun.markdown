@@ -1,3 +1,4 @@
+public: yes
 status: publish
 kind: post
 chronological: yes
@@ -69,4 +70,3 @@ Now, go have some responsible, careful, constrained fun of your own!
 
 _* Currently, a single on-demand m1.small Linux instance costs roughly $0.085 USD per hour_
 _** Currently, a single on-demand m2.2xlarge Linux instance costs roughly $1.20 USD per hour_
-

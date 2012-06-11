@@ -1,3 +1,4 @@
+public: yes
 status: publish
 kind: post
 chronological: yes
@@ -64,4 +65,3 @@ I think the unconference format worked best when it came to breaking into discus
 Ben Kepes did a fantastic job of keeping everyone on track, directing conversation, and organising the discussion groups. He ordered great pizza, too!
 
 Overall, it was a worthwhile event and I will definitely go again. Improving the lightning talks would benefit all involved and would turn CloudCamp Sydney from a worthwhile event into an _outstanding success_. And that's what we all want.
-
