@@ -94,11 +94,11 @@ class Entry(object):
 
     @property
     def summary_html(self):
-        return "%s" % markdown2.markdown(self.header['summary'].strip())
+        return "%s" % markdown2.markdown(self.header.get('summary').strip())
 
     @property
     def credits_html(self):
-        return "%s" % markdown2.markdown(self.header['credits'].strip())
+        return "%s" % markdown2.markdown(self.header.get('credits').strip())
 
     @property
     def summary_atom(self):
@@ -108,7 +108,7 @@ class Entry(object):
             more = '<a href="%s%s"> continue reading...</a>' % (GLOBAL_TEMPLATE_CONTEXT['site_url'], self.permalink)
 
         return "%s%s" % (
-            markdown2.markdown(self.header['summary'].strip()),
+            markdown2.markdown(self.header.get('summary').strip()),
             more,
         )
 
