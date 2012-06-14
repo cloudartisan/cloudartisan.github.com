@@ -12,6 +12,7 @@ With the newer versions of Djangy comes support for the fantastic `pip` installe
 
 It's as easy as:
 
+    :::text
     david@continuity:~$ sudo pip install --upgrade djangy
     Downloading/unpacking djangy
     Downloading Djangy-0.14.tar.gz

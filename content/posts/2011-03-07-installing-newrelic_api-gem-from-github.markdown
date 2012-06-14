@@ -14,6 +14,7 @@ Next thing I discovered... I had no idea how to install gems from GitHub!
 
 No longer!
 
+    :::text
     wintermute:~/Git $ mkdir newrelic
     wintermute:~/Git $ cd newrelic/
     wintermute:~/Git/newrelic $ git clone git://github.com/newrelic/newrelic_api.git

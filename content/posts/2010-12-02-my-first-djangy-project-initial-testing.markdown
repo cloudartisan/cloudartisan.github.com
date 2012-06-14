@@ -15,12 +15,14 @@ I may have bitten off more than I can chew, as I'm not sure Django (or Djangy's 
 First, I need Djangy:
 
 
+    :::text
     # sudo easy_install djangy
 
 
 I need a work environment for the project. Djangy uses git for releases, so:
 
 
+    :::text
     # mkdir -p Projects/djangy/rightscalefeed
     # cd Projects/djangy/rightscalefeed
     # git init .
@@ -29,6 +31,7 @@ I need a work environment for the project. Djangy uses git for releases, so:
 Next, I get started creating the Djangy application:
 
 
+    :::text
     # djangy create
     Please enter your application name: rightscalefeed  
     Enter your email address: david@cloudartisan.com
@@ -40,6 +43,7 @@ Next, I get started creating the Djangy application:
 That's the Djangy side of things, but before I push the project I need to take care of the Django side of things (ie, write some code).
 
 
+    :::text
     # django-admin.py startproject rightscalefeed
     # cd rightscalefeed
     # django-admin.py startapp feed2ws
@@ -71,17 +75,16 @@ In `rightscalefeed/feed2ws/views.py` I have:
 I intend to use `feedparser`, so I have added it to `djangy.eggs`:
 
 
-
+    :::text
     Django
     South
     feedparser
 
 
-
 Now to commit everything, push it to Djangy, and test:
 
 
-
+    :::text
     # git add .
     # git commit -a -m 'Initial release'
     [master fa7b52b] Initial release
@@ -119,7 +122,6 @@ Now to commit everything, push it to Djangy, and test:
     remote: 
     To git@api.djangy.com:rightscalefeed.git
      * [new branch]      master -> master
-
 
 
 Now I can test the project by visiting [http://rightscalefeed.djangy.com](http://rightscalefeed.djangy.com) in my browser:

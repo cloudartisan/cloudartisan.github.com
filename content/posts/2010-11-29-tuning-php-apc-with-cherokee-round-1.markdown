@@ -33,6 +33,7 @@ At this stage I didn't think it was a good idea to increase the memory used by `
 So I added the following to `/etc/php5/cgi/conf.d/apc.ini`:
 
 
+    :::ini
     # Does exactly what you think it does...
     apc.enabled=1
     # Number of seconds (7200 == 2h) before cache
@@ -46,8 +47,9 @@ So I added the following to `/etc/php5/cgi/conf.d/apc.ini`:
 Of course, after making the changes there's still more to be done. I'm using Cherokee and FastCGI, so I need to restart the `php-cgi` processes for the change to take effect. I've found that `/etc/init.d/cherokee restart` doesn't take care of restarting the `php-cgi` processes. Nor does using the `Graceful restart` or `Hard restart` options in `cherokee-admin`. Instead, I _believe_ (again, please correct me if I'm wrong) that sending the `SIGTERM` to `php- cgi` means that the `php-cgi` processes will terminate when they have finished handling their current requests.
 
 
-    # killall -TERM php-cgi
-    # /etc/init.d/cherokee start
+    :::bash
+    killall -TERM php-cgi
+    service cherokee start
 
   
 After these changes:

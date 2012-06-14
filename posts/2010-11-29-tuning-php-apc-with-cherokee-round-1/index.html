@@ -46,29 +46,29 @@
 
 <p>So I added the following to <code>/etc/php5/cgi/conf.d/apc.ini</code>:</p>
 
-<pre><code># Does exactly what you think it does...
+<div class="codehilite"><pre><code><span class="c"># Does exactly what you think it does...</span>
 
-apc.enabled=1
+<span class="na">apc.enabled</span><span class="o">=</span><span class="s">1</span>
 
-# Number of seconds (7200 == 2h) before cache
+<span class="c"># Number of seconds (7200 == 2h) before cache</span>
 
-# entries are expired. Otherwise, the default (0)
+<span class="c"># entries are expired. Otherwise, the default (0)</span>
 
-# means that the entire cache will be expunged
+<span class="c"># means that the entire cache will be expunged</span>
 
-# if/when the cache fills.
+<span class="c"># if/when the cache fills.</span>
 
-apc.ttl = 7200
+<span class="na">apc.ttl</span> <span class="o">=</span> <span class="s">7200</span>
 
-apc.user_ttl = 7200
-</code></pre>
+<span class="na">apc.user_ttl</span> <span class="o">=</span> <span class="s">7200</span>
+</code></pre></div>
 
 <p>Of course, after making the changes there's still more to be done. I'm using Cherokee and FastCGI, so I need to restart the <code>php-cgi</code> processes for the change to take effect. I've found that <code>/etc/init.d/cherokee restart</code> doesn't take care of restarting the <code>php-cgi</code> processes. Nor does using the <code>Graceful restart</code> or <code>Hard restart</code> options in <code>cherokee-admin</code>. Instead, I <em>believe</em> (again, please correct me if I'm wrong) that sending the <code>SIGTERM</code> to <code>php- cgi</code> means that the <code>php-cgi</code> processes will terminate when they have finished handling their current requests.</p>
 
-<pre><code># killall -TERM php-cgi
+<div class="codehilite"><pre><code>killall -TERM php-cgi
 
-# /etc/init.d/cherokee start
-</code></pre>
+service cherokee start
+</code></pre></div>
 
 <p>After these changes:</p>
 

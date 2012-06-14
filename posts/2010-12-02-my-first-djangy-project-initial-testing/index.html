@@ -25,21 +25,21 @@
 
 <p>First, I need Djangy:</p>
 
-<pre><code># sudo easy_install djangy
-</code></pre>
+<div class="codehilite"><pre><code># sudo easy_install djangy
+</code></pre></div>
 
 <p>I need a work environment for the project. Djangy uses git for releases, so:</p>
 
-<pre><code># mkdir -p Projects/djangy/rightscalefeed
+<div class="codehilite"><pre><code># mkdir -p Projects/djangy/rightscalefeed
 
 # cd Projects/djangy/rightscalefeed
 
 # git init .
-</code></pre>
+</code></pre></div>
 
 <p>Next, I get started creating the Djangy application:</p>
 
-<pre><code># djangy create
+<div class="codehilite"><pre><code># djangy create
 
 Please enter your application name: rightscalefeed  
 
@@ -49,17 +49,17 @@ Please enter your password:
 
 Using /home/david/.ssh/id_rsa.pub as your public key...  
 
-Application created.  Now you can run 'git push djangy master'.
-</code></pre>
+Application created.  Now you can run &#39;git push djangy master&#39;.
+</code></pre></div>
 
 <p>That's the Djangy side of things, but before I push the project I need to take care of the Django side of things (ie, write some code).</p>
 
-<pre><code># django-admin.py startproject rightscalefeed
+<div class="codehilite"><pre><code># django-admin.py startproject rightscalefeed
 
 # cd rightscalefeed
 
 # django-admin.py startapp feed2ws
-</code></pre>
+</code></pre></div>
 
 <p>In <code>rightscalefeed/urls.py</code> I have:</p>
 
@@ -83,18 +83,18 @@ Application created.  Now you can run 'git push djangy master'.
 
 <p>I intend to use <code>feedparser</code>, so I have added it to <code>djangy.eggs</code>:</p>
 
-<pre><code>Django
+<div class="codehilite"><pre><code>Django
 
 South
 
 feedparser
-</code></pre>
+</code></pre></div>
 
 <p>Now to commit everything, push it to Djangy, and test:</p>
 
-<pre><code># git add .
+<div class="codehilite"><pre><code># git add .
 
-# git commit -a -m 'Initial release'
+# git commit -a -m &#39;Initial release&#39;
 
 [master fa7b52b] Initial release
 
@@ -102,13 +102,13 @@ feedparser
 
 # git push djangy master
 
-The authenticity of host 'api.djangy.com (184.73.176.148)' can't be established.
+The authenticity of host &#39;api.djangy.com (184.73.176.148)&#39; can&#39;t be established.
 
 RSA key fingerprint is e0:03:fd:46:b2:3d:22:bc:d3:f8:96:6f:c4:62:b2:d5.
 
 Are you sure you want to continue connecting (yes/no)? yes
 
-Warning: Permanently added 'api.djangy.com,184.73.176.148' (RSA) to the list of known hosts.
+Warning: Permanently added &#39;api.djangy.com,184.73.176.148&#39; (RSA) to the list of known hosts.
 
 Counting objects: 22, done.
 
@@ -165,7 +165,7 @@ remote:
 To git@api.djangy.com:rightscalefeed.git
 
  * [new branch]      master -&gt; master
-</code></pre>
+</code></pre></div>
 
 <p>Now I can test the project by visiting <a href="http://rightscalefeed.djangy.com">http://rightscalefeed.djangy.com</a> in my browser:</p>
 

@@ -13,6 +13,7 @@ To quote the [mr.awsome](https://github.com/fschulze/mr.awsome) documentation "m
 Once you know the correct incantation, installing it is easy.
 
 
+    :::bash
     curl -o setuptools-0.6c11-py2.6.egg http://pypi.python.org/packages/2.6/s/setuptools/setuptools-0.6c11-py2.6.egg#md5=bfa92100bd772d5a213eedd356d64086
     sudo sh setuptools-0.6c11-py2.6.egg
     rm setuptools-0.6c11-py2.6.egg

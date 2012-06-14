@@ -23,12 +23,12 @@
 
 <p>Install the packages required by <code>rvm</code>:</p>
 
-<pre><code>david@continuity:~$ sudo apt-get install curl git
-</code></pre>
+<div class="codehilite"><pre><code>david@continuity:~$ sudo apt-get install curl git
+</code></pre></div>
 
 <p>Install <code>rvm</code>:</p>
 
-<pre><code>david@continuity:~$ bash &lt; &lt;( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+<div class="codehilite"><pre><code>david@continuity:~$ bash &lt; &lt;( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 
 % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed
 
@@ -61,11 +61,11 @@ Installing RVM to /home/david/.rvm/
 Correct permissions for base binaries in /home/david/.rvm/bin...
 
 Copying manpages into place.
-</code></pre>
+</code></pre></div>
 
 <p>Backup and update your <code>.bashrc</code> to make sure <code>rvm</code> is ready whenever you fire up a terminal:</p>
 
-<pre><code>david@continuity:~$ cp -v ~/.bashrc ~/.bashrc-`date '+%s'`
+<div class="codehilite"><pre><code>david@continuity:~$ cp -v ~/.bashrc ~/.bashrc-`date &#39;+%s&#39;`
 
 /home/david/.bashrc -&gt; /home/david/.bashrc-1291952792
 
@@ -73,65 +73,65 @@ david@continuity:~$ cat &lt;&lt;~/.bashrc &gt;&gt;EOF
 
 &gt; # This loads RVM into a shell session
 
-&gt; [[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"
+&gt; [[ -s &quot;$HOME/.rvm/scripts/rvm&quot; ]] &amp;&amp; . &quot;$HOME/.rvm/scripts/rvm&quot;
 
 &gt; EOF
 
 david@continuity:~$
-</code></pre>
+</code></pre></div>
 
 <p>Load <code>rvm</code> into the current shell session:</p>
 
-<pre><code>david@continuity:~$ source ~/.rvm/scripts/rvm
-</code></pre>
+<div class="codehilite"><pre><code>david@continuity:~$ source ~/.rvm/scripts/rvm
+</code></pre></div>
 
 <p>Now, for installing Ruby 1.9.2, we can check the requirements using <code>rvm notes</code>:</p>
 
-<pre><code>david@continuity:~$ rvm notes | grep "^[ \t]*ruby:"
+<div class="codehilite"><pre><code>david@continuity:~$ rvm notes | grep &quot;^[ \t]*ruby:&quot;
 
 ruby: aptitude install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
 
 david@continuity:~$ `
-</code></pre>
+</code></pre></div>
 
 <p>Install those packages:</p>
 
-<pre><code>david@continuity:~$ sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+<div class="codehilite"><pre><code>david@continuity:~$ sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
 
 [sudo] password for david: . . . `
-</code></pre>
+</code></pre></div>
 
 <p>Now install Ruby 1.9.2:</p>
 
-<pre><code>david@continuity:~$ rvm install 1.9.2
+<div class="codehilite"><pre><code>david@continuity:~$ rvm install 1.9.2
 
 /home/david/.rvm/rubies/ruby-1.9.2-p0, this may take a while depending on your cpu(s)...
-</code></pre>
+</code></pre></div>
 
 <p>Now make Ruby 1.9.2 your default:</p>
 
-<pre><code>david@continuity:~$ rvm use 1.9.2 --default Using
+<div class="codehilite"><pre><code>david@continuity:~$ rvm use 1.9.2 --default Using
 
 /home/david/.rvm/gems/ruby-1.9.2-p0
 
 david@continuity:~$
-</code></pre>
+</code></pre></div>
 
 <p>Install the Rails gem:</p>
 
-<pre><code>david@continuity:~$ gem install rails
-</code></pre>
+<div class="codehilite"><pre><code>david@continuity:~$ gem install rails
+</code></pre></div>
 
 <p>So that's it, we now have Ruby 1.9.2 and Rails 3.0.3. To verify this:</p>
 
-<pre><code>david@continuity:~$ ruby -v
+<div class="codehilite"><pre><code>david@continuity:~$ ruby -v
 
 ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-linux]
 
 david@continuity:~$ rails -v
 
 Rails 3.0.3
-</code></pre>
+</code></pre></div>
 
 <p><em>Note: of course, this only applies to your user account. These changes do not apply system-wide and do not affect other users.</em></p>
 

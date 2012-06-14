@@ -11,6 +11,7 @@ slug: resizing-ec2-instances
 An EC2 instance needs to be stopped before it can be resized. Also, it can only be resized to a "compatible" type (ie, one with a compatible kernel, 32 bit or 64 bit). So, if you started with a 32 bit `t1.micro` you can only resize up to a 32 bit `m1.small`. If you started with a 64 bit `t1.micro` you could resize up to a 64 bit `m1.large`.
 
 
+    :::text
     wintermute:~ $ ec2-stop-instances i-3e15ff51
     INSTANCE        i-3e15ff51      running stopping
     wintermute:~ $ ec2-modify-instance-attribute -t m2.2xlarge i-3e15ff51

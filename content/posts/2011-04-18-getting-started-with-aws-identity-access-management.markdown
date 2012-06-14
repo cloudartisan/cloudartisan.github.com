@@ -13,7 +13,6 @@ account...
 
 > enabling businesses to create multiple Users with individual security credentials who can use AWS web services, all controlled by and billed to a single AWS Account
 
-  
 For example, you might use it to:
 
   * restrict your web application to only manage S3
@@ -32,6 +31,7 @@ Using the process I've documented below you can use your existing AWS 'master' c
 First, download the [AWS Identity and Access Management software](http://aws.amazon.com/developertools/AWS-Identity-and-Access-Management/4143), then unzip it somewhere sensible. I unzipped it into `~/AWS`, where I store all the AWS command-line tools. This gave me a `~/AWS/IAMCli-1.2.0` directory, to which I created a symbolic link:
 
 
+    :::text
     wintermute:~/AWS $ unzip ~/Downloads/IAMCli.zip
     wintermute:~/AWS $ ln -s IAMCli-1.2.0 IAMCli
 
@@ -39,6 +39,7 @@ First, download the [AWS Identity and Access Management software](http://aws.ama
 Now that you have the software, you'll need to setup your shell environment.  Here's an example based on my own Mac OS X configuration (in `.bash_profile`):
 
 
+    :::bash
     # Paths needed for AWS EC2, AWS IAM, etc
     export JAVA_HOME=/Library/Java/Home
     export EC2_HOME=$HOME/AWS/EC2
@@ -56,6 +57,7 @@ Now that you have the software, you'll need to setup your shell environment.  He
 As you can see, I keep my credentials in a directory called `~/.aws`, which I make sure no one else has access to:
 
 
+    :::text
     wintermute:~/AWS $ mkdir ~/.aws
     wintermute:~/AWS $ chmod 0700 ~/.aws
 
@@ -63,6 +65,7 @@ As you can see, I keep my credentials in a directory called `~/.aws`, which I ma
 As we're only starting out with IAM, we don't yet have our own credentials, we only have the credentials for our 'master' AWS account. For now, we'll dump those 'master' credentials into `~/.aws/account-key` and later we'll replace them with our new credentials:
 
 
+    :::text
     AWSAccessKeyId=EXAMPLEEXAMPLEEXAMPLE
     AWSSecretKey=EXAMPLEKEYEXAMPLEKEYEXAMPLEKEYEXAMPLEKEY
 
@@ -70,6 +73,7 @@ As we're only starting out with IAM, we don't yet have our own credentials, we o
 Now, try sourcing your profile and check that you can execute an IAM command- line tool. For example:
 
 
+    :::text
     wintermute:~ $ source ~/.bash_profile
     wintermute:~ $ iam-usercreate -h  
     Creates a new user in your account. You can also optionally add the user to one or more groups, and create an access key for the user.  
@@ -82,6 +86,7 @@ There we go, right now we've done enough to be dangerous... and we're now ready 
 Now I'll create an `Admin` group:
 
 
+    :::text
     wintermute:~ $ iam-groupcreate -g Admin
     wintermute:~ $ iam-grouplistbypath
     arn:aws:iam::123456789012:group/Admin
@@ -92,6 +97,7 @@ We'll create a policy for an `Admin` group. This group will be allowed to perfor
 You may wish to prevent certain actions, such as using IAM to create additional accounts. I don't. I want administrators to be able to use their individual credentials to do all AWS management tasks.
 
 
+    :::text
     wintermute:~ $ vi ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
     wintermute:~ $ cat ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
     {
@@ -106,6 +112,7 @@ You may wish to prevent certain actions, such as using IAM to create additional 
 The new group policy is applied by uploading it:
 
     
+    :::text
     wintermute:~ $ iam-groupuploadpolicy -g Admin -p AdminGroupPolicy -f ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
     wintermute:~ $ iam-grouplistpolicies -g Admin
     AdminGroupPolicy
@@ -114,6 +121,7 @@ The new group policy is applied by uploading it:
 Now that we have our `Admin` group we can create a user for our own use. I'm going to create a `david` user:
 
 
+    :::text
     wintermute:~ $ iam-usercreate -u david -g Admin -k -v
     AKIAIOEXAMPLEEXAMPLE
     wJaEXAMPLEKEYEMI/KEXAMPLEKEYfiCYzEXAMPLEKEY
@@ -124,6 +132,7 @@ Now that we have our `Admin` group we can create a user for our own use. I'm goi
 I now have the credentials for my `david` account. And, if you've been playing along, you should now have the credentials for your own account. Now we can backup our existing `~/.aws/account-key` file and update it to use our new access key ID and secret key. I'm feeling brave, so I'm going to replace my old credentials with my new credentials:
 
 
+    :::text
     wintermute:~ $ vi ~/.aws/account-key
     wintermute:~ $ cat ~/.aws/account-key
     AWSAccessKeyId=AKIAIOSFODNN7EXAMPLE
@@ -133,6 +142,7 @@ I now have the credentials for my `david` account. And, if you've been playing a
 Alternatively, if you're worried and want to be able to switch back with ease, create a new file using your new credentials and change `AWS_CREDENTIAL_FILE` to point to your new file. For example:
 
 
+    :::bash
     # IAM credentials
     export AWS_CREDENTIAL_FILE=~/.aws/david_cloudartisan_cred.txt
 
@@ -142,6 +152,7 @@ We're not finished yet! Some of the AWS command-line tools require a private key
 Here I generate my private key and certificate files:
 
 
+    :::text
     wintermute:~ $ openssl version
     OpenSSL 0.9.8o 01 Jun 2010
     wintermute:~ $ openssl genrsa 1024 > pk.pem
@@ -151,12 +162,14 @@ Here I generate my private key and certificate files:
 After generating them I add the certificate to my user credentials:
 
 
+    :::text
     wintermute:~ $ iam-useraddcert -u david -f cert.pem
 
 
 AWS command-line tools that require a private key and certificate will look for the `EC2_PRIVATE_KEY` and `EC2_CERT` environment variables if they're not supplied at the command-line. I like the sound of that, so we'll do the following in the shell (and, of course, add the same to our `.bash_profile` or `.bashrc`):
 
 
+    :::text
     wintermute:~ $ export EC2_PRIVATE_KEY=~/.aws/pk.pem
     wintermute:~ $ export EC2_CERT=~/aws/cert.pem
 
@@ -164,6 +177,7 @@ AWS command-line tools that require a private key and certificate will look for 
 If everything's working OK we should now be able to run `ec2-describe- instances` without any arguments and using our new credentials. Seriously.  Just like this:
 
 
+    :::text
     wintermute:~ $ ec2-describe-instances
 
 

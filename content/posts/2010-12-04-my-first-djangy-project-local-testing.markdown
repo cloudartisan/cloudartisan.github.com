@@ -15,6 +15,7 @@ A Djangy project is, in it's heart of hearts, a Django project that you've shove
 Simply go to your project's directory. In there you'll find `manage.py`. This handy script will do a lot of project management tasks, but the main one I'm interested in is running a local version of my project.
 
 
+    :::text
     david@continuity:~/Git/djangy/rightscalefeed/rightscalefeed$ python manage.py runserver
     Validating models...
     0 errors found  
@@ -26,6 +27,7 @@ Simply go to your project's directory. In there you'll find `manage.py`. This ha
 It's as simple as that. When I visit the address I can see my site is working.  I can also go back to my terminal and check the log:
 
 
+    :::text
     [04/Dec/2010 05:19:36] "GET / HTTP/1.1" 200 1001
 
 
