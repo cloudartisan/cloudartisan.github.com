@@ -36,6 +36,7 @@ Once you're past that, you need to get them both to work together.
 First you'll need to fire up `cherokee-admin` before you can configure a _vServer_ to serve ISPConfig. The easiest way is to run the following on your server:
 
 
+    :::text
     # cherokee-admin -b
     Cherokee Web Server 1.0.10 (Nov 25 2010): Listening on port ALL:9090, TLS
     disabled, IPv6 enabled, using epoll, 4096 fds system limit, max. 2041
@@ -52,39 +53,39 @@ _Note: the administration interface is now available, unencrypted, to the world 
 
 Point your browser at your server on port 9090 and log in.
 
-[![Cherokee Admin Login](http://www.cloudartisan.com/wp-content/uploads/2010/11/Cherokee-Admin-Login-300x160.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Cherokee-Admin-Login.png)
+[![Cherokee Admin Login](/media/img/2010/11/Cherokee-Admin-Login-300x160.png)](/media/img/2010/11/Cherokee-Admin-Login.png)
 
 Next, click on the `vServers` tab up the top and then the plus sign in the top-left corner:
 
-[![Add vServer](http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-vServer.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-vServer.png)
+[![Add vServer](/media/img/2010/11/Add-vServer.png)](/media/img/2010/11/Add-vServer.png)
 
 Select `Languages` then `PHP` and click on `Add`:
 
-[![Select Language PHP](http://www.cloudartisan.com/wp-content/uploads/2010/11/Select-Language-PHP-300x189.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Select-Language-PHP.png)
+[![Select Language PHP](/media/img/2010/11/Select-Language-PHP-300x189.png)](/media/img/2010/11/Select-Language-PHP.png)
 
 Then click `Next`:
 
-[![Welcome to the PHP Wizard](http://www.cloudartisan.com/wp-content/uploads/2010/11/Welcome-to-the-PHP-Wizard-300x129.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Welcome-to-the-PHP-Wizard.png)
+[![Welcome to the PHP Wizard](/media/img/2010/11/Welcome-to-the-PHP-Wizard-300x129.png)](/media/img/2010/11/Welcome-to-the-PHP-Wizard.png)
 
 Enter the document root (probably `/var/www/ispconfig` unless you strayed from the recommended default when installing ISPConfig) and click `Next`:
 
-[![Document Root](http://www.cloudartisan.com/wp-content/uploads/2010/11/Document-Root-300x140.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Document-Root.png)
+[![Document Root](/media/img/2010/11/Document-Root-300x140.png)](/media/img/2010/11/Document-Root.png)
 
 Enter your hostname, choose whether you want to use the same logging configuration as an existing site, then click `Create`:
 
-[![Create New Virtual Server](http://www.cloudartisan.com/wp-content/uploads/2010/11/Create-New-Virtual-Server-300x173.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Create-New-Virtual-Server.png)
+[![Create New Virtual Server](/media/img/2010/11/Create-New-Virtual-Server-300x173.png)](/media/img/2010/11/Create-New-Virtual-Server.png)
 
 Unless you have a simple Cherokee configuration and plan to keep it that way, (which, if you need ISPConfig, is unlikely), you'll want to reconfigure the `Host Match` tab so that your new site matches on wildcards, regular expressions or server IP. For example:
 
-[![Host Match Wildcards](http://www.cloudartisan.com/wp-content/uploads/2010/11/Host-Match-Wildcards-300x141.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Host-Match-Wildcards.png)
+[![Host Match Wildcards](/media/img/2010/11/Host-Match-Wildcards-300x141.png)](/media/img/2010/11/Host-Match-Wildcards.png)
 
 and:
 
-[![Add New Wildcard](http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-New-Wildcard-300x139.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-New-Wildcard.png)
+[![Add New Wildcard](/media/img/2010/11/Add-New-Wildcard-300x139.png)](/media/img/2010/11/Add-New-Wildcard.png)
 
 Once you're done, click on `SAVE` in the top-right corner, followed by `Graceful restart`:
 
-[![Save Configuration Graceful Restart](http://www.cloudartisan.com/wp-content/uploads/2010/11/Save-Configuration-Graceful-Restart-300x97.png)](http://www.cloudartisan.com/wp-content/uploads/2010/11/Save-Configuration-Graceful-Restart.png)
+[![Save Configuration Graceful Restart](/media/img/2010/11/Save-Configuration-Graceful-Restart-300x97.png)](/media/img/2010/11/Save-Configuration-Graceful-Restart.png)
 
 Ordinarily, you'd expect that you might be finished at this point... but you're not. If you try to visit the site now you will either get `404` (Page Not Found) or `504` (Gateway Timeout) errors.
 
@@ -95,6 +96,7 @@ ISPConfig is typically installed in `/usr/local/ispconfig` and a symbolic link a
 Now, I admit, I got bored at this point before digging any further. Also, Cherokee is not extremely helpful when it comes to error messages and debugging. I changed the ownership of the files and directories to the `www- data` user and group and everything started to work. That was good enough for me. To do the same:
 
 
+    :::text
     # chown -R www-data:www-data /usr/local/ispconfig
 
 

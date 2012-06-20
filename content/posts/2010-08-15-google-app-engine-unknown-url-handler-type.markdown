@@ -8,8 +8,9 @@ published: 2010-08-15
 title: Google App Engine - unknown URL handler type
 slug: google-app-engine-unknown-url-handler-type
 
+    :::text
     Fatal error when loading application configuration:
-
+    
     Invalid object:
     Unknown url handler type.
     <URLMap 

@@ -16,7 +16,7 @@ Users create [RightScripts](http://support.rightscale.com/12-Guides/01-RightScal
 
 Input parameters are essentially environment variables for RightScripts.  RightScale's user interface attempts to identify these input parameters by analysing your script. And here is where our problem arises... RightScale only identifies input parameters for uninitialised global variables preceded by the '$' character. That's why RightScripts are typically written in Bash, Ruby, or Perl - so that input parameters will work.
 
-# Bash, Ruby, Perl BEGONE!
+## Bash, Ruby, Perl BEGONE!
 
 What if we don't want to use Bash, Ruby, or Perl?  What if we think Bash isn't up to the job, Ruby is Python's cross-dressing uncle, and Perl is evil? Could we use Python? What about Groovy? Lua?
 
@@ -47,7 +47,7 @@ The second option is better for the following reasons:
 * we get the benefit of RightScale's revision control
 * we don't have to deal with Bash, Ruby, or Perl if we don't want to
   
-# Python Example
+## Python Example
 
 Here's an example in Python that has two input parameters, LOG_IDENT and LOG_MESSAGE:
 
@@ -66,9 +66,9 @@ Here's an example in Python that has two input parameters, LOG_IDENT and LOG_MES
 
 In RightScale this looks like:
 
-[![Screenshot of a Python RightScript](http://www.cloudartisan.com/wp-content/uploads/2010/05/Screenshot-1024x583.png)](http://www.cloudartisan.com/wp-content/uploads/2010/05/Screenshot.png)
+[![Screenshot of a Python RightScript](/media/img/2010/05/Screenshot-1024x583.png)](/media/img/2010/05/Screenshot.png)
 
-# Simple
+## Simple
 
 All we needed was some comments and '$' characters.
 

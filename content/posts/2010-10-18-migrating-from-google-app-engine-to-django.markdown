@@ -28,7 +28,7 @@ I've tried to gather together the resources I found most useful in moving from G
 
 ## A Gentle Overview of Django
 
-IBM have an article in their DeveloperWorks library titled [Deploying Django applications to a production server](http://www.ibm.com/developerworks/opensource/library/os-django/).  As an article on deploying Django projects to production... well... it sucks.  However, as a gentle overview of Django concepts, it rocks. It also provides some insight into the differences between development and production environments.
+IBM have an article in their DeveloperWorks library titled [Deploying Django applications to a production server](http://www.ibm.com/developerworks/opensource/library/os-django/). As an article on deploying Django projects to production... well... it sucks.  However, as a gentle overview of Django concepts, it rocks. It also provides some insight into the differences between development and production environments.
 
 ## Project/Application Layout
 

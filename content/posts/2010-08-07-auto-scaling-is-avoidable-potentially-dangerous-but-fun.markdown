@@ -12,7 +12,7 @@ RightScale have some tutorials on using their service to set up auto-scaling.  R
 
 Here's why...
 
-# Unconstrained Scaling
+## Unconstrained Scaling
 
 Unconstrained scaling is bad, mmkay. If you allow your systems to scale without constraint, you're risking a surprise credit card bill. Worse yet, if you're not paying any attention to your systems (shame!) then you could be in for a _jaw-dropping_ credit card bill.
 
@@ -24,7 +24,7 @@ Now, let's imagine half of those are `m2.2xlarge` Linux instances. We're now tal
 
 Note, none of these rough calculations have taken traffic into account, or EBS usage, or S3 usage, or other sundry costs. And I'm not even going to do the maths for `m2.4xlarge` Windows instances!
 
-# What About My ROI?
+## What About My ROI?
 
 You might say, _So what? Doesn't that mean I have more customers? Doesn't that mean I have more income?_
 
@@ -32,11 +32,11 @@ Probably not. I doubt you have a direct correlation between demand and income.  
 
 If you do manage to directly tie your income to server load...  congratulations! If you do manage to charge customers up-front for that server load before Amazon bills you... double congratulations! If you also have no bugs and will never ever _ever_ suffer a denial of service attack... I will bear your man-babies!
 
-# Isn't Cloud All About Auto-Scaling?
+## Isn't Cloud All About Auto-Scaling?
 
 No. It's about delivering compute power as a utility. You use what you need.  You use it when you need it. You pay for what you use. Like electricity.
 
-# How Do I Cope With Demand?
+## How Do I Cope With Demand?
 
 Plan. Prepare. Monitor. React.
 
@@ -50,21 +50,21 @@ If you have a product launch, a new ad, a new article, a new pricing plan, an el
 
 For the moments you can't predict, allow for a small amount of auto-scaling, with heavily-tested constraints and monitoring to alert you _before_ it starts. The limited auto-scaling covers for your response time. The monitoring alerts get you involved early on so you can make the call whether to launch additional servers or not.
 
-# What About Those RightScale Tutorials?
+## What About Those RightScale Tutorials?
 
 Note, RightScale makes no mention of the risks of auto-scaling in their documentation. I think they should. I wonder if they've had any support requests along the lines of _"I followed your tutorials, scaled, and now I have to sell my car. Is this covered by your SLA?"_
 
 Knowing what you know now, check out the main tutorial: [How do I set up Autoscaling?](http://support.rightscale.com/03-Tutorials/02-AWS/02-Website_Edition/How_do_I_set_up_Autoscaling%3f) It has links to all the necessary bits and bobs.
 
-# And The Fun Stuff?
+## And The Fun Stuff?
 
 Here's a screenshot showing RightScale automatically launching web servers to cope with increased demand.
 
-[![RightScale Auto-scaling](http://www.cloudartisan.com/wp-content/uploads/2010/08/RightScale-Auto-scaling-1024x575.png)](http://www.cloudartisan.com/wp-content/uploads/2010/08/RightScale-Auto-scaling.png)
+[![RightScale Auto-scaling](/media/img/2010/08/RightScale-Auto-scaling-1024x575.png)](/media/img/2010/08/RightScale-Auto-scaling.png)
 
 Here's a screenshot showing one of my HAProxy load balancers backed by auto-scaled web servers.
 
-[![Auto-scaling load balancing](http://www.cloudartisan.com/wp-content/uploads/2010/08/Auto-scaling-load-balancing-1024x575.png)](http://www.cloudartisan.com/wp-content/uploads/2010/08/Auto-scaling-load-balancing.png)
+[![Auto-scaling load balancing](/media/img/2010/08/Auto-scaling-load-balancing-1024x575.png)](/media/img/2010/08/Auto-scaling-load-balancing.png)
 
 Now, go have some responsible, careful, constrained fun of your own!
 

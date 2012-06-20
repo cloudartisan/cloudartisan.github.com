@@ -12,6 +12,7 @@ If you're getting login failures after enabling _Unix user/group database_ secur
 
 If you see:
 
+    :::text
     Oct 11, 2010 9:41:08 PM hudson.security.AuthenticationProcessingFilter2 onUnsuccessfulAuthentication
     INFO: Login attempt failed
     org.acegisecurity.BadCredentialsException: pam_authenticate failed : Authentication failure; nested exception is org.jvnet.libpam.PAMException: pam_authenticate failed : Authentication failure
@@ -43,10 +44,12 @@ If you see:
 
 The simplest fix (note: I did not say "most secure") is to add the `hudson` user to the `shadow` group:
 
+    :::text
     # usermod -a -G shadow hudson
 
 After which, you'll need to stop then start Hudson (note: Hudson doesn't seem to handle an immediate restart very well):
 
+    :::text
     # /etc/init.d/hudson restart
     Restarting Hudson Continuous Integration Server: hudson
     The selected http port (8080) seems to be in use by another program

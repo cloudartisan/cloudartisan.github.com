@@ -5,22 +5,22 @@ chronological: yes
 author: David Taylor
 tags: ['gae', 'google app engine', 'google app engine', 'google apps', 'gotcha', 'paas', 'sdc', 'urlfetch']
 published: 2010-08-29
-title: Google App Engine Gotcha #3
+title: Google App Engine Gotcha 3
 slug: google-app-engine-gotcha-3
 
-**What's the problem?**  
+## What's the problem?
 
 Well, gotcha #3 is a simple but annoying one. The `urlfetch` call does not use a fixed source IP address.
 
 It makes sense, when you think about it. Google App Engine is ([apparently](http://code.google.com/appengine/docs/whatisgoogleappengine.html)) distributed all over the place, with no guarantee of where your code will run at any given time. I presume this is so that Google are free to move applications between data centres to optimise uptime and performance.
 
-**Why is this a problem?**
+## Why is this a problem?
 
 Unfortunately, some APIs (eg, eNom) still require users to register their source IP so that it can be whitelisted. If you can't register an IP you can't use their API.
 
 Google are really not making it easy to integrate Google App Engine with external (slow/legacy) APIs. Refer to [Google App Engine: Gotcha #2](http://www.cloudartisan.com/2010/08/google-app-engine-gotcha-2/) for another issue with `urlfetch` and consuming external APIs...
 
-**How did I test this?**
+## How did I test this?
 
 I created a simple handler in two different Google App Engine applications; the same handler in both.
 
@@ -60,6 +60,7 @@ I then visited `/urlfetchtest` a few times in each of these applications. I also
 The logs showed:
 
     
+    :::text
     root@hal:/var/log/apache2# grep googleappengine cloudartisan.com-access.log
     74.125.154.83 - - [29/Aug/2010:13:17:23 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19528 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)"
     72.14.212.81 - - [29/Aug/2010:13:18:05 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19522 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudomate)"
@@ -74,6 +75,7 @@ The logs showed:
 Notice there are some common network addresses in the above requests (`74.125.154.X`, `72.14.212.X`). Apparently `urlfetch` calls could originate from any of the following networks:
 
 
+    :::text
     david@continuity:~$ dig +short _netblocks.google.com TXT 
     "v=spf1 ip4:216.239.32.0/19 ip4:64.233.160.0/19 ip4:66.249.80.0/20 ip4:72.14.192.0/18 ip4:209.85.128.0/17 ip4:66.102.0.0/20 ip4:74.125.0.0/16 ip4:64.18.0.0/20 ip4:207.126.144.0/20 ip4:173.194.0.0/16 ?all"
     david@continuity:~$ 
@@ -81,7 +83,7 @@ Notice there are some common network addresses in the above requests (`74.125.15
 
 _Cripes!_ They're all bigger than class C.
 
-**What's the solution?**
+## What's the solution?
 
 Well, there are a few. Let's go through them from definitely most annoying to probably least annoying...
 

@@ -16,6 +16,7 @@ Today I got a chance to dust off the code and do some more work on it... only to
 
 When I started my code with `dev_appserver.rb` I saw:
 
+    :::text
     $ dev_appserver.rb .
     => Booting DevAppServer
     => Press Ctrl-C to shutdown server

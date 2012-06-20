@@ -11,18 +11,21 @@ slug: install-cherokee-testing-on-debian-lenny
 Add the following to `/etc/sources`:
 
 
+    :::text
     deb http://ftp.us.debian.org/debian/ testing main contrib non-free
 
 
 Create `/etc/apt/apt.conf` with:
 
 
+    :::text
     APT::Default-Release "stable";
 
 
 Create `/etc/apt/preferences` for pinning the testing packages:
 
 
+    :::text
     Package: libssl-dev
     Pin: release a=testing
     Pin-Priority: 999  

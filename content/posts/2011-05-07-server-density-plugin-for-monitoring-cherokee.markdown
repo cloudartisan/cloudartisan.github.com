@@ -12,13 +12,12 @@ I've created a Server Density plugin that can be used to monitor the Cherokee we
 
 Here are some screenshots...
 
-[![Cherokee Uptime](http://www.cloudartisan.com/wp-content/uploads/2011/05/cherokee_uptime-300x159.jpg)](http://www.cloudartisan.com/wp-
-content/uploads/2011/05/cherokee_uptime.jpg)
+[![Cherokee Uptime](/media/img/2011/05/cherokee_uptime-300x159.jpg)](/media/img/2011/05/cherokee_uptime.jpg)
 
-[![Cherokee Configured Threads](http://www.cloudartisan.com/wp-content/uploads/2011/05/cherokee_config_threads-300x155.jpg)](http://www.cloudartisan.com/wp-content/uploads/2011/05/cherokee_config_threads.jpg)
+[![Cherokee Configured Threads](/media/img/2011/05/cherokee_config_threads-300x155.jpg)](/media/img/2011/05/cherokee_config_threads.jpg)
 
-[![Cherokee Connections](http://www.cloudartisan.com/wp-content/uploads/2011/05/cherokee_connections-300x158.jpg)](http://www.cloudartisan.com/wp-content/uploads/2011/05/cherokee_connections.jpg)
+[![Cherokee Connections](/media/img/2011/05/cherokee_connections-300x158.jpg)](/media/img/2011/05/cherokee_connections.jpg)
 
-[![Cherokee Traffic](http://www.cloudartisan.com/wp-content/uploads/2011/05/cherokee_traffic-300x160.jpg)](http://www.cloudartisan.com/wp-content/uploads/2011/05/cherokee_traffic.jpg)
+[![Cherokee Traffic](/media/img/2011/05/cherokee_traffic-300x160.jpg)](/media/img/2011/05/cherokee_traffic.jpg)
 
 [Follow me on Twitter](http://twitter.com/davidltaylor). It's free.

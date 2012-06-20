@@ -19,6 +19,7 @@ This problem is covered in these Google Code issues:
   
 If you try to use Google App Engine SDK on Python 2.6 you will encounter tracebacks like the following:
 
+    :::text
     Traceback (most recent call last):
       File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 3211, in _HandleRequest
         self._Dispatch(dispatcher, self.rfile, outfile, env_dict)
@@ -33,8 +34,7 @@ If you try to use Google App Engine SDK on Python 2.6 you will encounter traceba
       File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 2441, in curried_exec_cgi
         return ExecuteCGI(*args, **kwargs)
       File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 2312, in ExecuteCGI
-        logging.debug('Executing CGI with env:
-%s', pprint.pformat(env))
+        logging.debug('Executing CGI with env: %s', pprint.pformat(env))
       File "/usr/lib/python2.6/pprint.py", line 60, in pformat
         return PrettyPrinter(indent=indent, width=width, depth=depth).pformat(object)
       File "/usr/lib/python2.6/pprint.py", line 119, in pformat
