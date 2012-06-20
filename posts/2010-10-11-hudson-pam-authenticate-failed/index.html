@@ -23,7 +23,7 @@
 
 <p>If you see:</p>
 
-<pre><code>Oct 11, 2010 9:41:08 PM hudson.security.AuthenticationProcessingFilter2 onUnsuccessfulAuthentication
+<div class="codehilite"><pre><code>Oct 11, 2010 9:41:08 PM hudson.security.AuthenticationProcessingFilter2 onUnsuccessfulAuthentication
 
 INFO: Login attempt failed
 
@@ -74,18 +74,18 @@ org.acegisecurity.BadCredentialsException: pam_authenticate failed : Authenticat
   at hudson.security.PAMSecurityRealm$PAMAuthenticationProvider.authenticate(PAMSecurityRealm.java:90)
 
   ... 18 more
-</code></pre>
+</code></pre></div>
 
 <p>... the problem is likely caused by Hudson being unable to read your <code>/etc/shadow</code> file.</p>
 
 <p>The simplest fix (note: I did not say "most secure") is to add the <code>hudson</code> user to the <code>shadow</code> group:</p>
 
-<pre><code># usermod -a -G shadow hudson
-</code></pre>
+<div class="codehilite"><pre><code># usermod -a -G shadow hudson
+</code></pre></div>
 
 <p>After which, you'll need to stop then start Hudson (note: Hudson doesn't seem to handle an immediate restart very well):</p>
 
-<pre><code># /etc/init.d/hudson restart
+<div class="codehilite"><pre><code># /etc/init.d/hudson restart
 
 Restarting Hudson Continuous Integration Server: hudson
 
@@ -102,7 +102,7 @@ Stopping Hudson Continuous Integration Server: hudson.
 Starting Hudson Continuous Integration Server: hudson
 
 Setting up max open files limit to 8192 .
-</code></pre>
+</code></pre></div>
 
 <p>You should now be able to log in. That's it.</p>
 

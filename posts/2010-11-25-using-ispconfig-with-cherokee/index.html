@@ -50,7 +50,7 @@
 
 <p>First you'll need to fire up <code>cherokee-admin</code> before you can configure a <em>vServer</em> to serve ISPConfig. The easiest way is to run the following on your server:</p>
 
-<pre><code># cherokee-admin -b
+<div class="codehilite"><pre><code># cherokee-admin -b
 
 Cherokee Web Server 1.0.10 (Nov 25 2010): Listening on port ALL:9090, TLS
 
@@ -69,45 +69,45 @@ Login:
 Web Interface:
 
   URL:               http://localhost:9090/
-</code></pre>
+</code></pre></div>
 
 <p><em>Note: the administration interface is now available, unencrypted, to the world on port 9090. Don't leave it this way once you're done.</em></p>
 
 <p>Point your browser at your server on port 9090 and log in.</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Cherokee-Admin-Login.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Cherokee-Admin-Login-300x160.png" alt="Cherokee Admin Login" /></a></p>
+<p><a href="/media/img/2010/11/Cherokee-Admin-Login.png"><img src="/media/img/2010/11/Cherokee-Admin-Login-300x160.png" alt="Cherokee Admin Login" /></a></p>
 
 <p>Next, click on the <code>vServers</code> tab up the top and then the plus sign in the top-left corner:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-vServer.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-vServer.png" alt="Add vServer" /></a></p>
+<p><a href="/media/img/2010/11/Add-vServer.png"><img src="/media/img/2010/11/Add-vServer.png" alt="Add vServer" /></a></p>
 
 <p>Select <code>Languages</code> then <code>PHP</code> and click on <code>Add</code>:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Select-Language-PHP.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Select-Language-PHP-300x189.png" alt="Select Language PHP" /></a></p>
+<p><a href="/media/img/2010/11/Select-Language-PHP.png"><img src="/media/img/2010/11/Select-Language-PHP-300x189.png" alt="Select Language PHP" /></a></p>
 
 <p>Then click <code>Next</code>:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Welcome-to-the-PHP-Wizard.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Welcome-to-the-PHP-Wizard-300x129.png" alt="Welcome to the PHP Wizard" /></a></p>
+<p><a href="/media/img/2010/11/Welcome-to-the-PHP-Wizard.png"><img src="/media/img/2010/11/Welcome-to-the-PHP-Wizard-300x129.png" alt="Welcome to the PHP Wizard" /></a></p>
 
 <p>Enter the document root (probably <code>/var/www/ispconfig</code> unless you strayed from the recommended default when installing ISPConfig) and click <code>Next</code>:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Document-Root.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Document-Root-300x140.png" alt="Document Root" /></a></p>
+<p><a href="/media/img/2010/11/Document-Root.png"><img src="/media/img/2010/11/Document-Root-300x140.png" alt="Document Root" /></a></p>
 
 <p>Enter your hostname, choose whether you want to use the same logging configuration as an existing site, then click <code>Create</code>:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Create-New-Virtual-Server.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Create-New-Virtual-Server-300x173.png" alt="Create New Virtual Server" /></a></p>
+<p><a href="/media/img/2010/11/Create-New-Virtual-Server.png"><img src="/media/img/2010/11/Create-New-Virtual-Server-300x173.png" alt="Create New Virtual Server" /></a></p>
 
 <p>Unless you have a simple Cherokee configuration and plan to keep it that way, (which, if you need ISPConfig, is unlikely), you'll want to reconfigure the <code>Host Match</code> tab so that your new site matches on wildcards, regular expressions or server IP. For example:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Host-Match-Wildcards.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Host-Match-Wildcards-300x141.png" alt="Host Match Wildcards" /></a></p>
+<p><a href="/media/img/2010/11/Host-Match-Wildcards.png"><img src="/media/img/2010/11/Host-Match-Wildcards-300x141.png" alt="Host Match Wildcards" /></a></p>
 
 <p>and:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-New-Wildcard.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Add-New-Wildcard-300x139.png" alt="Add New Wildcard" /></a></p>
+<p><a href="/media/img/2010/11/Add-New-Wildcard.png"><img src="/media/img/2010/11/Add-New-Wildcard-300x139.png" alt="Add New Wildcard" /></a></p>
 
 <p>Once you're done, click on <code>SAVE</code> in the top-right corner, followed by <code>Graceful restart</code>:</p>
 
-<p><a href="http://www.cloudartisan.com/wp-content/uploads/2010/11/Save-Configuration-Graceful-Restart.png"><img src="http://www.cloudartisan.com/wp-content/uploads/2010/11/Save-Configuration-Graceful-Restart-300x97.png" alt="Save Configuration Graceful Restart" /></a></p>
+<p><a href="/media/img/2010/11/Save-Configuration-Graceful-Restart.png"><img src="/media/img/2010/11/Save-Configuration-Graceful-Restart-300x97.png" alt="Save Configuration Graceful Restart" /></a></p>
 
 <p>Ordinarily, you'd expect that you might be finished at this point... but you're not. If you try to visit the site now you will either get <code>404</code> (Page Not Found) or <code>504</code> (Gateway Timeout) errors.</p>
 
@@ -117,8 +117,8 @@ Web Interface:
 
 <p>Now, I admit, I got bored at this point before digging any further. Also, Cherokee is not extremely helpful when it comes to error messages and debugging. I changed the ownership of the files and directories to the <code>www- data</code> user and group and everything started to work. That was good enough for me. To do the same:</p>
 
-<pre><code># chown -R www-data:www-data /usr/local/ispconfig
-</code></pre>
+<div class="codehilite"><pre><code># chown -R www-data:www-data /usr/local/ispconfig
+</code></pre></div>
 
 <p>Try loading the site again. As long as the usual culprits are OK (eg, DNS) ISPConfig should now be working.</p>
 

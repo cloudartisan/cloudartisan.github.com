@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta name="google-site-verification" content="FIXME FIXME FIXME" />
-  <title> Google App Engine Gotcha  &raquo; cloudartisan.com</title>
+  <title> Google App Engine Gotcha 3  &raquo; cloudartisan.com</title>
   <link rel="stylesheet" type="text/css" href="/media/css/pygments_style.css" media="screen" /> 
   <link rel="stylesheet" type="text/css" href="/media/css/site.css" media="screen" /> 
   
@@ -13,25 +13,25 @@
   <div id="header">
     
 <div class="published"><a href="/">David Taylor</a> &ndash; August 29, 2010</div>
-<h1>Google App Engine Gotcha</h1>
+<h1>Google App Engine Gotcha 3</h1>
 
   </div><!--/#header-->
   <div id="content">
     
 <div class="body">
-  <p><strong>What's the problem?</strong>  </p>
+  <h2>What's the problem?</h2>
 
 <p>Well, gotcha #3 is a simple but annoying one. The <code>urlfetch</code> call does not use a fixed source IP address.</p>
 
 <p>It makes sense, when you think about it. Google App Engine is (<a href="http://code.google.com/appengine/docs/whatisgoogleappengine.html">apparently</a>) distributed all over the place, with no guarantee of where your code will run at any given time. I presume this is so that Google are free to move applications between data centres to optimise uptime and performance.</p>
 
-<p><strong>Why is this a problem?</strong></p>
+<h2>Why is this a problem?</h2>
 
 <p>Unfortunately, some APIs (eg, eNom) still require users to register their source IP so that it can be whitelisted. If you can't register an IP you can't use their API.</p>
 
 <p>Google are really not making it easy to integrate Google App Engine with external (slow/legacy) APIs. Refer to <a href="http://www.cloudartisan.com/2010/08/google-app-engine-gotcha-2/">Google App Engine: Gotcha #2</a> for another issue with <code>urlfetch</code> and consuming external APIs...</p>
 
-<p><strong>How did I test this?</strong></p>
+<h2>How did I test this?</h2>
 
 <p>I created a simple handler in two different Google App Engine applications; the same handler in both.</p>
 
@@ -83,37 +83,37 @@
 
 <p>The logs showed:</p>
 
-<pre><code>root@hal:/var/log/apache2# grep googleappengine cloudartisan.com-access.log
+<div class="codehilite"><pre><code>root@hal:/var/log/apache2# grep googleappengine cloudartisan.com-access.log
 
-74.125.154.83 - - [29/Aug/2010:13:17:23 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19528 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)"
+74.125.154.83 - - [29/Aug/2010:13:17:23 +1000] &quot;GET /?googleappengine=true HTTP/1.1&quot; 200 19528 &quot;-&quot; &quot;AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)&quot;
 
-72.14.212.81 - - [29/Aug/2010:13:18:05 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19522 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudomate)"
+72.14.212.81 - - [29/Aug/2010:13:18:05 +1000] &quot;GET /?googleappengine=true HTTP/1.1&quot; 200 19522 &quot;-&quot; &quot;AppEngine-Google; (+http://code.google.com/appengine; appid: cloudomate)&quot;
 
-74.125.154.80 - - [29/Aug/2010:13:18:26 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19522 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)"
+74.125.154.80 - - [29/Aug/2010:13:18:26 +1000] &quot;GET /?googleappengine=true HTTP/1.1&quot; 200 19522 &quot;-&quot; &quot;AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)&quot;
 
-72.14.212.87 - - [29/Aug/2010:13:18:28 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19522 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudomate)"
+72.14.212.87 - - [29/Aug/2010:13:18:28 +1000] &quot;GET /?googleappengine=true HTTP/1.1&quot; 200 19522 &quot;-&quot; &quot;AppEngine-Google; (+http://code.google.com/appengine; appid: cloudomate)&quot;
 
-74.125.154.83 - - [29/Aug/2010:13:59:31 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19522 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)"
+74.125.154.83 - - [29/Aug/2010:13:59:31 +1000] &quot;GET /?googleappengine=true HTTP/1.1&quot; 200 19522 &quot;-&quot; &quot;AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)&quot;
 
-74.125.154.81 - - [29/Aug/2010:13:59:44 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19522 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)"
+74.125.154.81 - - [29/Aug/2010:13:59:44 +1000] &quot;GET /?googleappengine=true HTTP/1.1&quot; 200 19522 &quot;-&quot; &quot;AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)&quot;
 
-72.14.212.81 - - [29/Aug/2010:13:59:47 +1000] "GET /?googleappengine=true HTTP/1.1" 200 19522 "-" "AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)"
+72.14.212.81 - - [29/Aug/2010:13:59:47 +1000] &quot;GET /?googleappengine=true HTTP/1.1&quot; 200 19522 &quot;-&quot; &quot;AppEngine-Google; (+http://code.google.com/appengine; appid: cloudzuum)&quot;
 
 root@hal:/var/log/apache2#
-</code></pre>
+</code></pre></div>
 
 <p>Notice there are some common network addresses in the above requests (<code>74.125.154.X</code>, <code>72.14.212.X</code>). Apparently <code>urlfetch</code> calls could originate from any of the following networks:</p>
 
-<pre><code>david@continuity:~$ dig +short _netblocks.google.com TXT 
+<div class="codehilite"><pre><code>david@continuity:~$ dig +short _netblocks.google.com TXT 
 
-"v=spf1 ip4:216.239.32.0/19 ip4:64.233.160.0/19 ip4:66.249.80.0/20 ip4:72.14.192.0/18 ip4:209.85.128.0/17 ip4:66.102.0.0/20 ip4:74.125.0.0/16 ip4:64.18.0.0/20 ip4:207.126.144.0/20 ip4:173.194.0.0/16 ?all"
+&quot;v=spf1 ip4:216.239.32.0/19 ip4:64.233.160.0/19 ip4:66.249.80.0/20 ip4:72.14.192.0/18 ip4:209.85.128.0/17 ip4:66.102.0.0/20 ip4:74.125.0.0/16 ip4:64.18.0.0/20 ip4:207.126.144.0/20 ip4:173.194.0.0/16 ?all&quot;
 
 david@continuity:~$
-</code></pre>
+</code></pre></div>
 
 <p><em>Cripes!</em> They're all bigger than class C.</p>
 
-<p><strong>What's the solution?</strong></p>
+<h2>What's the solution?</h2>
 
 <p>Well, there are a few. Let's go through them from definitely most annoying to probably least annoying...</p>
 

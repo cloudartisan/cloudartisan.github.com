@@ -32,73 +32,70 @@
 
 <p>If you try to use Google App Engine SDK on Python 2.6 you will encounter tracebacks like the following:</p>
 
-<pre><code>Traceback (most recent call last):
+<div class="codehilite"><pre><code>Traceback (most recent call last):
 
-  File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 3211, in _HandleRequest
+  File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 3211, in _HandleRequest
 
     self._Dispatch(dispatcher, self.rfile, outfile, env_dict)
 
-  File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 3154, in _Dispatch
+  File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 3154, in _Dispatch
 
     base_env_dict=env_dict)
 
-  File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 527, in Dispatch
+  File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 527, in Dispatch
 
     base_env_dict=base_env_dict)
 
-  File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 2452, in Dispatch
+  File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 2452, in Dispatch
 
     CGIDispatcher.Dispatch(self, *args, **kwargs)
 
-  File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 2404, in Dispatch
+  File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 2404, in Dispatch
 
     self._module_dict)
 
-  File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 2441, in curried_exec_cgi
+  File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 2441, in curried_exec_cgi
 
     return ExecuteCGI(*args, **kwargs)
 
-  File "/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py", line 2312, in ExecuteCGI
+  File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 2312, in ExecuteCGI
 
-    logging.debug('Executing CGI with env:
-</code></pre>
+    logging.debug(&#39;Executing CGI with env: %s&#39;, pprint.pformat(env))
 
-<p>%s', pprint.pformat(env))</p>
-
-<pre><code>  File "/usr/lib/python2.6/pprint.py", line 60, in pformat
+  File &quot;/usr/lib/python2.6/pprint.py&quot;, line 60, in pformat
 
     return PrettyPrinter(indent=indent, width=width, depth=depth).pformat(object)
 
-  File "/usr/lib/python2.6/pprint.py", line 119, in pformat
+  File &quot;/usr/lib/python2.6/pprint.py&quot;, line 119, in pformat
 
     self._format(object, sio, 0, 0, {}, 0)
 
-  File "/usr/lib/python2.6/pprint.py", line 137, in _format
+  File &quot;/usr/lib/python2.6/pprint.py&quot;, line 137, in _format
 
     rep = self._repr(object, context, level - 1)
 
-  File "/usr/lib/python2.6/pprint.py", line 230, in _repr
+  File &quot;/usr/lib/python2.6/pprint.py&quot;, line 230, in _repr
 
     self._depth, level)
 
-  File "/usr/lib/python2.6/pprint.py", line 242, in format
+  File &quot;/usr/lib/python2.6/pprint.py&quot;, line 242, in format
 
     return _safe_repr(object, context, maxlevels, level)
 
-  File "/usr/lib/python2.6/pprint.py", line 284, in _safe_repr
+  File &quot;/usr/lib/python2.6/pprint.py&quot;, line 284, in _safe_repr
 
     for k, v in _sorted(object.items()):
 
-  File "/usr/lib/python2.6/pprint.py", line 75, in _sorted
+  File &quot;/usr/lib/python2.6/pprint.py&quot;, line 75, in _sorted
 
     with warnings.catch_warnings():
 
-  File "/usr/lib/python2.6/warnings.py", line 333, in __init__
+  File &quot;/usr/lib/python2.6/warnings.py&quot;, line 333, in __init__
 
-    self._module = sys.modules['warnings'] if module is None else module
+    self._module = sys.modules[&#39;warnings&#39;] if module is None else module
 
-  KeyError: 'warnings'
-</code></pre>
+  KeyError: &#39;warnings&#39;
+</code></pre></div>
 
 <p>... which is a pain in the proverbial to debug.</p>
 

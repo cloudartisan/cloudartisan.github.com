@@ -21,17 +21,17 @@
 <div class="body">
   <p>Add the following to <code>/etc/sources</code>:</p>
 
-<pre><code>deb http://ftp.us.debian.org/debian/ testing main contrib non-free
-</code></pre>
+<div class="codehilite"><pre><code>deb http://ftp.us.debian.org/debian/ testing main contrib non-free
+</code></pre></div>
 
 <p>Create <code>/etc/apt/apt.conf</code> with:</p>
 
-<pre><code>APT::Default-Release "stable";
-</code></pre>
+<div class="codehilite"><pre><code>APT::Default-Release &quot;stable&quot;;
+</code></pre></div>
 
 <p>Create <code>/etc/apt/preferences</code> for pinning the testing packages:</p>
 
-<pre><code>Package: libssl-dev
+<div class="codehilite"><pre><code>Package: libssl-dev
 
 Pin: release a=testing
 
@@ -90,7 +90,7 @@ Package: *
 Pin: release a=stable
 
 Pin-Priority: 500
-</code></pre>
+</code></pre></div>
 
 <p>Then install the packages:</p>
 
