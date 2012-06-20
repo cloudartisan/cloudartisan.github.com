@@ -1,4 +1,3 @@
-public: yes
 title: RightScripts In Any Scripting Language
 author: David Taylor
 published: 2010-05-30
@@ -8,7 +7,7 @@ status: publish
 public: yes
 chronological: yes
 kind: post
-summary: Write RightScripts in any scripting language
+summary: You can write RightScripts in any scripting language with only a little jiggery-pokery. Break free from Bash, Ruby, or Perl and maybe write a Lua or Python RightScript instead. Here's how...
 
 [RightScale's](http://www.rightscale.com/) cloud management platform can be used to deploy and manage solutions on cloud infrastructure with some degree of automation, control, and scaling.
 

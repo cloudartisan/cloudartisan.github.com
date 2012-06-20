@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-20T23:11:06Z:/</id>
-<updated>2012-06-20T23:11:06Z</updated>
+<id>tag:cloudartisan.com,2012-06-20T23:38:22Z:/</id>
+<updated>2012-06-20T23:38:22Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -93,20 +93,20 @@
 </entry>
 
 <entry>
-  <title>Google App Engine Gotcha 3</title>
-  <link href="http://cloudartisan.com/posts/2010-08-29-google-app-engine-gotcha-3" />
-  <id>tag:cloudartisan.com,2010-08-29:/posts/2010-08-29-google-app-engine-gotcha-3</id>
-  <updated>2010-08-29T00:00:00Z</updated>
+  <title>IronRuby on Rails on Azure (Part 2 of 3) – Connecting your Rails app to SQLAzure</title>
+  <link href="http://cloudartisan.com/posts/2010-09-08-ironruby-on-rails-on-azure-part-2-of-3-e28093-connecting-your-rails-app-to-sqlazure" />
+  <id>tag:cloudartisan.com,2010-09-08:/posts/2010-09-08-ironruby-on-rails-on-azure-part-2-of-3-e28093-connecting-your-rails-app-to-sqlazure</id>
+  <updated>2010-09-08T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
     <div xmlns="http://www.w3.org/1999/xhtml"></div>
   </content>
 </entry>
 
 <entry>
-  <title>Google App Engine - unknown URL handler type</title>
-  <link href="http://cloudartisan.com/posts/2010-08-15-google-app-engine-unknown-url-handler-type" />
-  <id>tag:cloudartisan.com,2010-08-15:/posts/2010-08-15-google-app-engine-unknown-url-handler-type</id>
-  <updated>2010-08-15T00:00:00Z</updated>
+  <title>IronRuby on Rails on Azure (Part 1 of 3) - Getting Started</title>
+  <link href="http://cloudartisan.com/posts/2010-09-07-ironruby-on-rails-on-azure-part-1-of-3-getting-started" />
+  <id>tag:cloudartisan.com,2010-09-07:/posts/2010-09-07-ironruby-on-rails-on-azure-part-1-of-3-getting-started</id>
+  <updated>2010-09-07T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
     <div xmlns="http://www.w3.org/1999/xhtml"></div>
   </content>

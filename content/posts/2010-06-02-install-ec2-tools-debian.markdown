@@ -1,14 +1,13 @@
-public: yes
 title: Install EC2 AMI & API Tools in Debian
 author: David Taylor
 published: 2010-06-02
+tags: [aws, ec2, debian, iaas]
 slug: install-ec2-tools-debian
 status: publish
-tags: [aws, ec2, debian, iaas]
 public: yes
 chronological: yes
 kind: post
-summary: A quick run-down on installing EC2 AMI & API Tools in Debian
+summary: A quick run-down on installing EC2 AMI & API Tools in Debian...
 
 Download the zip files for the tools:
 

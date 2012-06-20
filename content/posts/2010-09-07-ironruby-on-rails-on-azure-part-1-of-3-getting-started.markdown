@@ -1,4 +1,5 @@
 status: publish
+public: yes
 kind: post
 chronological: yes
 author: Ameer Deen
@@ -11,25 +12,28 @@ This is the first of a three part series on running a rails application on Windo
 
 In this part, we'll simply be focusing on getting a basic rails application running on your laptop or desktop using IronRuby and SQL Server and links to download bundles that you can try out for yourself. If you already know how to do all that, skip to the end of this article to the download bundles and head over to Part 2: Connecting your rails application to SQLAzure 
 
-**Installing IronRuby 1.1:**
+## Installing IronRuby 1.1
 
 IronRuby 1.1 runs on either .NET Framework v3.5 or v4. I'll be using the package targeted at .NET v3.5 for our example simply because I wasn't sure if most people would have the newer framework installed on their machines. Ruby normally lives in a self-contained folder. Installing IronRuby, therefore, is as simple as downloading this 4MB zip [file](http://ironruby.codeplex.com/releases/view/43540#DownloadId=133276) and unpacking it.   For the purposes of this article, I've created a root folder called
 
 
+    :::text
     C:\Sample
 
 
 and unzipped the contents of the IronRuby zip file to
 
 
+    :::text
     C:\Sample\ironruby
 
 
-**Installing Rails:**  
+## Installing Rails
 
 Install IronRuby on Rails by typing:
 
     
+    :::text
     cd C:\Sample\IronRuby\bin
     .\igem install rails --version 2.3.8
 
@@ -37,6 +41,7 @@ Install IronRuby on Rails by typing:
 You should see output similar to the following:
 
     
+    :::text
     C:\Sample\IronRuby\bin>igem install --version 2.3.8  
     Successfully installed rake-0.8.7
     Successfully installed activesupport-2.3.8
@@ -45,11 +50,12 @@ You should see output similar to the following:
     8 gems installed
 
 
-**Installing SQL Server Active Record Adapter:**  
+## Installing SQL Server Active Record Adapter
 
 For rails to use the active-record pattern with MS SQL Server, we’ll also need to install the `activerecord-sqlserver-adapter` gem:
 
 
+    :::text
     c:\Sample\IronRuby\bin>.\igem install activerecord-sqlserver-adapter --version 2.3.8
      Successfully installed activerecord-sqlserver-adapter-2.3.8
      1 gem installed
@@ -57,13 +63,14 @@ For rails to use the active-record pattern with MS SQL Server, we’ll also need
      Installing RDoc documentation for activerecord-sqlserver-adapter-2.3.8...** **
 
 
-**Configuring SQL Server:**  
+## Configuring SQL Server
 
 SQLAzure is based on SQL Server 2008 and uses SQL Authentication. I’m not going to cover SQL server installation in this article. Please ensure you install SQL Server 2008 (or 2008 Express) on your development machine and enable SQL Server authentication mode.
 
 For our example, let’s ensure we have the following setup on our SQL Server:
 
 
+    :::text
     Server: localhost
     Database: dev
     Username: myuser
@@ -72,11 +79,12 @@ For our example, let’s ensure we have the following setup on our SQL Server:
   
 Please ensure the ‘myuser’ login has CRUD privileges on the ‘dev’ database.
 
-**Creating a vanilla rails application:**  
+## Creating a vanilla rails application
 
 Create the canonical rails application in our sample as follows:
 
 
+    :::text
     cd c:\sample
     Set path=%path;C:\Sample\IronRuby\bin
     .\IronRuby\bin\rails myapp
@@ -84,7 +92,7 @@ Create the canonical rails application in our sample as follows:
 
 As you would expect, that should create a host of new files that comprise our new rails application.
 
-**Configuring our rails application to talk to SQL Server**
+## Configuring our rails application to talk to SQL Server**
 
 The database.yml database configuration file under C:\Sample\myapp\config\ tells rails how to connect to the application’s database. Replace the following default connection string in database.yml that was generated:
 
@@ -115,6 +123,7 @@ We have now installed IronRuby, Rails and other necessary gems and configured ou
 All that remains is starting up the application:
 
     
+    :::text
     cd c:\Sample
     .\IronRuby\bin\ir myapp\script\server
 
@@ -122,6 +131,7 @@ All that remains is starting up the application:
 You should see the webrick web server start up:
 
     
+    :::text
     c:\Sample>.\IronRuby\bin\ir myapp\script\server
     WARNING: YAML.add_builtin_type is not implemented
     => Booting WEBrick
@@ -138,12 +148,13 @@ Browse to http://localhost:3000 and you should see the “Welcome Aboard” rail
 We’re now just a few steps away from tweaking this setup slightly to get out rails application to talking to your SQLAzure account instead.
 
 
-**Download bundles**  
+## Download bundles**  
 
 The bundle assumes you have an existing SQL Server installed on your machine with the following configuration:
 
     
     
+    :::text
     SQL Server: localhost
     Database: dev
     Username: myuser

@@ -1,4 +1,5 @@
 status: publish
+public: yes
 kind: post
 chronological: yes
 author: David Taylor
@@ -13,7 +14,7 @@ I’m assuming you have the vanilla rails application from Part 1 up and running
 
 Connecting your rails app has two main gotchas:
 
-**Gotcha #1: SQL Server active record adapter does not work with SQL Azure**
+## Gotcha #1: SQL Server active record adapter does not work with SQL Azure
 
 The SQL Server active record gem we installed in part 1 does not work out of the box with SQL Azure and needs to be modified slightly before it can be made to work. The SQL server active record adapter identifies the version of SQL Server using the following SQL transact-sql query:
 
@@ -70,7 +71,7 @@ To my uglier but SQLAzure friendly:
 I'd love to hear from someone who can help me improve the Ruby above. I’m essentially attempting to extract the SQL Server version number (9,10 etc) that appears after the first “) -“ character sequence and use that to determine the SQL server release year (2000, 2005 or 2008).
 
 
-**Gotcha #2: Migrations do not work with SQL Azure**
+## Gotcha #2: Migrations do not work with SQL Azure
 
 Everytime I tried to do a rails migration I’m met with an error that SQL Azure does not support tables without clustered indexes. It turns out, the table SQLAzure was complaining about was the schema_migrations table.
 
