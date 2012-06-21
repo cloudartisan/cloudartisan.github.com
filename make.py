@@ -235,6 +235,15 @@ def render_index(entries):
     destination.close()
 
 
+def render_about():
+    context = GLOBAL_TEMPLATE_CONTEXT.copy()
+    template = JINJA_ENV.get_template('about.html')
+    html = template.render(context)
+    destination = codecs.open("about/index.html", 'w', CONFIG['content_encoding'])
+    destination.write(html)
+    destination.close()
+
+
 def render_atom_feed(entries, render_to=None):
     context = GLOBAL_TEMPLATE_CONTEXT.copy()
     context['entries'] = entries[:10]
@@ -296,12 +305,17 @@ def build():
     print
     print " site wide index",
     render_index(_sort_entries(entries))
-    print "................done"
+    print "................ done"
+    print
+    print " about page",
+    render_index(_sort_entries(entries))
+    print "................ done"
+    print
     print " site wide atom feeds",
     render_atom_feed(_sort_entries(entries))
-    print "...........done"
+    print "................ done"
     print
-    print "All done ",
+    print "All done",
 
 
 if __name__== '__main__':
