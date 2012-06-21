@@ -185,7 +185,18 @@ Setting up php-apc (3.1.3p1-2) ...
 <div id="underpost">
   <h3>Discussions/Feedback.</h3>
   
-  <p>I do not accept comments on this blog. I welcome feedback via email to <code>feedback@cloudartisan.com</code>. Specifically, I would be grateful for your feedback on errors, omissions, broken links, etc.</p>
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'cloudartisan';
+
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
   
 </div>
