@@ -308,7 +308,7 @@ def build():
     print "................ done"
     print
     print " about page",
-    render_index(_sort_entries(entries))
+    render_about()
     print "................ done"
     print
     print " site wide atom feeds",
