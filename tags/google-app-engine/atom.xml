@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-23T18:26:18Z:/</id>
-<updated>2012-06-23T18:26:18Z</updated>
+<id>tag:cloudartisan.com,2012-06-23T20:47:10Z:/</id>
+<updated>2012-06-23T20:47:10Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -17,16 +17,6 @@
   <link href="http://cloudartisan.com/posts/2011-08-22-google_app_engine_python_getting_started_on_mac" />
   <id>tag:cloudartisan.com,2011-08-22:/posts/2011-08-22-google_app_engine_python_getting_started_on_mac</id>
   <updated>2011-08-22T00:00:00Z</updated>
-  <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
-  </content>
-</entry>
-
-<entry>
-  <title>Buddypoke on Google App Engine</title>
-  <link href="http://cloudartisan.com/notes/2010-11-23-buddypoke-on-google-app-engine" />
-  <id>tag:cloudartisan.com,2010-11-23:/notes/2010-11-23-buddypoke-on-google-app-engine</id>
-  <updated>2010-11-23T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
     <div xmlns="http://www.w3.org/1999/xhtml"></div>
   </content>
@@ -117,6 +107,17 @@
   <content type="xhtml" xml:base="http://cloudartisan.com">
     <div xmlns="http://www.w3.org/1999/xhtml"><p>No smtplib for you!</p>
 <a href="http://cloudartisan.com/posts/2010-06-27-google-app-engine-gotcha-1"> continue reading...</a></div>
+  </content>
+</entry>
+
+<entry>
+  <title>Scheduled Tasks With Google App Engine & Python</title>
+  <link href="http://cloudartisan.com/posts/2010-06-02-scheduled-tasks-with-google-app-engine-python" />
+  <id>tag:cloudartisan.com,2010-06-02:/posts/2010-06-02-scheduled-tasks-with-google-app-engine-python</id>
+  <updated>2010-06-02T00:00:00Z</updated>
+  <content type="xhtml" xml:base="http://cloudartisan.com">
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Create a simple application that sends an e-mail every 5 minutes...</p>
+<a href="http://cloudartisan.com/posts/2010-06-02-scheduled-tasks-with-google-app-engine-python"> continue reading...</a></div>
   </content>
 </entry>
 
