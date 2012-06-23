@@ -124,11 +124,10 @@ class Entry(object):
 
     @property
     def atom_id(self):
-        return "tag:cloudartisan.com,%s:%s" % \
-                (
-                    self.published.strftime("%Y-%m-%d"),
-                    self.permalink,
-                )
+        return "tag:cloudartisan.com,%s:%s" % (
+            self.published.strftime("%Y-%m-%d"),
+            self.permalink,
+        )
 
     @property
     def body_html(self):
