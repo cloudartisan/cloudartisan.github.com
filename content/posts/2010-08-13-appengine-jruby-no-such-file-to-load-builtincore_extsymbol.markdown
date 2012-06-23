@@ -7,6 +7,7 @@ tags: ['google app engine', 'google app engine', 'jruby', 'paas']
 published: 2010-08-13
 title: appengine-jruby "no such file to load -- builtin/core_ext/symbol"
 slug: appengine-jruby-no-such-file-to-load-builtincore_extsymbol
+summary: Ugh!!!
 
 A while ago I wrote a proof of concept in JRuby on Google App Engine, using the fantastic [appengine-jruby](http://code.google.com/p/appengine-jruby/) project. The code worked (albeit, _very slowly!_).
 

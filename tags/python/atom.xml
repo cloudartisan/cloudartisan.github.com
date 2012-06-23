@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-21T23:20:22Z:/</id>
-<updated>2012-06-21T23:20:22Z</updated>
+<id>tag:cloudartisan.com,2012-06-23T18:26:18Z:/</id>
+<updated>2012-06-23T18:26:18Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -68,7 +68,8 @@
   <id>tag:cloudartisan.com,2010-10-24:/posts/2010-10-24-google-app-engine-sdk-broken-on-ubuntu-maverick-10-10</id>
   <updated>2010-10-24T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>The Google App Engine SDK is broken on Ubuntu 10.10, but it's easy enough to fix...</p>
+<a href="http://cloudartisan.com/posts/2010-10-24-google-app-engine-sdk-broken-on-ubuntu-maverick-10-10"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -78,7 +79,8 @@
   <id>tag:cloudartisan.com,2010-10-18:/posts/2010-10-18-migrating-from-google-app-engine-to-django</id>
   <updated>2010-10-18T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Yup, I'm migrating from Google App Engine to Django.  In this post I go over some of the key differences and considerations...</p>
+<a href="http://cloudartisan.com/posts/2010-10-18-migrating-from-google-app-engine-to-django"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -88,7 +90,8 @@
   <id>tag:cloudartisan.com,2010-10-04:/posts/2010-10-04-install-uwsgi-latest-on-debian-lenny</id>
   <updated>2010-10-04T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>uWSGI is a fast, self-healing, WSGI server.  Follow these instructions to install it on Debian Lenny...</p>
+<a href="http://cloudartisan.com/posts/2010-10-04-install-uwsgi-latest-on-debian-lenny"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -98,7 +101,8 @@
   <id>tag:cloudartisan.com,2010-10-03:/posts/2010-10-03-python-one-liner-debug-mail-server</id>
   <updated>2010-10-03T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>I love a good Python one-liner...</p>
+<a href="http://cloudartisan.com/posts/2010-10-03-python-one-liner-debug-mail-server"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -108,7 +112,8 @@
   <id>tag:cloudartisan.com,2010-09-29:/posts/2010-09-29-migrating-from-google-app-engine-to-django-preamble</id>
   <updated>2010-09-29T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Looks like I might need to migrate from Google App Engine to Django...</p>
+<a href="http://cloudartisan.com/posts/2010-09-29-migrating-from-google-app-engine-to-django-preamble"> continue reading...</a></div>
   </content>
 </entry>
 

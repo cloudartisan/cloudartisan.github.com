@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-21T23:20:22Z:/</id>
-<updated>2012-06-21T23:20:22Z</updated>
+<id>tag:cloudartisan.com,2012-06-23T18:26:18Z:/</id>
+<updated>2012-06-23T18:26:18Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -68,7 +68,8 @@
   <id>tag:cloudartisan.com,2010-11-21:/posts/2010-11-21-install-uwsgi-latest-on-ubuntu-server-10-10</id>
   <updated>2010-11-21T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>uWSGI is a fast, self-healing, WSGI server. In this post I show how to install the latest version on Ubuntu Server 10.10...</p>
+<a href="http://cloudartisan.com/posts/2010-11-21-install-uwsgi-latest-on-ubuntu-server-10-10"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -78,7 +79,8 @@
   <id>tag:cloudartisan.com,2010-11-20:/posts/2010-11-20-adding-the-cherokee-web-server-ppa-to-ubuntu</id>
   <updated>2010-11-20T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Follow the commands in this post to add the Cherokee Web Server PPA to Ubuntu 9.10 or higher...</p>
+<a href="http://cloudartisan.com/posts/2010-11-20-adding-the-cherokee-web-server-ppa-to-ubuntu"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -88,7 +90,8 @@
   <id>tag:cloudartisan.com,2010-10-18:/posts/2010-10-18-migrating-from-google-app-engine-to-django</id>
   <updated>2010-10-18T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Yup, I'm migrating from Google App Engine to Django.  In this post I go over some of the key differences and considerations...</p>
+<a href="http://cloudartisan.com/posts/2010-10-18-migrating-from-google-app-engine-to-django"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -98,7 +101,8 @@
   <id>tag:cloudartisan.com,2010-10-11:/posts/2010-10-11-hudson-pam-authenticate-failed</id>
   <updated>2010-10-11T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Ugh!!!</p>
+<a href="http://cloudartisan.com/posts/2010-10-11-hudson-pam-authenticate-failed"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -108,7 +112,8 @@
   <id>tag:cloudartisan.com,2010-10-04:/posts/2010-10-04-install-uwsgi-latest-on-debian-lenny</id>
   <updated>2010-10-04T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>uWSGI is a fast, self-healing, WSGI server.  Follow these instructions to install it on Debian Lenny...</p>
+<a href="http://cloudartisan.com/posts/2010-10-04-install-uwsgi-latest-on-debian-lenny"> continue reading...</a></div>
   </content>
 </entry>
 

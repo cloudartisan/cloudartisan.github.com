@@ -7,6 +7,7 @@ tags: ['google app engine', 'paas', 'paas', 'python']
 published: 2010-06-02
 title: Scheduled Tasks With Google App Engine & Python
 slug: scheduled-tasks-with-google-app-engine-python
+summary: Create a simple application that sends an e-mail every 5 minutes...
 
 We'll create a simple Hello World application that sends an e-mail every 5 minutes to reassure you that the Internet is still out there and still cares.
 

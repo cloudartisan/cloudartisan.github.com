@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-21T23:20:22Z:/</id>
-<updated>2012-06-21T23:20:22Z</updated>
+<id>tag:cloudartisan.com,2012-06-23T18:26:18Z:/</id>
+<updated>2012-06-23T18:26:18Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -18,7 +18,8 @@
   <id>tag:cloudartisan.com,2010-10-20:/posts/2010-10-20-rightscale-servertemplate-virtualmin</id>
   <updated>2010-10-20T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>I've published a <a href="http://www.rightscale.com">RightScale</a> ServerTemplate for launching <a href="http://www.virtualmin.com">Virtualmin</a> on Amazon EC2...</p>
+<a href="http://cloudartisan.com/posts/2010-10-20-rightscale-servertemplate-virtualmin"> continue reading...</a></div>
   </content>
 </entry>
 

@@ -7,6 +7,7 @@ tags: ['cloudcamp', 'cloudcamp sydney', 'conference', 'events']
 published: 2010-08-06
 title: CloudCamp Sydney 2010v2 (Aug 6, 2010)
 slug: cloudcamp-sydney-2010v2-aug-6-2010
+summary: My impressions of CloudCamp Sydney 2010v2 (generally "meh" with glimpses of "ooh" mixed in)...
 
 I've just come back from [CloudCamp Sydney 2010v2](http://www.cloudcamp.org/sydney/2010-08-06) and I have some mixed thoughts about the event...
 

@@ -7,6 +7,7 @@ tags: ['auditing', 'cloud', 'process', 'processes', 'questionnaire', 'security',
 published: 2010-07-27
 title: Auditing Cloud Service Providers
 slug: auditing-cloud-service-providers
+summary: Asked to audit our cloud service provider, I decide to see what's out there...
 
 ## What's Up?  
 

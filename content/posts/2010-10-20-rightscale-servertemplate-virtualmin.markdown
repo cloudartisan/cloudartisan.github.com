@@ -7,6 +7,7 @@ tags: ['rightscale', 'rightscale', 'servertemplate', 'virtualmin']
 published: 2010-10-20
 title: "RightScale ServerTemplate: Virtualmin"
 slug: rightscale-servertemplate-virtualmin
+summary: I've published a [RightScale](http://www.rightscale.com) ServerTemplate for launching [Virtualmin](http://www.virtualmin.com) on Amazon EC2...
 
 I've published a [RightScale](http://www.rightscale.com) ServerTemplate for launching [Virtualmin](http://www.virtualmin.com) on Amazon EC2.
 

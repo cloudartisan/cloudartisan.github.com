@@ -3,10 +3,11 @@ public: yes
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['paas', 'rails', 'sqlazure', 'windows azure', 'windows azure']
+tags: ['paas', 'rails', 'sqlazure', 'windows azure']
 published: 2010-09-08
 title: IronRuby on Rails on Azure (Part 2 of 3) – Connecting your Rails app to SQLAzure
 slug: ironruby-on-rails-on-azure-part-2-of-3-%e2%80%93-connecting-your-rails-app-to-sqlazure
+summary: Ameer builds an eclectic proof of concept on top of Windows Azure (part 2 of 3)...
 
 This is the continuation of my bungling around with IronRuby, Rails and getting it running on SLQAzure. In part 1, we installed a basic rails application using IronRuby with SQL Server as it's backend. We'll now examine how we can connect this application to a SQLAzure backend as opposed to a SQL Server hosted on your development machine.
 

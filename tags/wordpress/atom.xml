@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-21T23:20:22Z:/</id>
-<updated>2012-06-21T23:20:22Z</updated>
+<id>tag:cloudartisan.com,2012-06-23T18:26:18Z:/</id>
+<updated>2012-06-23T18:26:18Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -18,7 +18,8 @@
   <id>tag:cloudartisan.com,2010-10-21:/posts/2010-10-21-rightscale-servertemplate-bitnami-wordpress-stack</id>
   <updated>2010-10-21T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>I've published a <a href="http://www.rightscale.com">RightScale</a> ServerTemplate for installing <a href="http://bitnami.org/stack/wordpress">Bitnami's WordPress stack</a> on Amazon EC2...</p>
+<a href="http://cloudartisan.com/posts/2010-10-21-rightscale-servertemplate-bitnami-wordpress-stack"> continue reading...</a></div>
   </content>
 </entry>
 

@@ -7,6 +7,7 @@ tags: ['gae', 'google app engine', 'google app engine', 'google apps', 'gotcha',
 published: 2010-08-29
 title: Google App Engine Gotcha 3
 slug: google-app-engine-gotcha-3
+summary: Do I really need to whitelist every Google IP address ever?!
 
 ## What's the problem?
 

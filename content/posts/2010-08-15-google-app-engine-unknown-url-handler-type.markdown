@@ -7,6 +7,7 @@ tags: ['google app engine', 'paas', 'python']
 published: 2010-08-15
 title: Google App Engine - unknown URL handler type
 slug: google-app-engine-unknown-url-handler-type
+summary: Ugh!!!
 
     :::text
     Fatal error when loading application configuration:

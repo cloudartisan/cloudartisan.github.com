@@ -7,6 +7,7 @@ tags: ['general', 'google app engine', 'google app engine', 'paas', 'paas', 'pyt
 published: 2010-10-18
 title: Migrating from Google App Engine to Django
 slug: migrating-from-google-app-engine-to-django
+summary: Yup, I'm migrating from Google App Engine to Django.  In this post I go over some of the key differences and considerations...
 
 Unfortunately, I had to migrate one of my projects from Google App Engine to Django on a self-managed server. I didn't want to do this. See [Google App Engine Gotcha #2](http://www.cloudartisan.com/2010/08/google-app-engine-gotcha-2/) and [Google App Engine Gotcha #3](http://www.cloudartisan.com/2010/08/google-app-engine-gotcha-3/) for the main reasons. Those headaches became bad enough that I had to bite the bullet and migrate out of Google App Engine.
 

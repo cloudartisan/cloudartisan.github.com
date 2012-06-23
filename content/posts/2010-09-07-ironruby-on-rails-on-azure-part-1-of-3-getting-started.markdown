@@ -7,6 +7,7 @@ tags: ['paas', 'rails', 'sqlazure', 'windows azure', 'windows azure']
 published: 2010-09-07
 title: IronRuby on Rails on Azure (Part 1 of 3) - Getting Started
 slug: ironruby-on-rails-on-azure-part-1-of-3-getting-started
+summary: Ameer builds an eclectic proof of concept on top of Windows Azure (part 1 of 3)...
 
 This is the first of a three part series on running a rails application on Windows Azure using SQLAzure as your database backend. The Rail Guides website, of course, has a wonderful getting started [article](http://guides.rubyonrails.org/getting_started.html) that I couldn't possibly do justice. This small series is just a very simple demonstration of one possible way of developing a rails application on Microsoft's Azure platform.
 

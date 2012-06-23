@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-21T23:20:22Z:/</id>
-<updated>2012-06-21T23:20:22Z</updated>
+<id>tag:cloudartisan.com,2012-06-23T18:26:18Z:/</id>
+<updated>2012-06-23T18:26:18Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -24,8 +24,8 @@
 
 <entry>
   <title>Buddypoke on Google App Engine</title>
-  <link href="http://cloudartisan.com/posts/2010-11-23-buddypoke-on-google-app-engine" />
-  <id>tag:cloudartisan.com,2010-11-23:/posts/2010-11-23-buddypoke-on-google-app-engine</id>
+  <link href="http://cloudartisan.com/notes/2010-11-23-buddypoke-on-google-app-engine" />
+  <id>tag:cloudartisan.com,2010-11-23:/notes/2010-11-23-buddypoke-on-google-app-engine</id>
   <updated>2010-11-23T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
     <div xmlns="http://www.w3.org/1999/xhtml"></div>
@@ -38,7 +38,8 @@
   <id>tag:cloudartisan.com,2010-10-24:/posts/2010-10-24-google-app-engine-sdk-broken-on-ubuntu-maverick-10-10</id>
   <updated>2010-10-24T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>The Google App Engine SDK is broken on Ubuntu 10.10, but it's easy enough to fix...</p>
+<a href="http://cloudartisan.com/posts/2010-10-24-google-app-engine-sdk-broken-on-ubuntu-maverick-10-10"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -48,7 +49,8 @@
   <id>tag:cloudartisan.com,2010-10-18:/posts/2010-10-18-migrating-from-google-app-engine-to-django</id>
   <updated>2010-10-18T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Yup, I'm migrating from Google App Engine to Django.  In this post I go over some of the key differences and considerations...</p>
+<a href="http://cloudartisan.com/posts/2010-10-18-migrating-from-google-app-engine-to-django"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -58,7 +60,8 @@
   <id>tag:cloudartisan.com,2010-09-29:/posts/2010-09-29-migrating-from-google-app-engine-to-django-preamble</id>
   <updated>2010-09-29T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Looks like I might need to migrate from Google App Engine to Django...</p>
+<a href="http://cloudartisan.com/posts/2010-09-29-migrating-from-google-app-engine-to-django-preamble"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -68,7 +71,8 @@
   <id>tag:cloudartisan.com,2010-08-29:/posts/2010-08-29-google-app-engine-gotcha-3</id>
   <updated>2010-08-29T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Do I really need to whitelist every Google IP address ever?!</p>
+<a href="http://cloudartisan.com/posts/2010-08-29-google-app-engine-gotcha-3"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -78,7 +82,8 @@
   <id>tag:cloudartisan.com,2010-08-15:/posts/2010-08-15-google-app-engine-unknown-url-handler-type</id>
   <updated>2010-08-15T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Ugh!!!</p>
+<a href="http://cloudartisan.com/posts/2010-08-15-google-app-engine-unknown-url-handler-type"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -88,7 +93,8 @@
   <id>tag:cloudartisan.com,2010-08-13:/posts/2010-08-13-appengine-jruby-no-such-file-to-load-builtincore_extsymbol</id>
   <updated>2010-08-13T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Ugh!!!</p>
+<a href="http://cloudartisan.com/posts/2010-08-13-appengine-jruby-no-such-file-to-load-builtincore_extsymbol"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -98,7 +104,8 @@
   <id>tag:cloudartisan.com,2010-08-09:/posts/2010-08-09-google-app-engine-gotcha-2</id>
   <updated>2010-08-09T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Inflexible outbound timeouts are a pain in the...</p>
+<a href="http://cloudartisan.com/posts/2010-08-09-google-app-engine-gotcha-2"> continue reading...</a></div>
   </content>
 </entry>
 
@@ -108,7 +115,8 @@
   <id>tag:cloudartisan.com,2010-06-27:/posts/2010-06-27-google-app-engine-gotcha-1</id>
   <updated>2010-06-27T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>No smtplib for you!</p>
+<a href="http://cloudartisan.com/posts/2010-06-27-google-app-engine-gotcha-1"> continue reading...</a></div>
   </content>
 </entry>
 

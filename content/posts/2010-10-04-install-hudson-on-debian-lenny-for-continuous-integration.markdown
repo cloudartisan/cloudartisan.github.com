@@ -7,6 +7,7 @@ tags: ['debian', 'general', 'hudson', 'software development', 'system administra
 published: 2010-10-04
 title: Install Hudson on Debian Lenny for Continuous Integration
 slug: install-hudson-on-debian-lenny-for-continuous-integration
+summary: In this post I provide instructions for installing Hudson on Debian Lenny with some basic security...
 
 I found that Hudson depends on `daemon` but it doesn't install automatically.  So, before we get started:
 

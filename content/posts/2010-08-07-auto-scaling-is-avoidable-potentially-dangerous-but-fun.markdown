@@ -7,6 +7,7 @@ tags: ['autoscaling', 'capacity', 'cloud management', 'iaas', 'load balancing', 
 published: 2010-08-07
 title: Auto-Scaling Is Avoidable, Potentially Dangerous... But Fun
 slug: auto-scaling-is-avoidable-potentially-dangerous-but-fun
+summary: If you're blindly auto-scaling, you're doing it wrong... but probably having a fun time doing it...
 
 RightScale have some tutorials on using their service to set up auto-scaling.  Recently I played around with it, configuring auto-scaling in response to increases and decreases in server load. Honestly, it was fun. But it was essentially a folly, an exercise in dealing unnecessarily with dangerous corner cases.
 

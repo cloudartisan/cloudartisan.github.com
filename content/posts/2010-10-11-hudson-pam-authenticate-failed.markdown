@@ -7,6 +7,7 @@ tags: ['general', 'hudson', 'system administration']
 published: 2010-10-11
 title: "Hudson: pam_authenticate failed"
 slug: hudson-pam-authenticate-failed
+summary: Ugh!!!
 
 If you're getting login failures after enabling _Unix user/group database_ security check the log: `/var/log/hudson/hudson.log`.
 

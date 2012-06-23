@@ -7,6 +7,7 @@ tags: ['general', 'spawn-fcgi', 'system administration']
 published: 2010-10-04
 title: Cherokee failing to exec spawn-fcgi
 slug: cherokee-failin-to-exec-spawn-fcgi
+summary: Ugh!!!
 
 If you're using `spawn-fcgi` with Cherokee (probably to get a wiki or PHP application or similar working) and you see:
 

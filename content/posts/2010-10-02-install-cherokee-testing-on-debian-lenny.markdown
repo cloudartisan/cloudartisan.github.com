@@ -7,6 +7,7 @@ tags: ['debian', 'general', 'lenny', 'system administration']
 published: 2010-10-02
 title: Install Cherokee (testing) on Debian Lenny
 slug: install-cherokee-testing-on-debian-lenny
+summary: How to install Cherokee (testing) on Debian Lenny...
 
 Add the following to `/etc/sources`:
 

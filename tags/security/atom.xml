@@ -4,8 +4,8 @@
 <subtitle>Cloud Artisan</subtitle>
 <link href="http://cloudartisan.com/atom.xml" rel="self" />
 <link href="http://cloudartisan.com/" />
-<id>tag:cloudartisan.com,2012-06-21T23:20:22Z:/</id>
-<updated>2012-06-21T23:20:22Z</updated>
+<id>tag:cloudartisan.com,2012-06-23T18:26:18Z:/</id>
+<updated>2012-06-23T18:26:18Z</updated>
 <author>
   <name>David Taylor</name>
   <email>david@cloudartisan.com</email>
@@ -28,7 +28,8 @@
   <id>tag:cloudartisan.com,2010-07-27:/posts/2010-07-27-auditing-cloud-service-providers</id>
   <updated>2010-07-27T00:00:00Z</updated>
   <content type="xhtml" xml:base="http://cloudartisan.com">
-    <div xmlns="http://www.w3.org/1999/xhtml"></div>
+    <div xmlns="http://www.w3.org/1999/xhtml"><p>Asked to audit our cloud service provider, I decide to see what's out there...</p>
+<a href="http://cloudartisan.com/posts/2010-07-27-auditing-cloud-service-providers"> continue reading...</a></div>
   </content>
 </entry>
 

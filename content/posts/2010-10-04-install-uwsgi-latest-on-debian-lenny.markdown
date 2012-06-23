@@ -7,6 +7,7 @@ tags: ['general', 'python', 'software development', 'system administration', 'uw
 published: 2010-10-04
 title: Install uWSGI (latest) on Debian Lenny
 slug: install-uwsgi-latest-on-debian-lenny
+summary: uWSGI is a fast, self-healing, WSGI server.  Follow these instructions to install it on Debian Lenny...
 
 First, why would you want it? uWSGI is a fast, self-healing, WSGI server, originally intended for use with Python web applications. I intend to use it with Python Django, served by Cherokee.
 
