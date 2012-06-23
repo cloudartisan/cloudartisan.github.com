@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['google app engine', 'paas', 'paas', 'python']
+tags: ['google app engine', 'paas', 'python']
 published: 2010-06-02
 title: Scheduled Tasks With Google App Engine & Python
 slug: scheduled-tasks-with-google-app-engine-python

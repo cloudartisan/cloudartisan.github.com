@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['monitoring', 'monitoring', 'plugins', 'server density', 'system administration']
+tags: ['monitoring', 'plugins', 'server density', 'system administration']
 published: 2011-05-07
 title: Server Density Plugin for Monitoring Cherokee
 slug: server-density-plugin-for-monitoring-cherokee

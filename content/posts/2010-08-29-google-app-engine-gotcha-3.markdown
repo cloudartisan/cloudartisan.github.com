@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['gae', 'google app engine', 'google app engine', 'google apps', 'gotcha', 'paas', 'sdc', 'urlfetch']
+tags: ['gae', 'google app engine', 'google apps', 'gotcha', 'paas', 'sdc', 'urlfetch']
 published: 2010-08-29
 title: Google App Engine Gotcha 3
 slug: google-app-engine-gotcha-3

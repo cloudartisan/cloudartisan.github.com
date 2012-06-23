@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['rightscale', 'rightscale', 'servertemplate', 'virtualmin']
+tags: ['rightscale', 'servertemplate', 'virtualmin']
 published: 2010-10-20
 title: "RightScale ServerTemplate: Virtualmin"
 slug: rightscale-servertemplate-virtualmin

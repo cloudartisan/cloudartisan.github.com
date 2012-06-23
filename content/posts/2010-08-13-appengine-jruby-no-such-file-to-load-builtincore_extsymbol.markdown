@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['google app engine', 'google app engine', 'jruby', 'paas']
+tags: ['google app engine', 'jruby', 'paas']
 published: 2010-08-13
 title: appengine-jruby "no such file to load -- builtin/core_ext/symbol"
 slug: appengine-jruby-no-such-file-to-load-builtincore_extsymbol

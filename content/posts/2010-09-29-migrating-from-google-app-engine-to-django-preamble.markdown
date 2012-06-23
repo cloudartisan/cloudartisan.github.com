@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['google app engine', 'paas', 'paas', 'python']
+tags: ['google app engine', 'paas', 'python']
 published: 2010-09-29
 title: Migrating from Google App Engine to Django... a preamble
 slug: migrating-from-google-app-engine-to-django-preamble

@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['auditing', 'cloud', 'process', 'processes', 'questionnaire', 'security', 'security', 'survey']
+tags: ['auditing', 'cloud', 'process', 'processes', 'questionnaire', 'security', 'survey']
 published: 2010-07-27
 title: Auditing Cloud Service Providers
 slug: auditing-cloud-service-providers

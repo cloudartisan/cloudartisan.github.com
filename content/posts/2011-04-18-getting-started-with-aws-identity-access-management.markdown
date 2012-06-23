@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['aws', 'ec2', 'iaas', 'iam', 'openssl', 'security', 'security', 'system administration']
+tags: ['aws', 'ec2', 'iaas', 'iam', 'openssl', 'security', 'system administration']
 published: 2011-04-18
 title: Getting Started With AWS Identity Access Management
 slug: getting-started-with-aws-identity-access-management

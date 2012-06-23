@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['djangy', 'paas', 'paas', 'python']
+tags: ['djangy', 'paas', 'python']
 published: 2010-11-23
 title: My Djangy invite arrived!
 slug: my-djangy-invite-arrived

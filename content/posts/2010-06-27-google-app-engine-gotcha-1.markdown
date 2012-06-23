@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['google app engine', 'paas', 'paas', 'python']
+tags: ['google app engine', 'paas', 'python']
 published: 2010-06-27
 title: Google App Engine Gotcha 1
 slug: google-app-engine-gotcha-1

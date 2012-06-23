@@ -3,7 +3,7 @@ public: yes
 kind: post
 chronological: yes
 author: Ameer Deen
-tags: ['paas', 'rails', 'sqlazure', 'windows azure', 'windows azure']
+tags: ['paas', 'rails', 'sqlazure', 'windows azure']
 published: 2010-09-07
 title: IronRuby on Rails on Azure (Part 1 of 3) - Getting Started
 slug: ironruby-on-rails-on-azure-part-1-of-3-getting-started

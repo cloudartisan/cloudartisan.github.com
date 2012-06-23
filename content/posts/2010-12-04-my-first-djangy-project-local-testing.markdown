@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['djangy', 'djangy', 'general', 'paas', 'paas', 'python', 'software development']
+tags: ['djangy', 'general', 'paas', 'python', 'software development']
 published: 2010-12-04
 title: My first Djangy project (local testing)
 slug: my-first-djangy-project-local-testing

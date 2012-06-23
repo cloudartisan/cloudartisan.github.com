@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['drupal', 'rightscale', 'rightscale', 'servertemplate']
+tags: ['drupal', 'rightscale', 'servertemplate']
 published: 2010-10-21
 title: "RightScale ServerTemplate: Bitnami Drupal Stack"
 slug: rightscale-servertemplate-bitnami-drupal-stack

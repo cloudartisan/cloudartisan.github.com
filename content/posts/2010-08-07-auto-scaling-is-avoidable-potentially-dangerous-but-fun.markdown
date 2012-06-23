@@ -3,7 +3,7 @@ status: publish
 kind: post
 chronological: yes
 author: David Taylor
-tags: ['autoscaling', 'capacity', 'cloud management', 'iaas', 'load balancing', 'monitoring', 'rightscale', 'rightscale']
+tags: ['autoscaling', 'capacity', 'cloud management', 'iaas', 'load balancing', 'monitoring', 'rightscale']
 published: 2010-08-07
 title: Auto-Scaling Is Avoidable, Potentially Dangerous... But Fun
 slug: auto-scaling-is-avoidable-potentially-dangerous-but-fun
