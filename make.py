@@ -8,7 +8,7 @@ import datetime
 import yaml
 import codecs
 import markdown2
-from cStringIO import StringIO
+from io import StringIO
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -153,8 +153,8 @@ class Entry(object):
             header.append(line)
             line = f.readline()
             line = line.rstrip()
-        self.header = yaml.load(StringIO('\n'.join(header)))
-        for h in self.header.items():
+        self.header = yaml.safe_load(StringIO('\n'.join(header)))
+        for h in list(self.header.items()):
             if h:
                 try:
                     setattr(self, h[0], h[1])
@@ -168,7 +168,7 @@ class Entry(object):
         f.close()
 
         if self.kind == 'link':
-            from urlparse import urlparse
+            from urllib.parse import urlparse
             self.domain_name = urlparse(self.url).netloc
         elif self.kind == 'photo':
             pass
@@ -178,7 +178,7 @@ class Entry(object):
             pass
 
     def render(self):
-        if not self.header.has_key('public') or not self.header['public']:
+        if 'public' not in self.header or not self.header['public']:
             return False
 
         try:
@@ -257,7 +257,7 @@ def render_atom_feed(entries, render_to=None):
 
 def render_tag_pages(tag_tree):
     context = GLOBAL_TEMPLATE_CONTEXT.copy()
-    for t in tag_tree.items():
+    for t in list(tag_tree.items()):
         context['tag'] = t[1]['tag']
         context['entries'] = _sort_entries(t[1]['entries'])
         destination = "%s/tags/%s" % (CONFIG['output_to'], context['tag'].slug)
@@ -270,15 +270,15 @@ def render_tag_pages(tag_tree):
         f = codecs.open("%s/index.html" % destination, 'w', CONFIG['content_encoding'])
         f.write(html)
         f.close()
-        print "    tags/%s" % (context['tag'].slug, )
+        print("    tags/%s" % (context['tag'].slug, ))
         render_atom_feed(context['entries'], render_to="%s/atom.xml" % destination)
 
 
 def build():
-    print
-    print "Rendering website now..."
-    print
-    print " entries:"
+    print()
+    print("Rendering website now...")
+    print()
+    print(" entries:")
     entries = list()
     tags = dict()
     for root, dirs, files in os.walk(CONFIG['content_root']):
@@ -289,49 +289,49 @@ def build():
             if entry.render():
                 entries.append(entry)
                 for tag in entry.tags:
-                    if not tags.has_key(tag.name):
+                    if tag.name not in tags:
                         tags[tag.name] = {
                             'tag': tag,
                             'entries': list(),
                         }
                     tags[tag.name]['entries'].append(entry)
-            print "     %s" % entry.path
-    print " :done"
-    print
-    print " tag pages & their atom feeds:"
+            print("     %s" % entry.path)
+    print(" :done")
+    print()
+    print(" tag pages & their atom feeds:")
     render_tag_pages(tags)
-    print " :done"
-    print
-    print " site wide index",
+    print(" :done")
+    print()
+    print(" site wide index", end=' ')
     render_index(_sort_entries(entries))
-    print "................ done"
-    print
-    print " about page",
+    print("................ done")
+    print()
+    print(" about page", end=' ')
     render_about()
-    print "................ done"
-    print
-    print " site wide atom feeds",
+    print("................ done")
+    print()
+    print(" site wide atom feeds", end=' ')
     render_atom_feed(_sort_entries(entries))
-    print "................ done"
-    print
-    print "All done",
+    print("................ done")
+    print()
+    print("All done", end=' ')
 
 
 if __name__== '__main__':
-    print
+    print()
     build()
-    import SimpleHTTPServer
-    import SocketServer
-    Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
-    httpd = SocketServer.TCPServer(("", CONFIG['http_port']), Handler)
+    import http.server
+    import socketserver
+    Handler = http.server.SimpleHTTPRequestHandler
+    httpd = socketserver.TCPServer(("", CONFIG['http_port']), Handler)
 
     os.chdir(CONFIG['output_to'])
-    print "and ready to test at http://127.0.0.1:%d" % CONFIG['http_port']
-    print "Hit Ctrl+C to exit"
+    print("and ready to test at http://127.0.0.1:%d" % CONFIG['http_port'])
+    print("Hit Ctrl+C to exit")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
-        print
-        print "Shutting Down... Bye!. ☻ ☻ ☻ "
-        print
+        print()
+        print("Shutting Down... Bye!. ☻ ☻ ☻ ")
+        print()
         httpd.server_close()

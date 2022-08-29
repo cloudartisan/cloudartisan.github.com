@@ -33,7 +33,7 @@
 
 <p>If you try to use Google App Engine SDK on Python 2.6 you will encounter tracebacks like the following:</p>
 
-<div class="codehilite"><pre><code>Traceback (most recent call last):
+<div class="codehilite"><pre><span></span><code>Traceback (most recent call last):
 
   File &quot;/home/david/lib/google_appengine/google/appengine/tools/dev_appserver.py&quot;, line 3211, in _HandleRequest
 
@@ -104,7 +104,7 @@
 
 <p>Thankfully, there is a repository on Launchpad that contains the necessary packages. To install, do the following:</p>
 
-<div class="codehilite"><pre><code>sudo add-apt-repository ppa:fkrull/deadsnakes
+<div class="codehilite"><pre><span></span><code>sudo add-apt-repository ppa:fkrull/deadsnakes
 
 sudo apt-get update
 
@@ -113,12 +113,12 @@ sudo apt-get install python2.5
 
 <p>Next, modify <code>dev_appserver.py</code> in the Google App Engine SDK. Change the first line from:</p>
 
-<div class="codehilite"><pre><code><span class="c">#!/usr/bin/env python</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
 </code></pre></div>
 
 <p>to:</p>
 
-<div class="codehilite"><pre><code><span class="c">#!/usr/bin/env python2.5</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python2.5</span>
 </code></pre></div>
 
 <p>Simple. Done. Restart your <code>dev_appserver.py</code> and everything should work A-OK.</p>
@@ -161,7 +161,7 @@ sudo apt-get install python2.5
 
   </div><!--/#content-->
   <div id="footer">
-    <p>&copy; David Taylor 2012</p>
+    <p>&copy; David Taylor 2010-2022</p>
     <p>Licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
     <!-- Clicky -->
     <a title="Web Statistics" href="http://getclicky.com/243249"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>

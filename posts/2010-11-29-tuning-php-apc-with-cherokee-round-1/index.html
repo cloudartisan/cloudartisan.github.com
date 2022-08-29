@@ -47,26 +47,26 @@
 
 <p>So I added the following to <code>/etc/php5/cgi/conf.d/apc.ini</code>:</p>
 
-<div class="codehilite"><pre><code><span class="c"># Does exactly what you think it does...</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Does exactly what you think it does...</span><span class="w"></span>
 
-<span class="na">apc.enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">apc.enabled</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
 
-<span class="c"># Number of seconds (7200 == 2h) before cache</span>
+<span class="c1"># Number of seconds (7200 == 2h) before cache</span><span class="w"></span>
 
-<span class="c"># entries are expired. Otherwise, the default (0)</span>
+<span class="c1"># entries are expired. Otherwise, the default (0)</span><span class="w"></span>
 
-<span class="c"># means that the entire cache will be expunged</span>
+<span class="c1"># means that the entire cache will be expunged</span><span class="w"></span>
 
-<span class="c"># if/when the cache fills.</span>
+<span class="c1"># if/when the cache fills.</span><span class="w"></span>
 
-<span class="na">apc.ttl</span> <span class="o">=</span> <span class="s">7200</span>
+<span class="na">apc.ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">7200</span><span class="w"></span>
 
-<span class="na">apc.user_ttl</span> <span class="o">=</span> <span class="s">7200</span>
+<span class="na">apc.user_ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">7200</span><span class="w"></span>
 </code></pre></div>
 
 <p>Of course, after making the changes there's still more to be done. I'm using Cherokee and FastCGI, so I need to restart the <code>php-cgi</code> processes for the change to take effect. I've found that <code>/etc/init.d/cherokee restart</code> doesn't take care of restarting the <code>php-cgi</code> processes. Nor does using the <code>Graceful restart</code> or <code>Hard restart</code> options in <code>cherokee-admin</code>. Instead, I <em>believe</em> (again, please correct me if I'm wrong) that sending the <code>SIGTERM</code> to <code>php- cgi</code> means that the <code>php-cgi</code> processes will terminate when they have finished handling their current requests.</p>
 
-<div class="codehilite"><pre><code>killall -TERM php-cgi
+<div class="codehilite"><pre><span></span><code>killall -TERM php-cgi
 
 service cherokee start
 </code></pre></div>
@@ -123,7 +123,7 @@ service cherokee start
 
   </div><!--/#content-->
   <div id="footer">
-    <p>&copy; David Taylor 2012</p>
+    <p>&copy; David Taylor 2010-2022</p>
     <p>Licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
     <!-- Clicky -->
     <a title="Web Statistics" href="http://getclicky.com/243249"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>

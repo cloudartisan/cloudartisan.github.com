@@ -71,23 +71,23 @@
 
 <p>You can add an administration interface to your application by adding something like the following to your project's <code>urls.py</code>:</p>
 
-<div class="codehilite"><pre><code><span class="c"># Enable the administration interface</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Enable the administration interface</span>
 
 <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 
 <span class="n">admin</span><span class="o">.</span><span class="n">autodiscover</span><span class="p">()</span>
 
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
 
-    <span class="c"># Using the admin/doc line below, add &#39;django.contrib.admindocs&#39;</span>
+    <span class="c1"># Using the admin/doc line below, add &#39;django.contrib.admindocs&#39;</span>
 
-    <span class="c"># to INSTALLED_APPS to enable admin documentation:</span>
+    <span class="c1"># to INSTALLED_APPS to enable admin documentation:</span>
 
-    <span class="p">(</span><span class="s">r&#39;^admin/doc/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">&#39;django.contrib.admindocs.urls&#39;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^admin/doc/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;django.contrib.admindocs.urls&#39;</span><span class="p">)),</span>
 
-    <span class="c"># Enable the admin interface</span>
+    <span class="c1"># Enable the admin interface</span>
 
-    <span class="p">(</span><span class="s">r&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
 
 <span class="p">)</span>
 </code></pre></div>
@@ -156,7 +156,7 @@
 
   </div><!--/#content-->
   <div id="footer">
-    <p>&copy; David Taylor 2012</p>
+    <p>&copy; David Taylor 2010-2022</p>
     <p>Licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
     <!-- Clicky -->
     <a title="Web Statistics" href="http://getclicky.com/243249"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>

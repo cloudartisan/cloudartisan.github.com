@@ -28,26 +28,26 @@
 
 <p>IronRuby 1.1 runs on either .NET Framework v3.5 or v4. I'll be using the package targeted at .NET v3.5 for our example simply because I wasn't sure if most people would have the newer framework installed on their machines. Ruby normally lives in a self-contained folder. Installing IronRuby, therefore, is as simple as downloading this 4MB zip <a href="http://ironruby.codeplex.com/releases/view/43540#DownloadId=133276">file</a> and unpacking it.   For the purposes of this article, I've created a root folder called</p>
 
-<div class="codehilite"><pre><code>C:\Sample
+<div class="codehilite"><pre><span></span><code>C:\Sample
 </code></pre></div>
 
 <p>and unzipped the contents of the IronRuby zip file to</p>
 
-<div class="codehilite"><pre><code>C:\Sample\ironruby
+<div class="codehilite"><pre><span></span><code>C:\Sample\ironruby
 </code></pre></div>
 
 <h2>Installing Rails</h2>
 
 <p>Install IronRuby on Rails by typing:</p>
 
-<div class="codehilite"><pre><code>cd C:\Sample\IronRuby\bin
+<div class="codehilite"><pre><span></span><code>cd C:\Sample\IronRuby\bin
 
 .\igem install rails --version 2.3.8
 </code></pre></div>
 
 <p>You should see output similar to the following:</p>
 
-<div class="codehilite"><pre><code>C:\Sample\IronRuby\bin&gt;igem install --version 2.3.8  
+<div class="codehilite"><pre><span></span><code>C:\Sample\IronRuby\bin&gt;igem install --version 2.3.8  
 
 Successfully installed rake-0.8.7
 
@@ -64,7 +64,7 @@ Successfully installed rails-2.3.8
 
 <p>For rails to use the active-record pattern with MS SQL Server, we’ll also need to install the <code>activerecord-sqlserver-adapter</code> gem:</p>
 
-<div class="codehilite"><pre><code>c:\Sample\IronRuby\bin&gt;.\igem install activerecord-sqlserver-adapter --version 2.3.8
+<div class="codehilite"><pre><span></span><code>c:\Sample\IronRuby\bin&gt;.\igem install activerecord-sqlserver-adapter --version 2.3.8
 
  Successfully installed activerecord-sqlserver-adapter-2.3.8
 
@@ -81,7 +81,7 @@ Successfully installed rails-2.3.8
 
 <p>For our example, let’s ensure we have the following setup on our SQL Server:</p>
 
-<div class="codehilite"><pre><code>Server: localhost
+<div class="codehilite"><pre><span></span><code>Server: localhost
 
 Database: dev
 
@@ -96,7 +96,7 @@ Password: mypassword
 
 <p>Create the canonical rails application in our sample as follows:</p>
 
-<div class="codehilite"><pre><code>cd c:\sample
+<div class="codehilite"><pre><span></span><code>cd c:\sample
 
 Set path=%path;C:\Sample\IronRuby\bin
 
@@ -109,46 +109,46 @@ Set path=%path;C:\Sample\IronRuby\bin
 
 <p>The database.yml database configuration file under C:\Sample\myapp\config\ tells rails how to connect to the application’s database. Replace the following default connection string in database.yml that was generated:</p>
 
-<div class="codehilite"><pre><code><span class="l-Scalar-Plain">development</span><span class="p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">development</span><span class="p">:</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">adapter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sqlite3</span>
+<span class="w">  </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlite3</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">db/development.sqlite3</span>
+<span class="w">  </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db/development.sqlite3</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">pool</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">timeout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5000</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span><span class="w"></span>
 </code></pre></div>
 
 <p>with the following:</p>
 
-<div class="codehilite"><pre><code><span class="l-Scalar-Plain">development</span><span class="p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">development</span><span class="p">:</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">mode</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ADONET</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ADONET</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">adapter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">sqlserver</span>
+<span class="w">  </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlserver</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">.</span>
+<span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">dev</span>
+<span class="w">  </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">username</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myuser</span>
+<span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myuser</span><span class="w"></span>
 
-  <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mypassword</span>
+<span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mypassword</span><span class="w"></span>
 </code></pre></div>
 
 <p>We have now installed IronRuby, Rails and other necessary gems and configured our database.yml with the appropriate connection string to tell rails how to talk to SQL Server.</p>
 
 <p>All that remains is starting up the application:</p>
 
-<div class="codehilite"><pre><code>cd c:\Sample
+<div class="codehilite"><pre><span></span><code>cd c:\Sample
 
 .\IronRuby\bin\ir myapp\script\server
 </code></pre></div>
 
 <p>You should see the webrick web server start up:</p>
 
-<div class="codehilite"><pre><code>c:\Sample&gt;.\IronRuby\bin\ir myapp\script\server
+<div class="codehilite"><pre><span></span><code>c:\Sample&gt;.\IronRuby\bin\ir myapp\script\server
 
 WARNING: YAML.add_builtin_type is not implemented
 
@@ -175,7 +175,7 @@ WARNING: YAML.add_builtin_type is not implemented
 
 <p>The bundle assumes you have an existing SQL Server installed on your machine with the following configuration:</p>
 
-<div class="codehilite"><pre><code>SQL Server: localhost
+<div class="codehilite"><pre><span></span><code>SQL Server: localhost
 
 Database: dev
 
@@ -234,7 +234,7 @@ Password: mypassword
 
   </div><!--/#content-->
   <div id="footer">
-    <p>&copy; David Taylor 2012</p>
+    <p>&copy; David Taylor 2010-2022</p>
     <p>Licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
     <!-- Clicky -->
     <a title="Web Statistics" href="http://getclicky.com/243249"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>

@@ -52,7 +52,7 @@
 
 <p>I modified the following function:</p>
 
-<div class="codehilite"><pre><code><span class="k">def</span> <span class="nf">database_year</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">database_year</span>
 
     <span class="no">DATABASE_VERSION_REGEXP</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">database_version</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">].</span><span class="n">to_i</span>
 
@@ -61,7 +61,7 @@
 
 <p>To my uglier but SQLAzure friendly:</p>
 
-<div class="codehilite"><pre><code><span class="k">def</span> <span class="nf">database_year</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">database_year</span>
 
     <span class="c1">#Ameer&#39;s horrible hack for SQL Azure  </span>
 
@@ -92,7 +92,7 @@
 
 <p>So...I just added one :)</p>
 
-<div class="codehilite"><pre><code><span class="k">CREATE</span> <span class="k">UNIQUE</span> <span class="n">CLUSTERED</span> <span class="k">INDEX</span> <span class="n">Idx1</span> <span class="k">ON</span> <span class="n">schema_migrations</span><span class="p">(</span><span class="k">version</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="n">CLUSTERED</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">Idx1</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">schema_migrations</span><span class="p">(</span><span class="k">version</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
 <p>Given the above to fixes, all we need to do is point our database.yml to our SQLAzure instance in the cloud:</p>
@@ -154,7 +154,7 @@
 
   </div><!--/#content-->
   <div id="footer">
-    <p>&copy; David Taylor 2012</p>
+    <p>&copy; David Taylor 2010-2022</p>
     <p>Licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
     <!-- Clicky -->
     <a title="Web Statistics" href="http://getclicky.com/243249"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>

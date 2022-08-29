@@ -26,12 +26,12 @@
 
 <p>First, I need Djangy:</p>
 
-<div class="codehilite"><pre><code># sudo easy_install djangy
+<div class="codehilite"><pre><span></span><code># sudo easy_install djangy
 </code></pre></div>
 
 <p>I need a work environment for the project. Djangy uses git for releases, so:</p>
 
-<div class="codehilite"><pre><code># mkdir -p Projects/djangy/rightscalefeed
+<div class="codehilite"><pre><span></span><code># mkdir -p Projects/djangy/rightscalefeed
 
 # cd Projects/djangy/rightscalefeed
 
@@ -40,7 +40,7 @@
 
 <p>Next, I get started creating the Djangy application:</p>
 
-<div class="codehilite"><pre><code># djangy create
+<div class="codehilite"><pre><span></span><code># djangy create
 
 Please enter your application name: rightscalefeed  
 
@@ -55,7 +55,7 @@ Application created.  Now you can run &#39;git push djangy master&#39;.
 
 <p>That's the Djangy side of things, but before I push the project I need to take care of the Django side of things (ie, write some code).</p>
 
-<div class="codehilite"><pre><code># django-admin.py startproject rightscalefeed
+<div class="codehilite"><pre><span></span><code># django-admin.py startproject rightscalefeed
 
 # cd rightscalefeed
 
@@ -64,27 +64,27 @@ Application created.  Now you can run &#39;git push djangy master&#39;.
 
 <p>In <code>rightscalefeed/urls.py</code> I have:</p>
 
-<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">django.conf.urls.defaults</span> <span class="kn">import</span> <span class="o">*</span>  
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.conf.urls.defaults</span> <span class="kn">import</span> <span class="o">*</span>  
 
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
 
-    <span class="p">(</span><span class="s">r&#39;^$&#39;</span><span class="p">,</span> <span class="s">&#39;feed2ws.views.index&#39;</span><span class="p">)</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^$&#39;</span><span class="p">,</span> <span class="s1">&#39;feed2ws.views.index&#39;</span><span class="p">)</span>
 
 <span class="p">)</span>
 </code></pre></div>
 
 <p>In <code>rightscalefeed/feed2ws/views.py</code> I have:</p>
 
-<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>  
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>  
 
 <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&#39;testing&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;testing&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>I intend to use <code>feedparser</code>, so I have added it to <code>djangy.eggs</code>:</p>
 
-<div class="codehilite"><pre><code>Django
+<div class="codehilite"><pre><span></span><code>Django
 
 South
 
@@ -93,7 +93,7 @@ feedparser
 
 <p>Now to commit everything, push it to Djangy, and test:</p>
 
-<div class="codehilite"><pre><code># git add .
+<div class="codehilite"><pre><span></span><code># git add .
 
 # git commit -a -m &#39;Initial release&#39;
 
@@ -222,7 +222,7 @@ To git@api.djangy.com:rightscalefeed.git
 
   </div><!--/#content-->
   <div id="footer">
-    <p>&copy; David Taylor 2012</p>
+    <p>&copy; David Taylor 2010-2022</p>
     <p>Licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a></p>
     <!-- Clicky -->
     <a title="Web Statistics" href="http://getclicky.com/243249"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
