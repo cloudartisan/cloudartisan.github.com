@@ -24,12 +24,12 @@
 
 <p>Install the packages required by <code>rvm</code>:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ sudo apt-get install curl git
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ sudo apt-get install curl git
 </code></pre></div>
 
 <p>Install <code>rvm</code>:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ bash &lt; &lt;( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ bash &lt; &lt;( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 
 % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed
 
@@ -66,7 +66,7 @@ Copying manpages into place.
 
 <p>Backup and update your <code>.bashrc</code> to make sure <code>rvm</code> is ready whenever you fire up a terminal:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ cp -v ~/.bashrc ~/.bashrc-`date &#39;+%s&#39;`
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ cp -v ~/.bashrc ~/.bashrc-`date &#39;+%s&#39;`
 
 /home/david/.bashrc -&gt; /home/david/.bashrc-1291952792
 
@@ -83,12 +83,12 @@ david@continuity:~$
 
 <p>Load <code>rvm</code> into the current shell session:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ source ~/.rvm/scripts/rvm
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ source ~/.rvm/scripts/rvm
 </code></pre></div>
 
 <p>Now, for installing Ruby 1.9.2, we can check the requirements using <code>rvm notes</code>:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ rvm notes | grep &quot;^[ \t]*ruby:&quot;
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ rvm notes | grep &quot;^[ \t]*ruby:&quot;
 
 ruby: aptitude install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
 
@@ -97,21 +97,21 @@ david@continuity:~$ `
 
 <p>Install those packages:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf
 
 [sudo] password for david: . . . `
 </code></pre></div>
 
 <p>Now install Ruby 1.9.2:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ rvm install 1.9.2
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ rvm install 1.9.2
 
 /home/david/.rvm/rubies/ruby-1.9.2-p0, this may take a while depending on your cpu(s)...
 </code></pre></div>
 
 <p>Now make Ruby 1.9.2 your default:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ rvm use 1.9.2 --default Using
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ rvm use 1.9.2 --default Using
 
 /home/david/.rvm/gems/ruby-1.9.2-p0
 
@@ -120,12 +120,12 @@ david@continuity:~$
 
 <p>Install the Rails gem:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ gem install rails
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ gem install rails
 </code></pre></div>
 
 <p>So that's it, we now have Ruby 1.9.2 and Rails 3.0.3. To verify this:</p>
 
-<div class="codehilite"><pre><code>david@continuity:~$ ruby -v
+<div class="codehilite"><pre><span></span><code>david@continuity:~$ ruby -v
 
 ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-linux]
 

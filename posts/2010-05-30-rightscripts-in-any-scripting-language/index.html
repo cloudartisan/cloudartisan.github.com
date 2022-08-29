@@ -40,9 +40,9 @@
 
 <p>For example:</p>
 
-<div class="codehilite"><pre><code><span class="c"># $WELL_NAMED_VAR_1</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># $WELL_NAMED_VAR_1</span>
 
-<span class="c"># $WELL_NAMED_VAR_2</span>
+<span class="c1"># $WELL_NAMED_VAR_2</span>
 </code></pre></div>
 
 <h2>Writing The RightScript Right</h2>
@@ -66,27 +66,27 @@
 
 <p>Here's an example in Python that has two input parameters, LOG<em>IDENT and LOG</em>MESSAGE:</p>
 
-<div class="codehilite"><pre><code><span class="c">#!/bin/env python</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/env python</span>
 
-<span class="c">#</span>
+<span class="c1">#</span>
 
-<span class="c"># Writes a log message using syslog.</span>
+<span class="c1"># Writes a log message using syslog.</span>
 
-<span class="c">#</span>
+<span class="c1">#</span>
 
-<span class="c"># Inputs:</span>
+<span class="c1"># Inputs:</span>
 
-<span class="c"># $LOG_IDENT</span>
+<span class="c1"># $LOG_IDENT</span>
 
-<span class="c"># $LOG_MESSAGE  </span>
+<span class="c1"># $LOG_MESSAGE  </span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">from</span> <span class="nn">syslog</span> <span class="kn">import</span> <span class="n">openlog</span><span class="p">,</span> <span class="n">syslog</span>  
 
-<span class="n">openlog</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&quot;LOG_IDENT&quot;</span><span class="p">])</span>
+<span class="n">openlog</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LOG_IDENT&quot;</span><span class="p">])</span>
 
-<span class="n">syslog</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&quot;LOG_MESSAGE&quot;</span><span class="p">])</span>
+<span class="n">syslog</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LOG_MESSAGE&quot;</span><span class="p">])</span>
 </code></pre></div>
 
 <p>In RightScale this looks like:</p>

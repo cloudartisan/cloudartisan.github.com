@@ -22,17 +22,17 @@
 <div class="body">
   <p>Add the following to <code>/etc/sources</code>:</p>
 
-<div class="codehilite"><pre><code>deb http://ftp.us.debian.org/debian/ testing main contrib non-free
+<div class="codehilite"><pre><span></span><code>deb http://ftp.us.debian.org/debian/ testing main contrib non-free
 </code></pre></div>
 
 <p>Create <code>/etc/apt/apt.conf</code> with:</p>
 
-<div class="codehilite"><pre><code>APT::Default-Release &quot;stable&quot;;
+<div class="codehilite"><pre><span></span><code>APT::Default-Release &quot;stable&quot;;
 </code></pre></div>
 
 <p>Create <code>/etc/apt/preferences</code> for pinning the testing packages:</p>
 
-<div class="codehilite"><pre><code>Package: libssl-dev
+<div class="codehilite"><pre><span></span><code>Package: libssl-dev
 
 Pin: release a=testing
 
@@ -95,7 +95,7 @@ Pin-Priority: 500
 
 <p>Then install the packages:</p>
 
-<div class="codehilite"><pre><code>apt-get install -t testing cherokee libcherokee-base0 libcherokee-server0 libcherokee-config0 libcherokee-mod-admin libssl0.9.8
+<div class="codehilite"><pre><span></span><code>apt-get install -t testing cherokee libcherokee-base0 libcherokee-server0 libcherokee-config0 libcherokee-mod-admin libssl0.9.8
 </code></pre></div>
 
 <p>That's the installation. For the configuration, check out the <a href="http://www.cherokee-project.com/doc/cookbook.html">Cherokee cookbooks</a>.</p>

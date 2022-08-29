@@ -22,12 +22,12 @@
 <div class="body">
   <p>I found that Hudson depends on <code>daemon</code> but it doesn't install automatically.  So, before we get started:</p>
 
-<div class="codehilite"><pre><code>apt-get install daemon
+<div class="codehilite"><pre><span></span><code>apt-get install daemon
 </code></pre></div>
 
 <p>Now that's out of the way, we need to grab the Hudson key and install the package:</p>
 
-<div class="codehilite"><pre><code>wget -q -O - http://hudson-ci.org/debian/hudson-ci.org.key | apt-key add -
+<div class="codehilite"><pre><span></span><code>wget -q -O - http://hudson-ci.org/debian/hudson-ci.org.key <span class="p">|</span> apt-key add -
 
 <span class="nb">cd</span> /tmp
 

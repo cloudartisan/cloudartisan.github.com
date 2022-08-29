@@ -51,7 +51,7 @@
 
 <p>First you'll need to fire up <code>cherokee-admin</code> before you can configure a <em>vServer</em> to serve ISPConfig. The easiest way is to run the following on your server:</p>
 
-<div class="codehilite"><pre><code># cherokee-admin -b
+<div class="codehilite"><pre><span></span><code># cherokee-admin -b
 
 Cherokee Web Server 1.0.10 (Nov 25 2010): Listening on port ALL:9090, TLS
 
@@ -118,7 +118,7 @@ Web Interface:
 
 <p>Now, I admit, I got bored at this point before digging any further. Also, Cherokee is not extremely helpful when it comes to error messages and debugging. I changed the ownership of the files and directories to the <code>www- data</code> user and group and everything started to work. That was good enough for me. To do the same:</p>
 
-<div class="codehilite"><pre><code># chown -R www-data:www-data /usr/local/ispconfig
+<div class="codehilite"><pre><span></span><code># chown -R www-data:www-data /usr/local/ispconfig
 </code></pre></div>
 
 <p>Try loading the site again. As long as the usual culprits are OK (eg, DNS) ISPConfig should now be working.</p>

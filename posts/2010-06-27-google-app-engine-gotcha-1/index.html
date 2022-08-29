@@ -28,17 +28,17 @@
 
 <p>Sometimes developing for Google App Engine isn't straightforward and requires a little imagination. However, most of the time there's a simple alternative; it just takes a little reading. For example, if you want to send e-mail on Google App Engine you can't use Python's <code>smtplib</code> (because it relies on <code>socket</code>, which is implemented as an empty module). Instead, you would do the following:</p>
 
-<div class="codehilite"><pre><code><span class="kn">from</span> <span class="nn">google.appengine.api</span> <span class="kn">import</span> <span class="n">mail</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">google.appengine.api</span> <span class="kn">import</span> <span class="n">mail</span>
 
 <span class="n">mail</span><span class="o">.</span><span class="n">send_mail</span><span class="p">(</span>
 
-    <span class="n">sender</span><span class="o">=</span><span class="s">&quot;&lt;from address&gt;&quot;</span><span class="p">,</span>
+    <span class="n">sender</span><span class="o">=</span><span class="s2">&quot;&lt;from address&gt;&quot;</span><span class="p">,</span>
 
-    <span class="n">to</span><span class="o">=</span><span class="s">&quot;&lt;to address&gt;&quot;</span><span class="p">,</span>
+    <span class="n">to</span><span class="o">=</span><span class="s2">&quot;&lt;to address&gt;&quot;</span><span class="p">,</span>
 
-    <span class="n">subject</span><span class="o">=</span><span class="s">&quot;sending e-mail on Google App Engine...&quot;</span><span class="p">,</span>
+    <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;sending e-mail on Google App Engine...&quot;</span><span class="p">,</span>
 
-    <span class="n">body</span><span class="o">=</span><span class="s">&quot;... is easy once you know how&quot;</span>
+    <span class="n">body</span><span class="o">=</span><span class="s2">&quot;... is easy once you know how&quot;</span>
 
 <span class="p">)</span>
 </code></pre></div>

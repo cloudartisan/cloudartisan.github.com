@@ -47,55 +47,55 @@
 
 <p>First, download the <a href="http://aws.amazon.com/developertools/AWS-Identity-and-Access-Management/4143">AWS Identity and Access Management software</a>, then unzip it somewhere sensible. I unzipped it into <code>~/AWS</code>, where I store all the AWS command-line tools. This gave me a <code>~/AWS/IAMCli-1.2.0</code> directory, to which I created a symbolic link:</p>
 
-<div class="codehilite"><pre><code>wintermute:~/AWS $ unzip ~/Downloads/IAMCli.zip
+<div class="codehilite"><pre><span></span><code>wintermute:~/AWS $ unzip ~/Downloads/IAMCli.zip
 
 wintermute:~/AWS $ ln -s IAMCli-1.2.0 IAMCli
 </code></pre></div>
 
 <p>Now that you have the software, you'll need to setup your shell environment.  Here's an example based on my own Mac OS X configuration (in <code>.bash_profile</code>):</p>
 
-<div class="codehilite"><pre><code><span class="c"># Paths needed for AWS EC2, AWS IAM, etc</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Paths needed for AWS EC2, AWS IAM, etc</span>
 
-<span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/Library/Java/Home
+<span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/Library/Java/Home
 
-<span class="nb">export </span><span class="nv">EC2_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/AWS/EC2
+<span class="nb">export</span> <span class="nv">EC2_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/AWS/EC2
 
-<span class="nb">export </span><span class="nv">AWS_IAM_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/AWS/IAM
+<span class="nb">export</span> <span class="nv">AWS_IAM_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/AWS/IAM
 
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$EC2_HOME</span>/bin:<span class="nv">$AWS_IAM_HOME</span>/bin  
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$EC2_HOME</span>/bin:<span class="nv">$AWS_IAM_HOME</span>/bin  
 
-<span class="c"># EC2 credentials</span>
+<span class="c1"># EC2 credentials</span>
 
-<span class="nb">export </span><span class="nv">EC2_PRIVATE_KEY</span><span class="o">=</span>~/.aws/pk.pem
+<span class="nb">export</span> <span class="nv">EC2_PRIVATE_KEY</span><span class="o">=</span>~/.aws/pk.pem
 
-<span class="nb">export </span><span class="nv">EC2_CERT</span><span class="o">=</span>~/.aws/cert.pem  
+<span class="nb">export</span> <span class="nv">EC2_CERT</span><span class="o">=</span>~/.aws/cert.pem  
 
-<span class="c"># IAM credentials</span>
+<span class="c1"># IAM credentials</span>
 
-<span class="nb">export </span><span class="nv">AWS_CREDENTIAL_FILE</span><span class="o">=</span>~/.aws/account-key  
+<span class="nb">export</span> <span class="nv">AWS_CREDENTIAL_FILE</span><span class="o">=</span>~/.aws/account-key  
 
-<span class="c"># Default EC2 URL: US West</span>
+<span class="c1"># Default EC2 URL: US West</span>
 
-<span class="nb">export </span><span class="nv">EC2_URL</span><span class="o">=</span>https://ec2.us-west-1.amazonaws.com
+<span class="nb">export</span> <span class="nv">EC2_URL</span><span class="o">=</span>https://ec2.us-west-1.amazonaws.com
 </code></pre></div>
 
 <p>As you can see, I keep my credentials in a directory called <code>~/.aws</code>, which I make sure no one else has access to:</p>
 
-<div class="codehilite"><pre><code>wintermute:~/AWS $ mkdir ~/.aws
+<div class="codehilite"><pre><span></span><code>wintermute:~/AWS $ mkdir ~/.aws
 
 wintermute:~/AWS $ chmod 0700 ~/.aws
 </code></pre></div>
 
 <p>As we're only starting out with IAM, we don't yet have our own credentials, we only have the credentials for our 'master' AWS account. For now, we'll dump those 'master' credentials into <code>~/.aws/account-key</code> and later we'll replace them with our new credentials:</p>
 
-<div class="codehilite"><pre><code>AWSAccessKeyId=EXAMPLEEXAMPLEEXAMPLE
+<div class="codehilite"><pre><span></span><code>AWSAccessKeyId=EXAMPLEEXAMPLEEXAMPLE
 
 AWSSecretKey=EXAMPLEKEYEXAMPLEKEYEXAMPLEKEYEXAMPLEKEY
 </code></pre></div>
 
 <p>Now, try sourcing your profile and check that you can execute an IAM command- line tool. For example:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ source ~/.bash_profile
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ source ~/.bash_profile
 
 wintermute:~ $ iam-usercreate -h  
 
@@ -110,7 +110,7 @@ iam-usercreate [options...] arguments...
 
 <p>Now I'll create an <code>Admin</code> group:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ iam-groupcreate -g Admin
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ iam-groupcreate -g Admin
 
 wintermute:~ $ iam-grouplistbypath
 
@@ -121,7 +121,7 @@ arn:aws:iam::123456789012:group/Admin
 
 <p>You may wish to prevent certain actions, such as using IAM to create additional accounts. I don't. I want administrators to be able to use their individual credentials to do all AWS management tasks.</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ vi ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ vi ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
 
 wintermute:~ $ cat ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
 
@@ -142,7 +142,7 @@ wintermute:~ $ cat ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
 
 <p>The new group policy is applied by uploading it:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ iam-groupuploadpolicy -g Admin -p AdminGroupPolicy -f ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ iam-groupuploadpolicy -g Admin -p AdminGroupPolicy -f ~/Git/cloudartisan/aws/policies/AdminGroupPolicy.txt
 
 wintermute:~ $ iam-grouplistpolicies -g Admin
 
@@ -151,7 +151,7 @@ AdminGroupPolicy
 
 <p>Now that we have our <code>Admin</code> group we can create a user for our own use. I'm going to create a <code>david</code> user:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ iam-usercreate -u david -g Admin -k -v
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ iam-usercreate -u david -g Admin -k -v
 
 AKIAIOEXAMPLEEXAMPLE
 
@@ -164,7 +164,7 @@ AKIAIOEXAMPLEEXAMPLE
 
 <p>I now have the credentials for my <code>david</code> account. And, if you've been playing along, you should now have the credentials for your own account. Now we can backup our existing <code>~/.aws/account-key</code> file and update it to use our new access key ID and secret key. I'm feeling brave, so I'm going to replace my old credentials with my new credentials:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ vi ~/.aws/account-key
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ vi ~/.aws/account-key
 
 wintermute:~ $ cat ~/.aws/account-key
 
@@ -175,16 +175,16 @@ AWSSecretKey=wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY
 
 <p>Alternatively, if you're worried and want to be able to switch back with ease, create a new file using your new credentials and change <code>AWS_CREDENTIAL_FILE</code> to point to your new file. For example:</p>
 
-<div class="codehilite"><pre><code><span class="c"># IAM credentials</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># IAM credentials</span>
 
-<span class="nb">export </span><span class="nv">AWS_CREDENTIAL_FILE</span><span class="o">=</span>~/.aws/david_cloudartisan_cred.txt
+<span class="nb">export</span> <span class="nv">AWS_CREDENTIAL_FILE</span><span class="o">=</span>~/.aws/david_cloudartisan_cred.txt
 </code></pre></div>
 
 <p>We're not finished yet! Some of the AWS command-line tools require a private key and a certificate. No problem, we can generate those easily enough. We'll need OpenSSL, a hacksaw, and a colostomy bag. Well... maybe just OpenSSL...  but I'm not promising anything.</p>
 
 <p>Here I generate my private key and certificate files:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ openssl version
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ openssl version
 
 OpenSSL 0.9.8o 01 Jun 2010
 
@@ -195,19 +195,19 @@ wintermute:~ $ openssl req -new -x509 -nodes -sha1 -days 730 -key ~/.aws/pk.pem 
 
 <p>After generating them I add the certificate to my user credentials:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ iam-useraddcert -u david -f cert.pem
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ iam-useraddcert -u david -f cert.pem
 </code></pre></div>
 
 <p>AWS command-line tools that require a private key and certificate will look for the <code>EC2_PRIVATE_KEY</code> and <code>EC2_CERT</code> environment variables if they're not supplied at the command-line. I like the sound of that, so we'll do the following in the shell (and, of course, add the same to our <code>.bash_profile</code> or <code>.bashrc</code>):</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ export EC2_PRIVATE_KEY=~/.aws/pk.pem
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ export EC2_PRIVATE_KEY=~/.aws/pk.pem
 
 wintermute:~ $ export EC2_CERT=~/aws/cert.pem
 </code></pre></div>
 
 <p>If everything's working OK we should now be able to run <code>ec2-describe- instances</code> without any arguments and using our new credentials. Seriously.  Just like this:</p>
 
-<div class="codehilite"><pre><code>wintermute:~ $ ec2-describe-instances
+<div class="codehilite"><pre><span></span><code>wintermute:~ $ ec2-describe-instances
 </code></pre></div>
 
 <p>And that's it, we're using our own credentials. In my case, I'm the user <code>david</code> in the <code>Admin</code> group.</p>

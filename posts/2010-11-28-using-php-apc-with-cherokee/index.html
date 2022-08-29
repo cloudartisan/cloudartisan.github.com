@@ -30,26 +30,26 @@
 
 <p>Create the file</p>
 
-<div class="codehilite"><pre><code><span class="c"># cat &gt;/var/www/phpinfo.php &lt;&lt;EOF</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cat &gt;/var/www/phpinfo.php &lt;&lt;EOF</span>
 
 &lt;?php
 
-  phpinfo<span class="o">()</span>;
+  phpinfo<span class="o">()</span><span class="p">;</span>
 
 ?&gt;
 
 EOF
 
-<span class="c"># chown www-data.www-data /var/www/phpinfo.php</span>
+<span class="c1"># chown www-data.www-data /var/www/phpinfo.php</span>
 
-<span class="c"># chmod 750 /var/www/phpinfo.php</span>
+<span class="c1"># chmod 750 /var/www/phpinfo.php</span>
 </code></pre></div>
 
 <p>Fire up <code>cherokee-admin</code>:</p>
 
-<div class="codehilite"><pre><code><span class="c"># cherokee-admin -b</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cherokee-admin -b</span>
 
-Cherokee Web Server 1.0.10 <span class="o">(</span>Nov 25 2010<span class="o">)</span>: Listening on port ALL:9090, TLS disabled, IPv6 enabled, using epoll, 4096 fds system limit, max. 2041 connections, caching I/O, 20 threads, 102 connections per thread, standard scheduling policy
+Cherokee Web Server <span class="m">1</span>.0.10 <span class="o">(</span>Nov <span class="m">25</span> <span class="m">2010</span><span class="o">)</span>: Listening on port ALL:9090, TLS disabled, IPv6 enabled, using epoll, <span class="m">4096</span> fds system limit, max. <span class="m">2041</span> connections, caching I/O, <span class="m">20</span> threads, <span class="m">102</span> connections per thread, standard scheduling policy
 
 Login:
 
